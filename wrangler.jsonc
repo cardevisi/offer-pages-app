@@ -1,7 +1,7 @@
 {
-  "name": "my-spa",
-  "compatibility_date": "2025-01-01",
+  "name": "offers-app",
+  "compatibility_date": "2025-04-05",
   "assets": {
-    "directory": "./dist"
+    "directory": "./public"
   }
 }
