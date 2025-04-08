@@ -21,7 +21,7 @@
         font-family: Arial, sans-serif;
         overflow: hidden;
       }
-      .background-container {
+      .cs-background-container {
         position: fixed;
         top: 0;
         left: 0;
@@ -32,7 +32,7 @@
         background-color: #000;
       }
 
-      .background-image-mobile {
+      .cs-background-image-mobile {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -42,7 +42,7 @@
         background-image: url("mobile.png");
       }
 
-      .background-image-desktop {
+      .cs-background-image-desktop {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -53,26 +53,26 @@
       }
 
       /* Base */
-      #background-image-desktop {
+      #cs-background-image-desktop {
         display: block;
       }
 
-      #background-image-mobile {
+      #cs-background-image-mobile {
         display: none;
       }
 
       /* Media query */
       @media (max-width: 768px) {
-        #background-image-desktop {
+        #cs-background-image-desktop {
           display: none;
         }
 
-        #background-image-mobile {
+        #cs-background-image-mobile {
           display: block;
         }
       }
 
-      .modal-container {
+      .cs-modal-container {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -86,47 +86,47 @@
       }
 
       @media (max-width: 768px) {
-        #modal-container {
+        #cs-modal-container {
           max-width: 620px;
         }
       }
 
-      .modal-image-desktop {
+      .cs-modal-image-desktop {
         border-radius: 12px;
         object-fit: cover;
         width: 100%;
         display: block;
       }
 
-      .modal-image-mobile {
+      .cs-modal-image-mobile {
         border-radius: 12px;
         object-fit: cover;
         display: none;
         max-width: 300px;
       }
       
-      #modal-image-desktop {
+      #cs-modal-image-desktop {
         display: block;
       }
 
-      #modal-image-mobile {
+      #cs-modal-image-mobile {
         display: none;
       }
       @media (max-width: 768px) {
-        #modal-image-desktop {
+        #cs-modal-image-desktop {
           display: none;
         }
 
-        #modal-image-mobile {
+        #cs-modal-image-mobile {
           display: block;
         }
       }
     </style>
   </head>
   <body>
-    <div class="background-container">
-      <div id="background-image-desktop" class="background-image-desktop"></div>
-      <div id="background-image-mobile" class="background-image-mobile"></div>
+    <div class="cs-background-container">
+      <div id="cs-background-image-desktop" class="cs-background-image-desktop"></div>
+      <div id="cs-background-image-mobile" class="cs-background-image-mobile"></div>
     </div>
     <span style="display: none">
       This website uses cookies to improve the user experience. By continuing to
@@ -136,18 +136,18 @@
       href="https://81f9eqchftip1sb5n8po64zo5a.hop.clickbank.net"
       target="_self"
     >
-      <div id="modal-container" class="modal-container">
+      <div id="cs-modal-container" class="cs-modal-container">
         <img
-          id="modal-image-desktop"
+          id="cs-modal-image-desktop"
           src="../resourses/select-coutries.png"
           alt="genius waves"
-          class="modal-image-desktop"
+          class="cs-modal-image-desktop"
         />
         <img
-          id="modal-image-mobile"
+          id="cs-modal-image-mobile"
           src="../resourses/select-coutries.png"
           alt="genius waves"
-          class="modal-image-mobile"
+          class="cs-modal-image-mobile"
         />
       </div>
     </a>
