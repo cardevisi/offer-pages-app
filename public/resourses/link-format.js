@@ -20,7 +20,7 @@
   // Função para atualizar todos os links na página
   function updateLinks() {
     // Captura todos os links da página que possuam o parâmetro 'tid'
-    const links = document.querySelectorAll('a[href*="tid="]');
+    const links = document.querySelectorAll('a[href*="tid="], a[href]');
 
     // Loop através de cada link
     links.forEach((link) => {
