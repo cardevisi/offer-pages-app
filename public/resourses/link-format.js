@@ -27,7 +27,7 @@
       const url = new URL(link.href);
 
       // Substitui o valor do parâmetro 'tid'
-      url.searchParams.set("tid", "gads_canada");
+      url.searchParams.set("tid", "gads");
       url.searchParams.set("aff_sub1", keyword);
       url.searchParams.set("aff_sub2", matchtype);
       url.searchParams.set("aff_sub3", device);
