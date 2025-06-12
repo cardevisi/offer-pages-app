@@ -1,0 +1,163 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ozenvitta</title>
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="padlock.png" />
+    <link rel="shortcut icon" href="padlock.ico" type="image/x-icon" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      .background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .background-image-mobile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: top center;
+        opacity: 0.4;
+        background-image: url("mobile.png");
+      }
+
+      .background-image-desktop {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: top center;
+        opacity: 0.4;
+        background-image: url("desktop.png");
+      }
+
+      #background-image-desktop {
+        display: block;
+      }
+
+      #background-image-mobile {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        #background-image-desktop {
+          display: none;
+        }
+
+        #background-image-mobile {
+          display: block;
+        }
+      }
+
+      .modal-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        text-align: center;
+        z-index: 1;
+        max-width: 500px;
+      }
+
+      @media (max-width: 768px) {
+        #modal-container {
+          max-width: 620px;
+        }
+      }
+
+      .modal-image-desktop {
+        border-radius: 12px;
+        object-fit: cover;
+        width: 100%;
+        display: block;
+      }
+
+      .modal-image-mobile {
+        border-radius: 12px;
+        object-fit: cover;
+        display: none;
+        max-width: 300px;
+      }
+
+      #modal-image-desktop {
+        display: block;
+      }
+
+      #modal-image-mobile {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        #modal-image-desktop {
+          display: none;
+        }
+
+        #modal-image-mobile {
+          display: block;
+        }
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16600952539"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-16600952539");
+    </script>
+  </head>
+  <body>
+    <div class="background-container">
+      <div id="background-image-desktop" class="background-image-desktop"></div>
+      <div id="background-image-mobile" class="background-image-mobile"></div>
+    </div>
+    <a href="https://ev.braip.com/ref?pv=proxxnde&af=afi8j6en1n" target="_self">
+      <div id="modal-container" class="modal-container">
+        <img
+          id="modal-image-desktop"
+          src="/resourses/cookies_br_desktop.png"
+          alt="ozenvitta"
+          class="modal-image-desktop"
+        />
+        <img
+          id="modal-image-mobile"
+          src="/resourses/cookies_br_mobile.png"
+          alt="ozenvitta"
+          class="modal-image-mobile"
+        />
+      </div>
+    </a>
+    <script src="/resourses/link-format.js"></script>
+  </body>
+</html>
