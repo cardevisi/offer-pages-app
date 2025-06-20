@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cookie Policy Popup</title>
+    <style>
+      .cookie-popup {
+        position: fixed;
+        height: fit-content;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1001;
+        max-width: 500px;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 24px;
+        background: #fff;
+      }
+
+      .cookie-popup h2 {
+        font-size: 20px;
+        color: #333;
+        font-weight: bold;
+        margin: 0 0 16px;
+      }
+
+      .cookie-popup p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+        margin: 0 0 24px;
+      }
+
+      .cookie-popup .btn {
+        display: inline-block;
+        font-size: 14px;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          border-color 0.3s ease;
+        margin: 6px 8px;
+        border: none;
+      }
+      .btn-accept {
+        background-color: #007bff;
+        color: #fff;
+        border: 2px solid #007bff;
+      }
+
+      .btn-accept:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      .btn-reject {
+        background-color: transparent;
+        color: #007bff;
+        border: 2px solid #007bff;
+      }
+
+      .btn-reject:hover {
+        background-color: #0056b3;
+        background-color: #0056b3;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cookie-popup" id="cookiePopup" style="display: block">
+      <h2>Cookie Policy</h2>
+      <p>
+        This website uses cookies to personalize content and ads, provide social
+        media features, and analyze our traffic. By clicking 'Allow,' you agree
+        to our use of cookies. For more info, visit our Cookie Policy.
+      </p>
+      <button id="acceptCookies" class="btn btn-accept">Allow</button>
+      <button id="rejectCookies" class="btn btn-reject">Close</button>
+    </div>
+  </body>
+</html>
