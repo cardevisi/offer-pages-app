@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cookie Policy Popup</title>
+    <meta name="description" content="Saiba como usamos cookies para melhorar sua experiência, personalizar anúncios e analisar nosso tráfego. Aceite para aproveitar todos os recursos do site." />
+    <meta name="keywords" content="cookies, política de cookies, privacidade, anúncios, Google Ads, consentimento" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      /* ... (mantém o CSS igual ao anterior) ... */
       .cookie-popup {
         position: fixed;
         height: fit-content;
@@ -17,21 +21,18 @@
         padding: 24px;
         background: #fff;
       }
-
-      .cookie-popup h2 {
-        font-size: 20px;
+      .cookie-popup h1 {
+        font-size: 22px;
         color: #333;
         font-weight: bold;
         margin: 0 0 16px;
       }
-
       .cookie-popup p {
         font-size: 14px;
         color: #555;
         line-height: 1.5;
         margin: 0 0 24px;
       }
-
       .cookie-popup .btn {
         display: inline-block;
         font-size: 14px;
@@ -51,35 +52,33 @@
         color: #fff;
         border: 2px solid #007bff;
       }
-
       .btn-accept:hover {
         background-color: #0056b3;
         border-color: #0056b3;
       }
-
       .btn-reject {
         background-color: transparent;
         color: #007bff;
         border: 2px solid #007bff;
       }
-
       .btn-reject:hover {
-        background-color: #0056b3;
         background-color: #0056b3;
         color: #fff;
       }
     </style>
   </head>
   <body>
-    <div class="cookie-popup" id="cookiePopup" style="display: block">
-      <h2>Cookie Policy</h2>
-      <p>
-        This website uses cookies to personalize content and ads, provide social
-        media features, and analyze our traffic. By clicking 'Allow,' you agree
-        to our use of cookies. For more info, visit our Cookie Policy.
-      </p>
-      <button id="acceptCookies" class="btn btn-accept">Allow</button>
-      <button id="rejectCookies" class="btn btn-reject">Close</button>
-    </div>
+    <main>
+      <section class="cookie-popup" id="cookiePopup" style="display: block" role="dialog" aria-modal="true" aria-labelledby="cookieTitle">
+        <h1 id="cookieTitle">Política de Cookies</h1>
+        <p>
+          Utilizamos cookies para personalizar sua experiência, exibir anúncios relevantes do Google Ads e analisar nosso tráfego. Ao clicar em <strong>'Permitir'</strong>, você concorda com o uso de cookies para melhorar sua navegação e facilitar suas compras. 
+          <br>
+          <a href="/politica-de-cookies.html" target="_blank" rel="noopener">Saiba mais sobre nossa Política de Cookies</a> e <a href="/privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.
+        </p>
+        <button id="acceptCookies" class="btn btn-accept" aria-label="Permitir cookies">Permitir</button>
+        <button id="rejectCookies" class="btn btn-reject" aria-label="Fechar aviso de cookies">Fechar</button>
+      </section>
+    </main>
   </body>
 </html>

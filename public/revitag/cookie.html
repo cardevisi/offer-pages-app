@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Banner de Cookies</title>
+  <style>
+    #cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+      z-index: 9999;
+    }
+    #cookie-banner h2 {
+      margin-top: 0;
+    }
+    #cookie-banner p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .cookie-buttons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .cookie-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .accept-btn {
+      background-color: black;
+      color: white;
+    }
+    .decline-btn {
+      background-color: #e5e7eb;
+      color: black;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="cookie-banner">
+  <button class="close-btn" onclick="handleCookieChoice(false)">&times;</button>
+  <h2>Configurações de cookies</h2>
+  <p>
+    Usamos cookies e tecnologias semelhantes para ajudar a personalizar o conteúdo, adaptar e medir anúncios e fornecer uma melhor experiência. Ao clicar em aceitar, você concorda com isso, conforme descrito em nossa
+    <a href="/politica-de-cookies" target="_blank">Política de Cookies</a>.
+  </p>
+  <div class="cookie-buttons">
+    <button class="accept-btn" onclick="handleCookieChoice(true)">Sim, eu aceito</button>
+    <button class="decline-btn" onclick="handleCookieChoice(false)">Eu não aceito</button>
+  </div>
+</div>
+
+<script>
+  function handleCookieChoice(accepted) {
+    // Armazena a escolha do usuário (pode ser usado com localStorage ou cookies reais)
+    localStorage.setItem('cookiesAccepted', accepted);
+    // Remove o banner
+    document.getElementById('cookie-banner').style.display = 'none';
+
+    // Aqui você pode ativar/desativar scripts de rastreamento conforme a escolha
+    if (accepted) {
+      console.log("Cookies permitidos");
+      // carregarGoogleAnalytics(); // Exemplo
+    } else {
+      console.log("Cookies recusados");
+    }
+  }
+
+  // Exibe o banner se o usuário ainda não escolheu
+  window.addEventListener('load', () => {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    } else {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
