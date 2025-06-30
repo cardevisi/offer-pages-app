@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenCortex - Special Promotion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    html {
+      height: 100vh;
+      font-size: 16px;
+      font-family: "Lato", sans-serif;
+    }
+
+    body {
+      font-family: "Lora", serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-around;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 30px;
+      border-bottom: #000 3px solid;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    header ul {
+      padding: 0;
+      list-style: none;
+    }
+    header li {
+      float: left;
+      display: inline;
+      padding: 0 20px 0 20px;
+    }
+    header h1 {
+      color: white;
+    }
+    .showcase {
+      display: flex;
+      align-items: center;
+      min-height: 400px;
+      background-color: #eef9f6;
+      text-align: left;
+      color: #212529;
+    }
+    .showcase .showcase-image {
+      width: 100%;
+      height: auto;
+    }
+    .showcase-content {
+      padding: 20px;
+    }
+    .showcase h1 {
+      font-size: 65px;
+      margin-bottom: 10px;
+      color: #212529;
+    }
+    .showcase p {
+      font-size: 20px;
+    }
+    .button {
+      display: inline-block;
+      color: #333;
+      background-color: #ffd814;
+      border: 1px solid #fcd200;
+      padding: 20px;
+      text-decoration: none;
+      font-size: 24px;
+      border-radius: 36px;
+      min-width: 480px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .button-container {
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+    .button-container:hover {
+      transform: scale(1.05);
+    }
+    .content {
+      padding: 20px;
+      background: #eef9f6;
+      margin-top: 20px;
+      color: #212529;
+      border-radius: 20px;
+    }
+    .content h2 {
+      text-align: center;
+    }
+    .content p {
+      line-height: 1.6;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 20px;
+    }
+    .content-container {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      padding: 32px;
+      align-items: center;
+    }
+    .content-box {
+      background: #eef9f6;
+      color: #212529;
+      padding: 20px;
+      border-radius: 20px;
+      width: 30%;
+      box-sizing: border-box;
+    }
+
+    .content-box.benefits {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      padding: 80px;
+
+      h2 {
+        font-size: 72px;
+        text-align: left;
+      }
+
+      .benefits-image {
+        width: 60%;
+      }
+    }
+
+    .content-box.options {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 32px;
+      padding: 80px;
+      width: 100%;
+
+      h2 {
+        font-size: 72px;
+        text-align: left;
+      }
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .free-bonuses {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .free-bonuses .card-bonuses-container {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      box-shadow: 0 8px 24px hsla(210, 8%, 62%, .2);
+    }
+
+    .free-bonuses .card-bonuses-container .box-right {
+      text-align: left;
+      width: 100%;
+      padding: 20px;
+      border-radius: 20px;
+
+      img {
+        width: 100%;
+        border-radius: 18px;
+      }
+    }
+
+    .free-bonuses .card-bonuses-container .box-left {
+      width: 100%;
+      text-align: left;
+
+      img {
+        width: 100%;
+        border-radius: 18px;
+      }
+    }
+
+    .offer-highlight {
+      color: #ce5200;
+    }
+
+    .clickbank {
+      position: fixed;
+      bottom: 0;
+      right: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 8px 24px hsla(210, 8%, 62%, .2);
+      border: 1px solid gray;
+    }
+
+    .footer p {
+      color: white;
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      .showcase {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 44px;
+      }
+      .showcase img {
+        max-width: 80%;
+      }
+
+      .showcase-content {
+        padding: 20px;
+      }
+
+      .showcase h1 {
+        font-size: 40px;
+      }
+
+      .showcase p {
+        font-size: 16px;
+      }
+
+      .button {
+        font-size: 20px;
+        min-width: 244px;
+      }
+
+      .content h2 {
+        font-size: 24px;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+
+        h1 {
+          font-size: 32px;
+        }
+
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      footer {
+        padding: 20px 0;
+      }
+
+      header ul {
+        text-align: center;
+      }
+
+      header li {
+        float: none;
+        display: inline;
+        padding: 0 10px 0 10px;
+      }
+
+      header h1 {
+        font-size: 24px;
+        color: #fff;
+      }
+
+      .content-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .content-box {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .content-box.benefits {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        h2 {
+          font-size: 32px;
+          text-align: center;
+        }
+
+        .benefits-image {
+          width: 100%;
+        }
+      }
+
+      .content-box.options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        h2 {
+          font-size: 32px;
+          text-align: center;
+        }
+      }
+
+      .free-bonuses .card-bonuses-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .clickbank {
+        position: relative;
+        padding: 10px;
+        text-align: center;
+        border: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>ZenCortex</h1>
+      <nav>
+        <ul>
+          <li><a href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=try-one">Try One</a></li>
+          <li><a href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=best-value">Best Value</a></li>
+          <li><a href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=most-popular" class="btn-purchase">Most Polular</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="showcase">
+    <div class="container">
+      <div class="showcase-image">
+        <img src="product-image.webp" alt="Zencortex24 Product Image">
+      </div>
+      <div class="showcase-content">
+        <h1>ZenCortex – <span class="offer-highlight">Special Offer</span> Only <span class="offer-highlight">$49/Bottle</span> + Free Shipping Special Today!</h1>
+        <p>Try ZenCortex Today At Special Introductory Pricing!</p>
+        <img src="certifications.webp" alt="Product Badge">
+        <div class="button-container">
+          <a href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=order-now" class="button">Access the Official WebSite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-container">
+    <div class="content-box benefits">
+      <div>
+        <h2>100% Satisfaction Guaranteed 60-Day Money Back Guarantee</h2>
+      </div>
+      <div class="benefits-image">
+        <img width="100%" src="guarantee_badge.webp" alt="Money Back Guarantee">
+      </div>
+    </div>
+
+    <div class="content-box options">
+      <div>
+        <h2>Order 6 Bottles Or 3 Bottles And Get 2 Free Bonuses!</h2>
+        <div class="button-container">
+          <a href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=order-now" class="button">Access the Official WebSite</a>
+        </div>
+      </div>
+      <div class="free-bonuses">
+        <div class="card-bonuses-container">
+            <div class="box-left">
+              <img srcset="book1.jpg" alt="Free Bonus Ultimate Tea Remedies">
+            </div>
+            <div class="box-right">
+                <h3 class="fs-5">Free Bonus #1</h3>
+                <p>Hear Like A Pro</p>
+                <p class="small mb-0">(instant download)</p>
+            </div>
+        </div>
+        <div class="card-bonuses-container">
+            <div class="box-left">
+              <img srcset="book2.jpg" alt="Free Bonus Powerful Ways To Sharpen Your Memory" loading="lazy">
+            </div>
+            <div class="box-right">
+                <h3 class="fs-5">Free Bonus #2</h3>
+                <p>Powerful Ways To Sharpen Your Memory</p>
+                <p class="small mb-0">(instant download)</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>
+      <a
+        class="privacy-policy"
+        title="Privacy Policy"
+        href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=privacy_policy"
+        >Privacy Policy</a
+      >
+      |
+      <a
+        class="terms-conditions"
+        title="Terms & Conditions"
+        href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=terms_conditions"
+        >Terms & Conditions</a
+      >
+      |
+      <a
+        class="references"
+        title="References"
+        href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=references"
+        >References</a
+      >
+    </p>
+    <p>&copy; 2024 Zencortex24. All rights reserved.</p>
+  </footer>
+  <div class="clickbank">
+    <a href="https://489a7imcb-6m1y1yheej6nfw4w.hop.clickbank.net/?&traffic_source=google&traffic_type=paid&tid=clickbank">
+      <img src="logo-tab-two-tone-en.png" alt="Clickbank">
+    </a>
+  </div>
+  <script src="/resourses/link-format.js"></script>
+</body>
+</html>
