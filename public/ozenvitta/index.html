@@ -2,75 +2,129 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Ozenvitta</title>
+    <title>
+      Ozenvitta - Perca Peso, Ganhe Saúde e Confiança | Site Oficial
+    </title>
     <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
+      name="description"
+      content="Conheça a fórmula natural de Ozenvitta e descubra como nosso suplemento pode ajudar você a acelerar o metabolismo e alcançar seus objetivos de bem-estar. Acesse o site oficial e garanta o seu!"
     />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/resourses/padlock.png" />
+    <link rel="icon" type="image/png" href="/resources/padlock.png" />
     <link
       rel="shortcut icon"
-      href="/resourses/padlock.ico"
+      href="/resources/padlock.ico"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      :root {
+        --primary-color: #0d826a; /* Tom de verde mais escuro */
+        --secondary-color: #1aae8d; /* Tom de verde mais claro */
+        --text-color-dark: #212529;
+        --text-color-light: #f8f9fa;
+        --bg-dark: #0f1020; /* Fundo escuro do hero */
+        --bg-grey: #f8f9fa; /* Fundo cinza claro para seções alternadas */
+        --bg-light: #fff; /* Fundo branco para cards */
+      }
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Arial, sans-serif;
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Arial, sans-serif;
         font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        background: #fff;
+        line-height: 1.6;
+        color: var(--text-color-dark);
+        background: var(--bg-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      .btn {
-        display: inline-block;
-        font-weight: 400;
-        color: #fff;
-        background: #007bff;
-        border: 1px solid #007bff;
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 80px 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
         text-align: center;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        border-radius: 0.25rem;
-        transition: background 0.15s, border-color 0.15s;
-        text-decoration: none;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 3rem;
+        color: var(--text-color-light);
+      }
+      h2 {
+        font-size: 2.2rem;
+        color: var(--text-color-dark);
       }
       p {
-        margin-bottom: 1rem;
-      }
-      a {
-        color: #007bff;
-        text-decoration: none;
-      }
-      a:visited,
-      a:active {
-        text-decoration: none;
+        color: var(--text-color-dark);
       }
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
+      .cta-btn {
+        display: inline-block;
+        font-weight: 700;
+        color: var(--bg-light);
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color) 0%,
+          var(--primary-color) 100%
+        );
+        border: none;
+        padding: 16px 32px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+
+        animation: pulse-green 2s infinite;
       }
-      h3 {
-        font-size: 1.75rem;
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        animation: none;
       }
-      .background-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: -2;
-        background: #000;
+
+      @keyframes pulse-green {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        min-height: 94vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--bg-dark);
+        overflow: hidden;
       }
       .background-image-desktop,
       .background-image-mobile {
@@ -79,39 +133,127 @@
         height: 100%;
         background-size: cover;
         background-position: top center;
-        opacity: 0.4;
+        opacity: 0.1;
+        animation: fadeIn 2s ease-in-out;
       }
       .background-image-desktop {
         background-image: url("desktop.png");
-        display: block;
       }
       .background-image-mobile {
         background-image: url("mobile.png");
         display: none;
       }
-      .cookie-popup {
-        position: fixed;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #c2c6cb;
-        border: 2px solid #fff;
-        color: #000;
-        padding: 50px;
-        border-radius: 5px;
-        z-index: 1000;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 900px;
+        margin: 0 auto;
+        color: var(--text-color-light);
+      }
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .small-logos {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .small-logos img {
+        height: 25px;
+        filter: invert(1);
+      }
+
+      .content-card {
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        margin-top: -80px;
+        position: relative;
+        z-index: 20;
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+      .benefit-item h3 {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+      }
+
+      /* ESTILOS PARA O FAQ (ACORDEÃO) */
+      .faq-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        cursor: pointer;
         text-align: left;
       }
-      .close-btn {
-        background: none;
-        border: none;
-        font-size: 1.2rem;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
+      .faq-question {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
+      .faq-question::after {
+        content: "+";
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      .faq-question.active::after {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        padding-top: 0;
+        color: var(--light-text-color);
+      }
+      .faq-answer.open {
+        max-height: 200px;
+      }
+
+      .main-footer {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 40px 0;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .main-footer p,
+      .main-footer a {
+        color: #ddd;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .main-footer a:hover {
+        text-decoration: underline;
+      }
+      .main-footer .legal-links {
+        margin-bottom: 10px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.1x;
+        }
+      }
+
       @media (max-width: 768px) {
         .background-image-desktop {
           display: none;
@@ -119,20 +261,18 @@
         .background-image-mobile {
           display: block;
         }
-        .cookie-popup {
-          position: fixed;
-          bottom: 60px;
-          width: 85%;
-          background-color: #c2c6cb;
-          border: white 2px solid;
-          color: black;
-          padding: 50px;
-          border-radius: 5px;
-          z-index: 1000;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .hero-content h1 {
+          font-size: 2.5rem;
         }
-        .cookie-popup h3 {
-          font-size: 1.5rem;
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .content-card {
+          margin-top: -40px;
+          padding: 20px;
+        }
+        section {
+          padding: 40px 0;
         }
       }
     </style>
@@ -175,34 +315,160 @@
       ></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- <div class="background-container">
+  </head>
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <header class="hero-section">
       <div class="background-image-desktop"></div>
       <div class="background-image-mobile"></div>
-    </div> -->
-    <div class="cookie-popup">
-      <a
-        href="https://ev.braip.com/campanhas/cpa/camx6227o"
-        class="close-btn cta go-to-ozenvitta-sales-page"
-        id="close-popup"
-        >Fechar</a
-      >
-      <h3>Política de Cookies</h3>
-      <p>
-        Este site usa cookies para personalizar conteúdo e anúncios, fornecer
-        recursos de mídia social e analisar nosso tráfego. Ao clicar em Aceitar,
-        você concorda com o uso de cookies. Para mais informações, por favor
-        visite nossa
-        <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta go-to-ozenvitta-sales-page"
-          >Política de Cookies</a
+
+      <div class="hero-content">
+        <h1>Ozenvitta</h1>
+        <p>
+          Perca peso, ganhe confiança e tenha a qualidade de vida que você tanto
+          quer e precisa!
+        </p>
+        <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn"
+          >SIM, QUERO COMEÇAR A MUDAR MINHA VIDA!</a
         >
-      </p>
-      <a
-        href="https://ev.braip.com/campanhas/cpa/camx6227o"
-        id="accept-cookies"
-        class="btn cta go-to-ozenvitta-sales-page"
-        >Aceitar</a
+      </div>
+    </header>
+
+    <main>
+      <section id="benefits" class="content-section">
+        <div class="container content-card">
+          <h2>Como Ozenvitta Vai Transformar Sua Vida</h2>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <h3>Acelera o Metabolismo</h3>
+              <p>
+                Com **L-Carnitina**, Ozenvitta ajuda seu corpo a queimar gordura
+                de forma mais eficiente.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <h3>Controla o Apetite</h3>
+              <p>
+                A **Inulina** promove a saciedade, reduzindo a fome e a vontade
+                de comer em excesso.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <h3>Mais Energia</h3>
+              <p>
+                Sinta-se mais ativo e com mais vitalidade para suas tarefas
+                diárias e exercícios.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <h3>Emagrecimento Saudável</h3>
+              <p>
+                Formulado com ingredientes naturais, contribui para uma perda de
+                peso segura e duradoura.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="testimonials"
+        class="content-section"
+        style="background-color: var(--bg-grey)"
       >
-    </div>
-    <!-- <script src="/resourses/link-format.js"></script> -->
+        <div class="container">
+          <h2>O Que Nossos Clientes Dizem</h2>
+          <p
+            style="
+              font-style: italic;
+              text-align: center;
+              max-width: 800px;
+              margin: 0 auto 20px;
+            "
+          >
+            "Ozenvitta mudou minha vida! Perdi 10kg em dois meses e me sinto com
+            mais energia do que nunca. Recomendo para todos que querem emagrecer
+            de forma saudável."
+          </p>
+          <p style="text-align: center; font-weight: 600">
+            - Ana P., 29 anos, Joinville/SC
+          </p>
+          <br />
+          <div style="text-align: center">
+            <a
+              href="https://ev.braip.com/campanhas/cpa/camx6227o"
+              class="cta-btn"
+              >QUERO MUDAR MINHA VIDA TAMBÉM!</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="content-section">
+        <div class="container content-card">
+          <h2>Perguntas Frequentes</h2>
+          <div class="faq-item">
+            <div class="faq-question">O que é Ozenvitta?</div>
+            <div class="faq-answer">
+              Ozenvitta é um suplemento alimentar que combina Inulina e
+              L-Carnitina para auxiliar na perda de peso e bem-estar.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">O produto é natural?</div>
+            <div class="faq-answer">
+              Sim, Ozenvitta é formulado com ingredientes naturais e não tem
+              contraindicações conhecidas.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Como devo tomar?</div>
+            <div class="faq-answer">
+              Recomendamos 2 cápsulas ao dia, preferencialmente antes das
+              refeições, ou conforme orientação médica.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="legal-links">
+          <a href="/politica-de-privacidade.html">Política de Privacidade</a> |
+          <a href="/termos-de-uso.html">Termos de Uso</a> |
+          <a href="/politica-de-reembolso.html">Política de Reembolso</a>
+        </div>
+        <p>
+          Atenção: Este site é uma página de afiliação e, ao clicar nos botões,
+          você será redirecionado para o site oficial do produto.
+        </p>
+        <p>&copy; 2025 Ozenvitta. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Script para o FAQ (acordeão)
+      document.querySelectorAll(".faq-question").forEach((item) => {
+        item.addEventListener("click", () => {
+          const answer = item.nextElementSibling;
+          const isActive = item.classList.toggle("active");
+          if (isActive) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            answer.classList.add("open");
+          } else {
+            answer.style.maxHeight = null;
+            answer.classList.remove("open");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
