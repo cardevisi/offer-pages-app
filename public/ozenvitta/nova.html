@@ -24,12 +24,12 @@
     />
     <style>
       :root {
-        --primary-color: #0d826a; /* Tom de verde mais escuro */
-        --secondary-color: #1aae8d; /* Tom de verde mais claro */
+        --primary-color: #0d826a; /* Tom de verde mais escuro - Mantido para CTA */
+        --secondary-color: #1aae8d; /* Tom de verde mais claro - Mantido para CTA */
         --text-color-dark: #212529;
         --text-color-light: #f8f9fa;
-        --bg-dark: #0f1020; /* Fundo escuro do hero */
-        --bg-grey: #f8f9fa; /* Fundo cinza claro para seções alternadas */
+        --bg-dark-blue: #1b1c32; /* Fundo escuro do hero - Inspirado no site oficial */
+        --bg-light-blue: #2a2c42; /* Fundo claro de seções alternadas - Inspirado no site oficial */
         --bg-light: #fff; /* Fundo branco para cards */
       }
       * {
@@ -123,7 +123,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: var(--bg-dark);
+        background-color: var(--bg-dark-blue);
         overflow: hidden;
       }
       .background-image-desktop,
@@ -287,7 +287,6 @@
         }
       }
     </style>
-    <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -300,8 +299,6 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-MD33XFQ7");
     </script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
@@ -314,18 +311,6 @@
       gtag("js", new Date());
       gtag("config", "AW-16809229348");
     </script>
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-MD33XFQ7"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
   </head>
   <body>
     <noscript>
@@ -343,8 +328,8 @@
       <div class="hero-content">
         <h1>Ozenvitta</h1>
         <p>
-          Conheça a fórmula que pode ajudar você a acelerar o metabolismo e
-          ter a qualidade de vida que tanto quer!
+          Descubra a fórmula que pode ajudar a acelerar o seu metabolismo e
+          transformar sua saúde!
         </p>
         <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn"
           >ACESSAR O SITE OFICIAL</a
@@ -360,29 +345,29 @@
             <div class="benefit-item">
               <h3>Acelera o Metabolismo</h3>
               <p>
-                Com <strong>L-Carnitina</strong>, Ozenvitta ajuda seu corpo a queimar gordura
+                Com **L-Carnitina**, Ozenvitta pode auxiliar seu corpo a queimar gordura
                 de forma mais eficiente.
               </p>
             </div>
             <div class="benefit-item">
               <h3>Controla o Apetite</h3>
               <p>
-                A <strong>Inulina</strong> promove a saciedade, reduzindo a fome e a vontade
-                de comer em excesso.
+                A **Inulina** pode promover a saciedade, contribuindo para
+                reduzir a fome e a vontade de comer em excesso.
               </p>
             </div>
             <div class="benefit-item">
               <h3>Mais Energia</h3>
               <p>
-                Sinta-se mais ativo e com mais vitalidade para suas tarefas
+                Sinta-se com mais disposição e vitalidade para suas tarefas
                 diárias e exercícios.
               </p>
             </div>
             <div class="benefit-item">
               <h3>Emagrecimento Saudável</h3>
               <p>
-                Formulado com ingredientes naturais, contribui para uma perda de
-                peso segura e duradoura.
+                Formulado com ingredientes naturais, pode contribuir para uma perda de
+                peso de forma segura e saudável.
               </p>
             </div>
           </div>
@@ -392,24 +377,25 @@
       <section
         id="testimonials"
         class="content-section"
-        style="background-color: var(--bg-grey)"
+        style="background-color: var(--bg-light-blue)"
       >
         <div class="container">
-          <h2>O Que Nossos Clientes Dizem</h2>
+          <h2 style="color: var(--text-color-light);">O Que Nossos Clientes Dizem</h2>
           <p
             style="
               font-style: italic;
               text-align: center;
               max-width: 800px;
               margin: 0 auto 5px;
+              color: rgba(255, 255, 255, 0.8);
             "
           >
             "Ozenvitta tem sido uma ótima experiência para mim! Consegui alcançar meus objetivos de forma saudável e me sinto com muito mais energia. Recomendo a todos que desejam uma mudança positiva!"
           </p>
-          <p style="text-align: center; font-weight: 600">
-            - Paula S., 29 anos, Joinville/SC
+          <p style="text-align: center; font-weight: 600; color: var(--text-color-light);">
+            - Ana P., 29 anos, Joinville/SC
           </p>
-          <p style="font-size: 0.8rem; text-align: center; color: #777;">
+          <p style="font-size: 0.8rem; text-align: center; color: rgba(255, 255, 255, 0.6);">
             *Os resultados podem variar de pessoa para pessoa.
           </p>
           <br />
