@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leanova - Reclaim Your Energy, Support Your Metabolism | Official Site</title>
+    <meta name="description" content="Discover Leanova's natural formula and learn how our supplement can help you accelerate your metabolism and achieve your wellness goals. Access the official site now!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/resources/padlock.png" />
+    <link rel="shortcut icon" href="/resources/padlock.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-color: #2e8b57; /* Darker green from example */
+        --secondary-color: #9acd32; /* Lighter green from example */
+        --text-color-dark: #212529;
+        --text-color-light: #f8f9fa;
+        --bg-dark: #2e8b57; /* Same as primary-color */
+        --bg-grey: #f8f9fa;
+        --bg-light: #fff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-color-dark);
+        background: var(--bg-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 80px 0;
+      }
+      h1, h2, h3 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 3rem;
+        color: var(--text-color-light);
+      }
+      h2 {
+        font-size: 2.2rem;
+        color: var(--primary-color);
+      }
+      p {
+        color: var(--text-color-dark);
+      }
+      .cta-btn {
+        display: inline-block;
+        font-weight: 700;
+        color: var(--bg-light);
+        background: var(--primary-color);
+        border: none;
+        padding: 16px 32px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        animation: pulse-green 2s infinite;
+      }
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        animation: none;
+      }
+      @keyframes pulse-green {
+        0% { transform: scale(1); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
+        50% { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
+        100% { transform: scale(1); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
+      }
+      .hero-section {
+        position: relative;
+        min-height: 94vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--primary-color);
+        overflow: hidden;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 900px;
+        margin: 0 auto;
+        color: var(--text-color-light);
+      }
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .content-card {
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        position: relative;
+        z-index: 20;
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+      .benefit-item h3 {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+      }
+      .faq-list {
+        list-style: none;
+        padding: 0;
+      }
+      .faq-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        cursor: pointer;
+        text-align: left;
+      }
+      .faq-question {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-question::after {
+        content: "+";
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      .faq-question.active::after { transform: rotate(45deg); }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        padding-top: 0;
+        color: #555;
+      }
+      .faq-answer.open { max-height: 200px; padding-top: 15px; }
+      .main-footer {
+        background-color: var(--primary-color);
+        color: #ffffff;
+        padding: 40px 0;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .main-footer p, .main-footer a {
+        color: #ddd;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .main-footer a:hover { text-decoration: underline; }
+      .main-footer .legal-links { margin-bottom: 10px; }
+      .disclaimer {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 20px;
+        color: #777;
+        font-style: italic;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      @media (max-width: 768px) {
+        .hero-content h1 { font-size: 2.5rem; }
+        .hero-content p { font-size: 1rem; }
+        .content-card { padding: 20px; }
+        section { padding: 40px 0; }
+      }
+    </style>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MD33XFQ7');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16809229348');
+    </script>
+  </head>
+  <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD33XFQ7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="hero-section">
+      <div class="hero-content">
+        <h1>Reclaim Your Energy. Support Your Metabolism. Discover a New You with Leanova.</h1>
+        <p>Feel like you've tried everything to boost your well-being, only to be left with frustration and a lack of results? The key to a more vibrant life isn't about harsh fads, but a smart, science-backed approach.</p>
+        <a href="" class="cta-btn">Ready for a Real Change? Learn More & Claim Your Package.</a>
+      </div>
+    </header>
+    <main>
+      <section id="benefits" class="content-section">
+        <div class="container content-card">
+          <h2>How Leanova Can Help You</h2>
+          <p style="text-align: center; font-size: 1.1em; max-width: 600px; margin: 0 auto 30px;">
+            It's not just another pill; it's a meticulously crafted formula with <strong>100% natural ingredients</strong> and <strong>no harsh additives</strong>.
+          </p>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <h3>Boosts Metabolism</h3>
+              <p>With scientifically-backed ingredients, Leanova helps your body burn fat more efficiently.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Controls Appetite</h3>
+              <p>Ingredients like Glucomannan promote a feeling of fullness, reducing hunger and the urge to overeat.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>More Energy</h3>
+              <p>Feel more active and vital for your daily tasks and workouts, without the use of stimulants.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Sustainable Wellness</h3>
+              <p>Formulated with natural ingredients, it contributes to a safe and lasting approach to well-being.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="faq" class="content-section" style="background-color: var(--bg-grey);">
+        <div class="container content-card">
+          <h2>Frequently Asked Questions</h2>
+          <ul class="faq-list">
+            <li class="faq-item">
+              <div class="faq-question">What is Leanova?</div>
+              <div class="faq-answer">Leanova is a daily nutritional supplement designed to support your weight management journey by boosting metabolism, energy, and overall wellness.</div>
+            </li>
+            <li class="faq-item">
+              <div class="faq-question">How and when should I take Leanova?</div>
+              <div class="faq-answer">Please refer to the instructions on the product label for the recommended dosage and timing.</div>
+            </li>
+            <li class="faq-item">
+              <div class="faq-question">Do I need to take Leanova every day?</div>
+              <div class="faq-answer">For optimal results, consistent daily use is recommended. Consult the product label for specific instructions.</div>
+            </li>
+            <li class="faq-item">
+              <div class="faq-question">What type of options do you offer?</div>
+              <div class="faq-answer">Leanova offers various packages, including a 30-day supply, a 90-day supply, and a 150-day supply, with savings options available for larger bundles.</div>
+            </li>
+            <li class="faq-item">
+              <div class="faq-question">Who is Leanova for?</div>
+              <div class="faq-answer">Leanova is for adults looking for a natural way to support their metabolism, manage their weight, and enhance their overall energy levels.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="disclaimer">
+        <p>
+          Disclaimer: Results may vary from person to person. This product does not replace the diagnosis or guidance of a healthcare professional. The information presented here is for informational purposes and should not be interpreted as medical advice. Always consult a doctor or nutritionist before starting any supplement.
+        </p>
+      </div>
+    </main>
+    <footer class="main-footer">
+      <div class="container">
+        <div class="legal-links">
+          <a href="./privacy-policy.html">Privacy Policy</a> |
+          <a href="./terms-of-use.html">Terms of Use</a> |
+          <a href="./refund-policy.html">Refund Policy</a>
+        </div>
+        <p>
+          Attention: This site is an affiliate page, and by clicking the buttons, you will be redirected to the product's official website.
+        </p>
+        <p>&copy; 2025 Leanova. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      // Script for the FAQ accordion
+      document.querySelectorAll(".faq-question").forEach((item) => {
+        item.addEventListener("click", () => {
+          const answer = item.nextElementSibling;
+          const isActive = item.classList.toggle("active");
+          if (isActive) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            answer.classList.add("open");
+          } else {
+            answer.style.maxHeight = null;
+            answer.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

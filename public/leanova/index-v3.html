@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leanova - Perca Peso, Ganhe Saúde e Confiança | Site Oficial</title>
+    <meta
+      name="description"
+      content="Conheça a fórmula natural de Leanova e descubra como nosso suplemento pode ajudar você a acelerar o metabolismo e alcançar seus objetivos de bem-estar. Acesse o site oficial e garanta o seu!"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/resources/padlock.png" />
+    <link
+      rel="shortcut icon"
+      href="/resources/padlock.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #0d826a;
+        --secondary-color: #1aae8d;
+        --text-color-dark: #212529;
+        --text-color-light: #f8f9fa;
+        --bg-dark: #0f1020;
+        --bg-grey: #f8f9fa;
+        --bg-light: #fff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-color-dark);
+        background: var(--bg-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 80px 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 3rem;
+        color: var(--text-color-light);
+      }
+      h2 {
+        font-size: 2.2rem;
+        color: var(--text-color-dark);
+      }
+      p {
+        color: var(--text-color-dark);
+      }
+
+      .cta-btn {
+        display: inline-block;
+        font-weight: 700;
+        color: var(--bg-light);
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color) 0%,
+          var(--primary-color) 100%
+        );
+        border: none;
+        padding: 16px 32px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+
+        animation: pulse-green 2s infinite;
+      }
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        animation: none;
+      }
+
+      @keyframes pulse-green {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        min-height: 94vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--bg-dark);
+        overflow: hidden;
+      }
+      .background-image-desktop,
+      .background-image-mobile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: top center;
+        opacity: 0.1;
+        animation: fadeIn 2s ease-in-out;
+      }
+      .background-image-desktop {
+        background-image: url("desktop.png");
+      }
+      .background-image-mobile {
+        background-image: url("mobile.png");
+        display: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 900px;
+        margin: 0 auto;
+        color: var(--text-color-light);
+      }
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .small-logos {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .small-logos img {
+        height: 25px;
+        filter: invert(1);
+      }
+
+      .content-card {
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        margin-top: -80px;
+        position: relative;
+        z-index: 20;
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+      .benefit-item h3 {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+      }
+
+      /* ESTILOS PARA O FAQ (ACORDEÃO) */
+      .faq-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        cursor: pointer;
+        text-align: left;
+      }
+      .faq-question {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-question::after {
+        content: "+";
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      .faq-question.active::after {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        padding-top: 0;
+        color: var(--light-text-color);
+      }
+      .faq-answer.open {
+        max-height: 200px;
+      }
+
+      .main-footer {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 40px 0;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .main-footer p,
+      .main-footer a {
+        color: #ddd;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .main-footer a:hover {
+        text-decoration: underline;
+      }
+      .main-footer .legal-links {
+        margin-bottom: 10px;
+      }
+
+      .disclaimer {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 20px;
+        color: #777;
+        font-style: italic;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.1x;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .background-image-desktop {
+          display: none;
+        }
+        .background-image-mobile {
+          display: block;
+        }
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .content-card {
+          margin-top: -40px;
+          padding: 20px;
+        }
+        section {
+          padding: 40px 0;
+        }
+      }
+      
+      .packages-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+          text-align: center;
+      }
+      .package-item {
+          background: #f0f8ff;
+          padding: 25px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+          flex: 1 1 300px;
+      }
+      .package-item h3 {
+          color: var(--primary-color);
+      }
+      .package-item .price {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: var(--text-color-dark);
+          margin: 10px 0;
+      }
+      .package-item .save {
+          font-weight: 600;
+          color: var(--secondary-color);
+      }
+      .package-item.bestseller {
+          border: 3px solid var(--secondary-color);
+          box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      }
+      .guarantees-grid {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 20px;
+          text-align: center;
+          margin-top: 40px;
+      }
+      .guarantee-item {
+          flex: 1 1 200px;
+          padding: 20px;
+          border-radius: 8px;
+          background: #f8f9fa;
+      }
+      .guarantee-item img {
+          height: 50px;
+          margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MD33XFQ7");
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-16809229348");
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MD33XFQ7"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <header class="hero-section">
+      <div class="background-image-desktop"></div>
+      <div class="background-image-mobile"></div>
+
+      <div class="hero-content">
+        <h1>Reivindique sua Energia. Apoie seu Metabolismo. Descubra uma Nova Você com Leanova.</h1>
+        <p>
+          Sente que já tentou de tudo para o seu bem-estar, mas só encontrou frustração e falta de resultados? A chave para uma vida mais vibrante não está em modismos, mas em uma abordagem inteligente e com base científica.
+        </p>
+        <a href="" class="cta-btn"
+          >ACESSAR O SITE OFICIAL</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section id="guarantees">
+        <div class="container guarantees-grid">
+            <div class="guarantee-item">
+                <h3>Padrões Europeus</h3>
+                <p>Produzido sob rigorosos padrões de qualidade e segurança.</p>
+            </div>
+            <div class="guarantee-item">
+                <h3>Ingredientes 100% Naturais</h3>
+                <p>Formulado com ingredientes premium, sem aditivos agressivos.</p>
+            </div>
+            <div class="guarantee-item">
+                <h3>Segurança SSL</h3>
+                <p>Transações seguras e criptografadas para a sua proteção.</p>
+            </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="content-section" style="background-color: var(--bg-grey);">
+        <div class="container">
+          <h2>Como Leanova Pode Te Ajudar</h2>
+          <p
+            style="
+              text-align: center;
+              font-size: 1.1em;
+              max-width: 600px;
+              margin: 0 auto 30px;
+            "
+          >
+            Leanova não é apenas uma pílula; é uma fórmula meticulosamente elaborada para ser uma verdadeira parceira na sua jornada de bem-estar.
+          </p>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <h3>Menos Inchaço</h3>
+              <p>
+                Ajuda a melhorar a digestão, reduzindo o desconforto e o inchaço.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <h3>Apoia o Metabolismo</h3>
+              <p>
+                Com ingredientes clinicamente apoiados, ajuda seu corpo a funcionar de forma mais eficiente.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <h3>Mais Energia Natural</h3>
+              <p>
+                Sinta-se mais ativo e com mais vitalidade, sem o uso de estimulantes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="packages"
+        class="content-section"
+      >
+        <div class="container">
+          <h2>Escolha o seu Pacote Leanova</h2>
+          <p style="text-align: center; margin-bottom: 20px;">
+            Apoie sua energia e bem-estar a cada dose.
+          </p>
+          <div class="packages-grid">
+              <div class="package-item">
+                  <h3>Pacote de 30 dias</h3>
+                  <p>1 frasco - 1 mês de uso</p>
+                  <p class="price">R$ 69,90</p>
+                  <p class="save">Economize R$ 9,60</p>
+              </div>
+              <div class="package-item bestseller">
+                  <h3>Pacote de 150 dias</h3>
+                  <p>5 frascos - 5 meses de uso</p>
+                  <p class="price">R$ 129,00</p>
+                  <p class="save">Economize R$ 100,00</p>
+                  <p><b>Mais de 700 pessoas compraram este pacote hoje!</b></p>
+              </div>
+              <div class="package-item">
+                  <h3>Pacote de 90 dias</h3>
+                  <p>3 frascos - 3 meses de uso</p>
+                  <p class="price">R$ 99,00</p>
+                  <p class="save">Economize R$ 50,95</p>
+              </div>
+          </div>
+          <div style="text-align: center; margin-top: 40px;">
+              <a href="" class="cta-btn">ESCOLHA SEU PACOTE</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="content-section" style="background-color: var(--bg-grey);">
+        <div class="container content-card">
+          <h2>Perguntas Frequentes</h2>
+          <div class="faq-item">
+            <div class="faq-question">O que é Leanova?</div>
+            <div class="faq-answer">
+              Leanova é um suplemento nutricional diário projetado para apoiar sua jornada de controle de peso, impulsionando o metabolismo, a energia e o bem-estar geral.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">O produto é natural?</div>
+            <div class="faq-answer">
+              Sim, Leanova é formulado com ingredientes naturais e não contém estimulantes ou aditivos agressivos.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Como devo tomar?</div>
+            <div class="faq-answer">
+              Para informações detalhadas sobre a forma de uso, consulte as instruções no rótulo do produto ou acesse o site oficial do fabricante.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="disclaimer">
+        <p>
+          Aviso: Os resultados podem variar de pessoa para pessoa. Este produto
+          não substitui o diagnóstico ou a orientação de um profissional de
+          saúde. As informações apresentadas aqui são para fins informativos e
+          não devem ser interpretadas como aconselhamento médico. Sempre
+          consulte um médico ou nutricionista antes de iniciar o uso de
+          qualquer suplemento.
+        </p>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="legal-links">
+          <a href="./politica-de-privacidade.html">Política de Privacidade</a> |
+          <a href="./termos-de-uso.html">Termos de Uso</a> |
+          <a href="./politica-de-reembolso.html">Política de Reembolso</a>
+        </div>
+        <p>
+          Atenção: Este site é uma página de afiliação e, ao clicar nos botões,
+          você será redirecionado para o site oficial do produto.
+        </p>
+        <p>&copy; 2025 Leanova. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Script para o FAQ (acordeão)
+      document.querySelectorAll(".faq-question").forEach((item) => {
+        item.addEventListener("click", () => {
+          const answer = item.nextElementSibling;
+          const isActive = item.classList.toggle("active");
+          if (isActive) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            answer.classList.add("open");
+          } else {
+            answer.style.maxHeight = null;
+            answer.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
