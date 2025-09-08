@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HepatoBurn - Natural Support for Metabolism & Energy</title>
+    <meta
+      name="description"
+      content="Discover HepatoBurn – a natural dietary supplement designed to support metabolism, energy, and overall wellness. Learn more on the official site!"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/resources/padlock.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #b80000;
+        --secondary-color: #ffb100;
+        --text-dark: #212529;
+        --text-light: #f8f9fa;
+        --bg-dark: #111;
+        --bg-grey: #f8f9fa;
+        --bg-light: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: var(--bg-light);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      h1, h2, h3 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.2rem; }
+
+      .cta-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: #fff;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      /* HERO */
+      .hero {
+        background: url("hepato-hero.jpg") center/cover no-repeat;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--text-light);
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+      }
+
+      /* BENEFITS */
+      .benefits {
+        background: var(--bg-grey);
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .benefit {
+        background: var(--bg-light);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+
+      .benefit h3 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+      /* TESTIMONIALS */
+      .testimonials {
+        background: #fff5f5;
+      }
+
+      .testimonial {
+        font-style: italic;
+        text-align: center;
+        margin: 20px auto;
+        max-width: 800px;
+      }
+
+      .testimonial strong {
+        display: block;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      /* FAQ */
+      .faq-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+        cursor: pointer;
+      }
+
+      .faq-question {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-answer.open {
+        max-height: 200px;
+        margin-top: 10px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #1a1a1a;
+        color: #ccc;
+        padding: 40px 0;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: #ccc;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      .disclaimer {
+        font-size: 0.8rem;
+        color: #777;
+        margin-top: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        font-style: italic;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <header class="hero">
+      <h1>HepatoBurn</h1>
+      <p>A natural dietary supplement carefully formulated to support metabolism, energy, and overall wellness.</p>
+      <a href="https://official-site-link.com" class="cta-btn">Visit Official Website</a>
+    </header>
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+      <div class="container">
+        <h2>Why Choose HepatoBurn?</h2>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <h3>Metabolism Support</h3>
+            <p>Contains ingredients that may help the body’s natural fat metabolism process.</p>
+          </div>
+          <div class="benefit">
+            <h3>Liver Health</h3>
+            <p>Includes plant-based compounds traditionally used to support healthy liver function.</p>
+          </div>
+          <div class="benefit">
+            <h3>Energy & Vitality</h3>
+            <p>May contribute to better daily energy levels when combined with a balanced lifestyle.</p>
+          </div>
+          <div class="benefit">
+            <h3>Natural Formula</h3>
+            <p>Made with natural ingredients and designed for long-term wellness support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Customers Are Saying</h2>
+        <p class="testimonial">
+          “Since I started using HepatoBurn, I’ve noticed more balance in my daily routine. Delivery was quick and easy.”
+          <strong>- Sarah, 42</strong>
+        </p>
+        <p class="testimonial">
+          “HepatoBurn has become part of my wellness plan. I feel more energetic throughout the day.”
+          <strong>- Daniel, 35</strong>
+        </p>
+        <div style="text-align:center;margin-top:30px;">
+          <a href="https://official-site-link.com" class="cta-btn">Visit Official Website</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What is HepatoBurn?</div>
+          <div class="faq-answer">HepatoBurn is a dietary supplement made with natural ingredients, created to support metabolism and liver function.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is it safe?</div>
+          <div class="faq-answer">HepatoBurn is generally considered safe for healthy adults. We recommend consulting a healthcare professional before starting any supplement.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I use it?</div>
+          <div class="faq-answer">Please follow the usage instructions provided on the product label or the official website.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      <p>
+        *These statements have not been evaluated by the Food and Drug Administration.  
+        This product is not intended to diagnose, treat, cure, or prevent any disease.  
+        Results may vary. Always consult a healthcare professional before starting any dietary supplement.
+      </p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <p>
+          <a href="./privacy-policy.html">Privacy Policy</a> |
+          <a href="./terms.html">Terms of Use</a> |
+          <a href="./refund-policy.html">Refund Policy</a>
+        </p>
+        <p>This is an affiliate promotional page. By clicking the buttons, you will be redirected to the official site of the product.</p>
+        <p>&copy; 2025 HepatoBurn. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // FAQ accordion
+      document.querySelectorAll(".faq-question").forEach((item) => {
+        item.addEventListener("click", () => {
+          const answer = item.nextElementSibling;
+          answer.classList.toggle("open");
+        });
+      });
+    </script>
+  </body>
+</html>
