@@ -26,7 +26,7 @@
         --secondary-color: #6fffdd; /* Azul vibrante das pílulas */
         --text-color-dark: #263570;
         --text-color-light: #f8f9fa;
-        --bg-dark: #0f1020; /* Fundo escuro do hero */
+        --bg-dark: #282c67; /* Fundo escuro do hero */
         --bg-grey: #f8f9fa; /* Fundo cinza claro para seções alternadas */
         --bg-light: #fff; /* Fundo branco para cards */
         --cta-green: #3cf8b3; /* Cor do botão CTA, verde-água vibrante */
@@ -266,7 +266,21 @@
       }
 
       .logo-ozenpharma {
-        color:  var(--bg-light);
+        color: var(--bg-light);
+      }
+
+      .promotion-bar {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--bg-light);
+        z-index: 15;
+        width: 100%;
+        background-image: linear-gradient(213deg, #263570 0%, #4668d5 100%);
+        font-weight: bolder;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
       @media (max-width: 768px) {
@@ -308,12 +322,11 @@
   </head>
   <body>
     <header class="hero-section">
+      <div class="promotion-bar">
+        Frete Grátis para todo o Brasil! Compre agora e receba em casa.
+      </div>
       <div class="logo-ozenpharma">
-        <img
-          src="./logo-ozenpharma.svg"
-          alt="Ozenpharma Logo"
-          height="50"
-        />
+        <img src="./logo-ozenpharma.svg" alt="Ozenpharma Logo" height="50" />
       </div>
       <div class="background-image-desktop"></div>
       <div class="background-image-mobile"></div>
