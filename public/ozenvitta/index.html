@@ -22,9 +22,9 @@
     />
     <style>
       :root {
-        --primary-color: #034f8a; /* Azul escuro da tampa */
-        --secondary-color: #00ccff; /* Azul vibrante das pílulas */
-        --text-color-dark: #212529;
+        --primary-color: #19deaf; /* Azul escuro da tampa */
+        --secondary-color: #6fffdd; /* Azul vibrante das pílulas */
+        --text-color-dark: #263570;
         --text-color-light: #f8f9fa;
         --bg-dark: #0f1020; /* Fundo escuro do hero */
         --bg-grey: #f8f9fa; /* Fundo cinza claro para seções alternadas */
@@ -76,15 +76,15 @@
       .cta-btn {
         display: inline-block;
         font-weight: 700;
-        color: var(--bg-light);
+        color: #263570;
         background: linear-gradient(
-          135deg,
+          180deg,
           var(--secondary-color) 0%,
           var(--primary-color) 100%
         );
         border: none;
-        padding: 16px 32px;
-        border-radius: 12px;
+        padding: 20px 32px;
+        border-radius: 50px;
         text-decoration: none;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -92,6 +92,7 @@
         font-size: 1.1rem;
 
         animation: pulse-green 2s infinite;
+        border: 3px solid #6fffdd;
       }
       .cta-btn:hover {
         transform: translateY(-2px);
@@ -132,7 +133,7 @@
         height: 100%;
         background-size: cover;
         background-position: top center;
-        opacity: 0.1;
+        opacity: 0.05;
         animation: fadeIn 2s ease-in-out;
       }
       .background-image-desktop {
@@ -260,8 +261,12 @@
           opacity: 0;
         }
         to {
-          opacity: 0.1x;
+          opacity: 0.05x;
         }
+      }
+
+      .logo-ozenpharma {
+        color:  var(--bg-light);
       }
 
       @media (max-width: 768px) {
@@ -303,6 +308,13 @@
   </head>
   <body>
     <header class="hero-section">
+      <div class="logo-ozenpharma">
+        <img
+          src="./logo-ozenpharma.svg"
+          alt="Ozenpharma Logo"
+          height="50"
+        />
+      </div>
       <div class="background-image-desktop"></div>
       <div class="background-image-mobile"></div>
 
