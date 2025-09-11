@@ -120,7 +120,7 @@
 
       .hero-section {
         position: relative;
-        min-height: 94vh;
+        min-height: 105vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -136,11 +136,11 @@
         height: 100%;
         background-size: cover;
         background-position: top center;
-        opacity: 0.05;
-        animation: fadeIn 2s ease-in-out;
+        opacity: 1;
+        /* animation: fadeIn 2s ease-in-out; */
       }
       .background-image-desktop {
-        background-image: url("desktop.png");
+        background-image: url("desktop-full.png");
       }
       .background-image-mobile {
         background-image: url("mobile.png");
@@ -153,6 +153,8 @@
         max-width: 900px;
         margin: 0 auto;
         color: var(--text-color-light);
+        top: 176px;
+        left: -381px;
       }
       .hero-content h1 {
         font-size: 3.5rem;
@@ -295,17 +297,19 @@
         z-index: 999;
       }
       @media (max-width: 768px) {
+        .hero-section {
+          min-height: 94vh;
+        }
         .background-image-desktop {
           display: none;
         }
         .background-image-mobile {
           display: block;
         }
-        .hero-content h1 {
-          font-size: 2.5rem;
-        }
-        .hero-content p {
-          font-size: 1rem;
+        .hero-content {
+          top: 130px;
+          left: 0;
+          padding: 0 20px;
         }
         .content-card {
           margin-top: -40px;
@@ -316,8 +320,9 @@
         }
         .sticky-cta {
           width: 90%;
-          left: 5%;
+          left: 50%;
           transform: none;
+          margin-left: -176px;
         }
       }
     </style>
@@ -343,22 +348,22 @@
     <!-- End Google Tag Manager (noscript) -->
     <header class="hero-section">
       <div class="promotion-bar">
-        Frete Grátis para todo o Brasil! Compre agora e receba em casa.
+        Frete Grátis para todo o Brasil! Pague Menos no Pix ou em até 12x no Cartão!
       </div>
-      <div class="logo-ozenpharma">
+      <!-- <div class="logo-ozenpharma">
         <img src="./logo-ozenpharma.svg" alt="Ozenpharma Logo" height="50" />
-      </div>
+      </div> -->
       <div class="background-image-desktop"></div>
       <div class="background-image-mobile"></div>
 
       <div class="hero-content">
-        <h1>Ozenvitta</h1>
+        <!-- <h1>Ozenvitta</h1>
         <p>
           Conheça a fórmula que pode ajudar você a acelerar o metabolismo e ter
           a qualidade de vida que tanto quer!
-        </p>
+        </p> -->
         <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn"
-          >Quero experimentar Ozenvitta</a
+          >Garanta Já o Seu Desconto</a
         >
       </div>
     </header>
@@ -427,7 +432,7 @@
             <a
               href="https://ev.braip.com/campanhas/cpa/camx6227o"
               class="cta-btn"
-              >Quero experimentar Ozenvitta</a
+              >Garanta Já o Seu Desconto</a
             >
           </div>
         </div>
@@ -459,7 +464,7 @@
             </div>
           </div>
           <div style="text-align:center; margin-top:30px;">
-            <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Quero experimentar Ozenvitta</a>
+            <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Garanta Já o Seu Desconto</a>
           </div>
         </div>
       </section>
@@ -492,9 +497,9 @@
     </footer>
 
     <!-- Sticky CTA -->
-    <!-- <div class="sticky-cta">
-      <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Quero experimentar Ozenvitta</a>
-    </div> -->
+    <div class="sticky-cta">
+      <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Garanta Já o Seu Desconto</a>
+    </div>
 
     <script>
       // Script para o FAQ (acordeão)
