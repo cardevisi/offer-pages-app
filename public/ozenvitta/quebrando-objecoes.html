@@ -12,7 +12,7 @@
     <!-- End Google Tag Manager -->
     <meta
       name="description"
-      content="Conheça a fórmula de Ozenvitta, com Inulina e L-Carnitina, e descubra como nosso suplemento pode dar suporte ao seu metabolismo. Acesse o site oficial e saiba mais!"
+      content="Conheça a fórmula de Ozenvitta, com Inulina e L-Carnitina, que apoia seu metabolismo, controla o apetite e aumenta sua disposição. Acesse o site oficial!"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/resources/padlock.png" />
@@ -29,7 +29,7 @@
         --secondary-color: #6fffdd; /* Azul vibrante das pílulas */
         --text-color-dark: #263570;
         --text-color-light: #f8f9fa;
-        --bg-dark: #202055; /* Fundo escuro do hero */
+        --bg-dark: #0f1020; /* Fundo escuro do hero */
         --bg-grey: #f8f9fa; /* Fundo cinza claro para seções alternadas */
         --bg-light: #fff; /* Fundo branco para cards */
         --cta-green: #3cf8b3; /* Cor do botão CTA, verde-água vibrante */
@@ -126,7 +126,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: var(--bg-dark);
+        background-color: var(--bg-light);
         overflow: hidden;
       }
       .background-image-desktop,
@@ -136,8 +136,8 @@
         height: 100%;
         background-size: cover;
         background-position: top center;
-        opacity: 0.1;
-        animation: fadeIn 1s ease-in-out;
+        opacity: 1;
+        /* animation: fadeIn 2s ease-in-out; */
       }
       .background-image-desktop {
         background-image: url("desktop-full.png");
@@ -148,12 +148,13 @@
       }
 
       .hero-content {
-        
+        position: relative;
         z-index: 10;
         max-width: 900px;
         margin: 0 auto;
         color: var(--text-color-light);
-        
+        top: 176px;
+        left: -381px;
       }
       .hero-content h1 {
         font-size: 3.5rem;
@@ -335,17 +336,11 @@
       }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
-
       gtag("config", "AW-16809229348");
     </script>
   </head>
@@ -354,123 +349,98 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD33XFQ7"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
     <header class="hero-section">
       <div class="promotion-bar">
         Frete Grátis para todo o Brasil! Pague Menos no Pix ou em até 12x no Cartão!
       </div>
-      <div class="logo-ozenpharma">
-        <img src="./logo-ozenpharma.svg" alt="Ozenpharma Logo" height="50" />
-      </div>
       <div class="background-image-desktop"></div>
       <div class="background-image-mobile"></div>
-
       <div class="hero-content">
-        <h1>Ozenvitta</h1>
-        <p>
-          Conheça a fórmula que pode ajudar você a acelerar o metabolismo e ter
-          a qualidade de vida que tanto quer!
+        <h1 style="display:none;">Ozenvitta - Fórmula Natural para o Seu Bem-Estar</h1>
+        <p style="font-size:1.3rem; font-weight:600; margin-bottom:20px;">
+          Fórmula com 13 nutrientes que apoia o metabolismo, ajuda a controlar o apetite e aumenta sua energia.
         </p>
-        <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn"
-          >Garanta Já o Seu Desconto</a
-        >
+        <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Garanta Já o Seu Desconto</a>
       </div>
     </header>
 
     <main>
+      <!-- Benefícios -->
       <section id="benefits" class="content-section">
         <div class="container content-card">
           <h2>Como Ozenvitta Pode Te Ajudar</h2>
           <div class="benefits-grid">
             <div class="benefit-item">
               <h3>Acelera o Metabolismo</h3>
-              <p>
-                Com <strong>L-Carnitina</strong>, Ozenvitta ajuda seu corpo a
-                queimar gordura de forma mais eficiente.
-              </p>
+              <p>Muitos acreditam que perder peso exige dietas restritivas. Com <strong>L-Carnitina</strong>, Ozenvitta ajuda seu corpo a queimar gordura de forma natural.</p>
             </div>
             <div class="benefit-item">
               <h3>Controla o Apetite</h3>
-              <p>
-                A <strong>Inulina</strong> promove a saciedade, reduzindo a fome
-                e a vontade de comer em excesso.
-              </p>
+              <p>“Tenho medo de passar fome.” A <strong>Inulina</strong> promove saciedade, ajudando a evitar exageros sem fraqueza ou ansiedade.</p>
             </div>
             <div class="benefit-item">
               <h3>Mais Energia</h3>
-              <p>
-                Sinta-se mais ativo e com mais vitalidade para suas tarefas
-                diárias e exercícios.
-              </p>
+              <p>Cansaço não precisa ser obstáculo. Com Ozenvitta você mantém disposição para treinar, trabalhar e cuidar da rotina.</p>
             </div>
             <div class="benefit-item">
               <h3>Emagrecimento Saudável</h3>
-              <p>
-                Formulado com ingredientes naturais, contribui para uma perda de
-                peso segura e duradoura.
-              </p>
+              <p>Diferente de soluções rápidas e arriscadas, Ozenvitta apoia uma perda de peso consistente e respeitosa com o seu corpo.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        id="testimonials"
-        class="content-section"
-        style="background-color: var(--bg-grey)"
-      >
+      <!-- Depoimentos -->
+      <section id="testimonials" class="content-section" style="background-color: var(--bg-grey)">
         <div class="container">
           <h2>O Que Nossos Clientes Dizem</h2>
-          <p
-            style="
-              font-style: italic;
-              text-align: center;
-              max-width: 800px;
-              margin: 0 auto 5px;
-            "
-          >
-            Mesmo morando em regiões afastadas, meu OzenVitta chegou certinho!
-            Obrigada
+          <p style="font-style: italic; text-align: center; max-width: 800px; margin: 0 auto 5px;">
+            "Já tentei outros suplementos sem resultado. Com Ozenvitta, consegui controlar a ansiedade por comida e percebi mudanças reais no meu corpo."
+          </p>
+          <p style="text-align: center; font-weight: 600">- Juliana, 34 anos</p>
+
+          <p style="font-style: italic; text-align: center; max-width: 800px; margin: 20px auto 5px;">
+            "Mesmo morando em regiões afastadas, meu Ozenvitta chegou rápido e bem embalado. Estou surpresa com os resultados."
           </p>
           <p style="text-align: center; font-weight: 600">- Carol, 30 anos</p>
+
           <p style="font-size: 0.8rem; text-align: center; color: #777">
             *Os resultados podem variar de pessoa para pessoa.
           </p>
-          <br />
-          <div style="text-align: center">
-            <a
-              href="https://ev.braip.com/campanhas/cpa/camx6227o"
-              class="cta-btn"
-              >Garanta Já o Seu Desconto</a
-            >
+
+          <div style="text-align: center; margin-top:20px;">
+            <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Garanta Já o Seu Desconto</a>
           </div>
         </div>
       </section>
 
+      <!-- FAQ -->
       <section id="faq" class="content-section">
         <div class="container content-card">
           <h2>Perguntas Frequentes</h2>
+
           <div class="faq-item">
-            <div class="faq-question">O que é Ozenvitta?</div>
+            <div class="faq-question">Preciso fazer dieta rígida junto com o uso?</div>
             <div class="faq-answer">
-              Ozenvitta é um suplemento alimentar que combina Inulina e
-              L-Carnitina para auxiliar na perda de peso e bem-estar.
+              Não. Hábitos saudáveis potencializam os resultados, mas Ozenvitta foi desenvolvido para auxiliar o metabolismo mesmo sem mudanças radicais na rotina.
             </div>
           </div>
+
           <div class="faq-item">
-            <div class="faq-question">O produto é natural?</div>
+            <div class="faq-question">Em quanto tempo começo a sentir diferença?</div>
             <div class="faq-answer">
-              Sim, Ozenvitta é formulado com ingredientes naturais e não tem
-              contraindicações conhecidas.
+              Cada organismo reage de forma única, mas muitos clientes relatam sentir mais energia e menos fome já nas primeiras semanas de uso.
             </div>
           </div>
+
           <div class="faq-item">
-            <div class="faq-question">Como devo tomar?</div>
+            <div class="faq-question">O produto é seguro?</div>
             <div class="faq-answer">
-              Para informações detalhadas sobre a forma de uso, consulte as
-              instruções no rótulo do produto ou acesse o site oficial do
-              fabricante.
+              Sim. Ozenvitta é formulado com ingredientes naturais, não contém substâncias proibidas e é produzido seguindo padrões de qualidade rigorosos.
             </div>
           </div>
+
           <div style="text-align:center; margin-top:30px;">
             <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Garanta Já o Seu Desconto</a>
           </div>
@@ -479,12 +449,8 @@
 
       <div class="disclaimer">
         <p>
-          Aviso: Os resultados podem variar de pessoa para pessoa. Este produto
-          não substitui o diagnóstico ou a orientação de um profissional de
-          saúde. As informações apresentadas aqui são para fins informativos e
-          não devem ser interpretadas como aconselhamento médico. Sempre
-          consulte um médico ou nutricionista antes de iniciar o uso de qualquer
-          suplemento.
+          Aviso: Os resultados podem variar de pessoa para pessoa. Este produto não substitui o diagnóstico ou a orientação de um profissional de saúde. 
+          Sempre consulte um médico ou nutricionista antes de iniciar o uso de qualquer suplemento.
         </p>
       </div>
     </main>
@@ -496,10 +462,7 @@
           <a href="./termos-de-uso.html" target="_blank" rel="noopener">Termos de Uso</a> |
           <a href="./politica-de-reembolso.html" target="_blank" rel="noopener">Política de Reembolso</a>
         </div>
-        <p>
-          Atenção: Este site é uma página de afiliação e, ao clicar nos botões,
-          você será redirecionado para o site oficial do produto.
-        </p>
+        <p>Atenção: Este site é uma página de afiliação e, ao clicar nos botões, você será redirecionado para o site oficial do produto.</p>
         <p>&copy; 2025 Ozenvitta. Todos os direitos reservados.</p>
       </div>
     </footer>
