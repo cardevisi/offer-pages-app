@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ozenvitta - Suporte ao Seu Bem-Estar e Rotina Ativa</title>
+    <meta
+      name="description"
+      content="Conheça a fórmula de Ozenvitta, com Inulina e L-Carnitina, e descubra como nosso suplemento pode dar suporte ao seu metabolismo. Acesse o site oficial e saiba mais!"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/resources/padlock.png" />
+    <link
+      rel="shortcut icon"
+      href="/resources/padlock.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #19deaf;
+        --secondary-color: #6fffdd;
+        --text-color-dark: #263570;
+        --text-color-light: #f8f9fa;
+        --bg-dark: #0f1020;
+        --bg-grey: #f8f9fa;
+        --bg-light: #fff;
+        --cta-green: #3cf8b3;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-color-dark);
+        background: var(--bg-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 80px 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 3rem;
+        color: var(--text-color-light);
+      }
+      h2 {
+        font-size: 2.2rem;
+        color: var(--text-color-dark);
+      }
+      p {
+        color: var(--text-color-dark);
+      }
+
+      .cta-btn {
+        display: inline-block;
+        font-weight: 700;
+        color: #263570;
+        background: linear-gradient(
+          180deg,
+          var(--secondary-color) 0%,
+          var(--primary-color) 100%
+        );
+        border: none;
+        padding: 20px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+
+        animation: pulse-green 2s infinite;
+        border: 3px solid #6fffdd;
+      }
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        animation: none;
+      }
+
+      @keyframes pulse-green {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        min-height: 94vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--bg-dark);
+        overflow: hidden;
+      }
+      .background-image-desktop,
+      .background-image-mobile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: top center;
+        opacity: 0.05;
+        animation: fadeIn 2s ease-in-out;
+      }
+      .background-image-desktop {
+        background-image: url("desktop.png");
+      }
+      .background-image-mobile {
+        background-image: url("mobile.png");
+        display: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 900px;
+        margin: 0 auto;
+        color: var(--text-color-light);
+      }
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .small-logos {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .small-logos img {
+        height: 25px;
+        filter: invert(1);
+      }
+
+      .content-card {
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        margin-top: -80px;
+        position: relative;
+        z-index: 20;
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+      .benefit-item h3 {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+      }
+
+      /* FAQ */
+      .faq-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        cursor: pointer;
+        text-align: left;
+      }
+      .faq-question {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-question::after {
+        content: "+";
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      .faq-question.active::after {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        padding-top: 0;
+        color: var(--light-text-color);
+      }
+      .faq-answer.open {
+        max-height: 200px;
+      }
+
+      .main-footer {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 40px 0;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .main-footer p,
+      .main-footer a {
+        color: #ddd;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .main-footer a:hover {
+        text-decoration: underline;
+      }
+      .main-footer .legal-links {
+        margin-bottom: 10px;
+      }
+
+      .disclaimer {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 20px;
+        color: #777;
+        font-style: italic;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.05;
+        }
+      }
+
+      /* NOVO STICKER FIXO NO RODAPÉ */
+      .promotion-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        padding: 12px;
+        color: #fff;
+        background: linear-gradient(90deg, #00d084, #19deaf);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+      }
+
+      @media (max-width: 768px) {
+        .background-image-desktop {
+          display: none;
+        }
+        .background-image-mobile {
+          display: block;
+        }
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .content-card {
+          margin-top: -40px;
+          padding: 20px;
+        }
+        section {
+          padding: 40px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero-section">
+      <div class="logo-ozenpharma">
+        <img src="./logo-ozenpharma.svg" alt="Ozenpharma Logo" height="50" />
+      </div>
+      <div class="background-image-desktop"></div>
+      <div class="background-image-mobile"></div>
+
+      <div class="hero-content">
+        <h1>Ozenvitta</h1>
+        <p>
+          Conheça a fórmula que pode ajudar você a acelerar o metabolismo e ter
+          a qualidade de vida que tanto quer!
+        </p>
+        <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn"
+          >ACESSAR O SITE OFICIAL</a
+        >
+      </div>
+    </header>
+
+    <!-- RESTO DA SUA PÁGINA AQUI -->
+
+    <!-- NOVO STICKER FIXO -->
+    <div class="promotion-bar">
+      Frete Grátis para todo o Brasil! Compre agora e receba em casa.
+    </div>
+  </body>
+</html>
