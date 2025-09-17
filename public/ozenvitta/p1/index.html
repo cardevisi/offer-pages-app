@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Ozenvitta - Promoção Limitada</title>
+<meta name="description" content="Aproveite a promoção especial de Ozenvitta com frete grátis e desconto exclusivo. Estoque limitado!">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary-color: #19deaf;
+  --secondary-color: #6fffdd;
+  --text-dark: #263570;
+  --text-light: #fff;
+  --bg-dark: #202055;
+  --bg-grey: #f8f9fa;
+  --bg-light: #fff;
+  --cta-yellow: #fffc6f;
+  --cta-green: #76de19;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:var(--text-dark);background:var(--bg-light);}
+a{text-decoration:none;}
+.hero-section{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bg-dark);color:var(--text-light);padding:20px;}
+.promotion-bar{position:absolute;top:0;left:0;width:100%;background:linear-gradient(213deg,#263570 0%,#4668d5 100%);color:#fff;font-weight:bold;padding:10px;text-align:center;z-index:10;}
+.hero-content h1{font-size:3rem;margin-bottom:1rem;}
+.hero-content p{font-size:1.2rem;margin-bottom:20px;}
+.cta-btn{display:inline-block;font-weight:700;color:var(--text-dark);background:linear-gradient(180deg,var(--cta-yellow) 0%,var(--cta-green) 100%);padding:20px 35px;border-radius:50px;text-transform:uppercase;font-size:1.1rem;box-shadow:0 6px 20px rgba(0,0,0,0.2);transition:transform 0.3s ease,box-shadow 0.3s ease;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,0.3);}
+.countdown-bar{background:#ff4c4c;color:#fff;padding:10px;margin:20px 0;font-weight:bold;border-radius:10px;font-size:1.2rem;}
+.sold-bar{background:#ffc107;color:#000;padding:8px;margin:10px 0;font-weight:bold;border-radius:8px;font-size:1rem;}
+.content-card{background:var(--bg-light);border-radius:10px;padding:40px;margin:40px auto;max-width:1200px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
+h2{text-align:center;margin-bottom:30px;}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;text-align:center;}
+.benefit-item h3{color:var(--primary-color);font-size:1.3rem;margin-bottom:10px;}
+.testimonials{background:var(--bg-grey);padding:60px 20px;}
+.testimonial{max-width:700px;margin:20px auto;text-align:center;font-style:italic;font-size:1.1rem;}
+.testimonial-author{font-weight:600;margin-top:5px;font-size:1rem;}
+.testimonial-disclaimer{font-size:0.8rem;color:#777;margin-top:5px;}
+.faq-item{border-bottom:1px solid #eee;padding:15px 0;cursor:pointer;}
+.faq-question{font-weight:600;display:flex;justify-content:space-between;align-items:center;}
+.faq-question::after{content:"+";font-size:1.5rem;transition: transform 0.3s ease;}
+.faq-question.active::after{transform:rotate(45deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease-out;padding-top:0;color:#555;}
+.faq-answer.open{max-height:200px;}
+.sticky-cta{position:fixed;bottom:15px;width:90%;left:50%;transform:translateX(-50%);z-index:999;}
+.sticky-cta .cta-btn{width:100%;text-align:center;padding:15px 0;}
+.main-footer{background:#1a1a1a;color:#fff;padding:40px 20px;text-align:center;font-size:0.9rem;}
+.main-footer a{color:#5a5a5a;margin:0 5px;}
+.main-footer a:hover{text-decoration:underline;}
+@media(max-width:768px){.hero-content h1{font-size:2.5rem;}.hero-content p{font-size:1rem;}.content-card{padding:20px;}}
+</style>
+</head>
+<body>
+
+<header class="hero-section">
+  <div class="promotion-bar">🔥 Promoção Limitada: Frete Grátis + Desconto Exclusivo!</div>
+  <div class="hero-content">
+    <h1>Ozenvitta</h1>
+    <p>Suplemento com 13 nutrientes para acelerar metabolismo, aumentar energia e apoiar saúde digestiva.</p>
+    <div class="countdown-bar" id="countdown">Promoção termina em 24:00:00</div>
+    <div class="sold-bar">Estoque Limitado: Apenas 20 unidades restantes!</div>
+    <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Comprar Agora</a>
+  </div>
+</header>
+
+<main>
+<section class="content-card">
+  <h2>Benefícios Rápidos</h2>
+  <div class="benefits-grid">
+    <div class="benefit-item"><h3>Metabolismo</h3><p>L-Carnitina auxilia na queima de gordura.</p></div>
+    <div class="benefit-item"><h3>Controle de Apetite</h3><p>Inulina promove saciedade e ajuda a reduzir fome.</p></div>
+    <div class="benefit-item"><h3>Energia</h3><p>Sinta-se mais disposto para tarefas e exercícios.</p></div>
+    <div class="benefit-item"><h3>Emagrecimento Saudável</h3><p>Ingredientes naturais para perda de peso segura.</p></div>
+  </div>
+</section>
+
+<section class="testimonials">
+<h2>O Que Nossos Clientes Dizem</h2>
+<div class="testimonial">"Meu Ozenvitta chegou rápido e estou vendo resultados na energia diária!"<div class="testimonial-author">- Ana, 32 anos</div></div>
+<div class="testimonial">"Consegui controlar melhor minha alimentação e disposição aumentou."<div class="testimonial-author">- Pedro, 36 anos</div></div>
+<div class="testimonial-disclaimer">*Resultados podem variar de pessoa para pessoa.</div>
+</section>
+
+<section class="content-card">
+<h2>Perguntas Frequentes</h2>
+<div class="faq-item"><div class="faq-question">O que é Ozenvitta?</div><div class="faq-answer">Suplemento com 13 nutrientes que apoia metabolismo, energia e bem-estar.</div></div>
+<div class="faq-item"><div class="faq-question">É natural?</div><div class="faq-answer">Sim, formulado com ingredientes naturais e seguro.</div></div>
+<div class="faq-item"><div class="faq-question">Como devo tomar?</div><div class="faq-answer">Siga instruções no rótulo ou no site oficial.</div></div>
+</section>
+</main>
+
+<div class="sticky-cta"><a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Comprar Agora</a></div>
+
+<footer class="main-footer">
+<p>Atenção: Site afiliado. Você será redirecionado para o site oficial.</p>
+<p>&copy; 2025 Ozenvitta. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll(".faq-question").forEach(item=>{
+  item.addEventListener("click", ()=>{
+    const answer = item.nextElementSibling;
+    const isActive = item.classList.toggle("active");
+    if(isActive){answer.style.maxHeight=answer.scrollHeight+"px"; answer.classList.add("open");} 
+    else{answer.style.maxHeight=null; answer.classList.remove("open");}
+  });
+});
+
+// Countdown 24h
+function startCountdown(duration, display){
+  let timer=duration, hours, minutes, seconds;
+  setInterval(function(){
+    hours=Math.floor(timer/3600);
+    minutes=Math.floor((timer%3600)/60);
+    seconds=timer%60;
+    display.textContent=`Promoção termina em ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    if(--timer<0) timer=0;
+  },1000);
+}
+window.onload=function(){
+  const display=document.getElementById('countdown');
+  startCountdown(86400, display);
+};
+</script>
+
+</body>
+</html>

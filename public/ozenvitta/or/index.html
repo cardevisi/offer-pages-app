@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ozenvitta</title>
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/resourses/padlock.png" />
+    <link
+      rel="shortcut icon"
+      href="/resourses/padlock.ico"
+      type="image/x-icon"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background: #fff;
+      }
+      .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #fff;
+        background: #007bff;
+        border: 1px solid #007bff;
+        text-align: center;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        transition: background 0.15s, border-color 0.15s;
+        text-decoration: none;
+      }
+      p {
+        margin-bottom: 1rem;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:visited,
+      a:active {
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: underline;
+      }
+      h3 {
+        font-size: 1.75rem;
+      }
+      .background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: #000;
+      }
+      .background-image-desktop,
+      .background-image-mobile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: top center;
+        opacity: 0.4;
+      }
+      .background-image-desktop {
+        background-image: url("desktop.png");
+        display: block;
+      }
+      .background-image-mobile {
+        background-image: url("mobile.png");
+        display: none;
+      }
+      .cookie-popup {
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #c2c6cb;
+        border: 2px solid #fff;
+        color: #000;
+        padding: 50px;
+        border-radius: 5px;
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        .background-image-desktop {
+          display: none;
+        }
+        .background-image-mobile {
+          display: block;
+        }
+        .cookie-popup {
+          position: fixed;
+          bottom: 60px;
+          width: 85%;
+          background-color: #c2c6cb;
+          border: white 2px solid;
+          color: black;
+          padding: 50px;
+          border-radius: 5px;
+          z-index: 1000;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cookie-popup h3 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MD33XFQ7");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-16809229348");
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MD33XFQ7"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="background-container">
+      <div class="background-image-desktop"></div>
+      <div class="background-image-mobile"></div>
+    </div>
+    <div class="cookie-popup">
+      <a
+        href="https://ev.braip.com/campanhas/cpa/camx6227o"
+        class="close-btn cta"
+        id="close-popup"
+        >Fechar</a
+      >
+      <h3>Política de Cookies</h3>
+      <p>
+        Este site usa cookies para personalizar conteúdo e anúncios, fornecer
+        recursos de mídia social e analisar nosso tráfego. Ao clicar em Aceitar,
+        você concorda com o uso de cookies. Para mais informações, por favor
+        visite nossa
+        <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta"
+          >Política de Cookies</a
+        >
+      </p>
+      <a
+        href="https://ev.braip.com/campanhas/cpa/camx6227o"
+        id="accept-cookies"
+        class="btn cta"
+        >Aceitar</a
+      >
+    </div>
+    <!-- <script src="/resourses/link-format.js"></script> -->
+  </body>
+</html>

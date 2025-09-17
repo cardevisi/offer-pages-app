@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Ozenvitta - Promoção Limitada</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary-color: #19deaf;
+  --secondary-color: #6fffdd;
+  --text-dark: #263570;
+  --text-light: #fff;
+  --bg-dark: #202055;
+  --bg-grey: #f8f9fa;
+  --bg-light: #fff;
+  --cta-yellow: #fffc6f;
+  --cta-green: #76de19;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:var(--text-dark);background:var(--bg-light);}
+a{text-decoration:none;}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;background:var(--bg-dark);color:var(--text-light);padding:50px 20px;position:relative;}
+.header-left{flex:1;min-width:300px;padding:20px;}
+.header-left h1{font-size:3rem;margin-bottom:20px;}
+.header-left p{font-size:1.2rem;margin-bottom:20px;line-height:1.4;}
+.header-left .cta-btn{display:inline-block;font-weight:700;color:var(--text-dark);background:linear-gradient(180deg,var(--cta-yellow) 0%,var(--cta-green) 100%);padding:20px 35px;border-radius:50px;text-transform:uppercase;font-size:1.2rem;box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.header-left .cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,0.3);}
+.header-left .countdown-bar{background:#ff4c4c;color:#fff;padding:10px;margin:15px 0;font-weight:bold;border-radius:10px;font-size:1.1rem;}
+.header-left .sold-bar{background:#ffc107;color:#000;padding:8px;margin:10px 0;font-weight:bold;border-radius:8px;font-size:1rem;}
+.header-right{flex:1;min-width:300px;padding:20px;text-align:center;}
+.header-right img{max-width:100%;height:auto;}
+
+.benefits{padding:50px 20px;background:var(--bg-grey);}
+.benefits h2{text-align:center;margin-bottom:40px;}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;text-align:center;}
+.benefit-item{background:var(--bg-light);padding:30px;border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);}
+.benefit-item h3{color:var(--primary-color);margin-bottom:15px;}
+
+.testimonials{padding:50px 20px;}
+.testimonials h2{text-align:center;margin-bottom:40px;}
+.testimonial-item{background:var(--bg-light);padding:25px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);margin-bottom:20px;text-align:center;}
+.testimonial-item p{font-style:italic;margin-bottom:10px;}
+.testimonial-item span{font-weight:600;color:var(--primary-color);}
+
+.sticky-cta{position:fixed;bottom:15px;right:50%;transform:translateX(50%);z-index:999;}
+.sticky-cta .cta-btn{padding:15px 35px;font-size:1.2rem;box-shadow:0 4px 15px rgba(0,0,0,0.2);background:linear-gradient(180deg,var(--cta-yellow) 0%,var(--cta-green) 100%);}
+.sticky-cta .cta-btn:hover{box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+
+@media(max-width:768px){header{flex-direction:column;} .header-left, .header-right{text-align:center;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>🔥 Promoção Limitada Ozenvitta!</h1>
+    <p>Suplemento com 13 nutrientes para acelerar metabolismo, aumentar energia e apoiar saúde digestiva.</p>
+    <div class="countdown-bar" id="countdown">Promoção termina em 24:00:00</div>
+    <div class="sold-bar">Estoque Limitado: Apenas 20 unidades restantes!</div>
+    <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Comprar Agora</a>
+  </div>
+  <div class="header-right">
+    <img src="./foto" alt="Ozenvitta Suplemento">
+  </div>
+</header>
+
+<section class="benefits">
+  <h2>Benefícios Principais</h2>
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <h3>Acelera o Metabolismo</h3>
+      <p>Com L-Carnitina, ajuda seu corpo a queimar gordura de forma eficiente.</p>
+    </div>
+    <div class="benefit-item">
+      <h3>Controla o Apetite</h3>
+      <p>A Inulina promove saciedade, reduzindo a fome e exageros alimentares.</p>
+    </div>
+    <div class="benefit-item">
+      <h3>Mais Energia</h3>
+      <p>Para atividades diárias e exercícios com mais vitalidade.</p>
+    </div>
+    <div class="benefit-item">
+      <h3>Emagrecimento Saudável</h3>
+      <p>Ingredientes naturais que auxiliam uma perda de peso segura e duradoura.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>O Que Nossos Clientes Dizem</h2>
+  <div class="testimonial-item">
+    <p>"Mesmo morando em regiões afastadas, meu OzenVitta chegou certinho! Obrigada"</p>
+    <span>- Carol, 30 anos</span>
+  </div>
+  <div class="testimonial-item">
+    <p>"Senti mais energia e controle do apetite desde a primeira semana."</p>
+    <span>- Marcos, 35 anos</span>
+  </div>
+</section>
+
+<div class="sticky-cta">
+  <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta-btn">Comprar Agora</a>
+</div>
+
+<script>
+// Countdown 24h
+function startCountdown(duration, display){
+  let timer=duration, hours, minutes, seconds;
+  setInterval(function(){
+    hours=Math.floor(timer/3600);
+    minutes=Math.floor((timer%3600)/60);
+    seconds=timer%60;
+    display.textContent=`Promoção termina em ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    if(--timer<0) timer=0;
+  },1000);
+}
+window.onload=function(){
+  const display=document.getElementById('countdown');
+  startCountdown(86400, display);
+};
+</script>
+
+</body>
+</html>
