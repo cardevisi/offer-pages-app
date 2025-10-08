@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ozenvitta - Modal</title>
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/resourses/padlock.png" />
+    <link
+      rel="shortcut icon"
+      href="/resourses/padlock.ico"
+      type="image/x-icon"
+    />
+    <style>
+      /* Reset para garantir cobertura total */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background: #fff;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:visited,
+      a:active {
+        text-decoration: none;
+      }
+      a:hover,
+      a:focus {
+        text-decoration: underline;
+      }
+      h3 {
+        font-size: 1.75rem;
+      }
+      .background-container {
+        /* position: fixed; */
+        /* top: 0;
+        left: 0; */
+        width: 100%;
+        height: 100vh;
+        /* z-index: -2; */
+        background: #000;
+      }
+      .background-image-desktop,
+      .background-image-mobile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: top center;
+        opacity: 0.4;
+      }
+      .background-image-desktop {
+        background-image: url("../desktop.png");
+        display: block;
+      }
+      .background-image-mobile {
+        background-image: url("../mobile.png");
+        display: none;
+      }
+      .cookie-popup {
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #c2c6cb;
+        border: 2px solid #fff;
+        color: #000;
+        padding: 50px;
+        border-radius: 5px;
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        .background-image-desktop {
+          display: none;
+        }
+        .background-image-mobile {
+          display: block;
+        }
+        .cookie-popup {
+          position: fixed;
+          bottom: 60px;
+          width: 85%;
+          background-color: #c2c6cb;
+          border: white 2px solid;
+          color: black;
+          padding: 50px;
+          border-radius: 5px;
+          z-index: 1000;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cookie-popup h3 {
+          font-size: 1.5rem;
+        }
+      }
+
+      #overlay {
+        /* position: fixed; */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        pointer-events: auto;
+      }
+
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1001;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .popup-overlay.popup-visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .popup-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 1002;
+      }
+
+      .popup-content {
+        background-color: #ffffff;
+        border-radius: 16px;
+        width: 90%;
+        max-width: 450px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        z-index: 1002;
+        position: relative;
+        animation: popupFadeIn 0.3s ease-out;
+        padding: 40px 32px;
+        text-align: center;
+        color: #333333;
+        pointer-events: auto;
+      }
+
+      @keyframes popupFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8) translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .popup-content h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 16px 0;
+        color: #1a1a1a;
+        line-height: 1.3;
+      }
+
+      .popup-message {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666666;
+        margin: 0 0 32px 0;
+      }
+
+      /* .popup-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      } */
+
+      .kit-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .kit-buttons .days {
+        display: block;
+        font-size: 12px;
+        margin-top: 4px;
+        color: white;
+        background-color: #ee314c;
+        border-radius: 4px;
+      }
+
+      .primary-btn,
+      .secondary-btn,
+      .close-btn {
+        z-index: 1003;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, #155c40 0%, #1e8c5e 100%);
+        color: white;
+        border: none;
+        padding: 16px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 6px 20px rgba(21, 92, 64, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        order: 1;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(21, 92, 64, 0.4);
+        background: linear-gradient(135deg, #1d7a54 0%, #155c40 100%);
+      }
+
+      .secondary-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 16px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        order: 2;
+      }
+
+      .secondary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        color: #6c757d;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 8px;
+        order: 3;
+      }
+
+      .close-btn:hover {
+        color: #495057;
+        text-decoration: underline;
+      }
+
+      /* Responsividade */
+      @media (max-width: 480px) {
+        .popup-content {
+          width: 95%;
+          margin: 20px;
+          padding: 32px 24px;
+        }
+
+        .popup-content h2 {
+          font-size: 22px;
+        }
+
+        .popup-message {
+          font-size: 15px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+          padding: 14px 20px;
+          font-size: 15px;
+        }
+      }
+
+      .main-footer {
+        position: relative;
+        z-index: 2000;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 40px 0;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .main-footer p,
+      .main-footer a {
+        color: #5a5a5a;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .main-footer a:hover {
+        text-decoration: underline;
+      }
+      .main-footer .legal-links {
+        margin-bottom: 10px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .disclaimer {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 20px;
+        color: #777;
+        font-style: italic;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MD33XFQ7");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-16809229348");
+    </script>
+  </head>
+  <body>
+    <div class="background-container">
+      <div class="background-image-desktop"></div>
+      <div class="background-image-mobile"></div>
+    </div>
+    <div id="modal-overlay">
+      <div id="overlay">
+        <div
+          id="navigation-popup"
+          class="popup-overlay popup-visible"
+          style="display: flex"
+        >
+          <div class="popup-container">
+            <div class="popup-content">
+              <h2>OzenVitta</h2>
+              <p>
+                Fórmula avançada que combina Inulina e L-Carnitina, para o seu
+                equilíbrio diário e qualidade de vida.
+              </p>
+              <div class="popup-buttons">
+                <div class="kit-buttons">
+                  <a
+                    href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=1"
+                    class="secondary-btn cta-1-potes buy-button"
+                  >
+                    Comprar 1 Pote
+                    <span class="days">30 dias</span>
+                  </a>
+                  <a
+                    href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=3"
+                    class="secondary-btn cta-3-potes buy-button"
+                  >
+                    Comprar 3 Potes
+                    <span class="days">LEVE 3 PAGUE 2 (90 dias)</span>
+                  </a>
+
+                  <a
+                    href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=5"
+                    class="secondary-btn cta-5-potes buy-button"
+                  >
+                    Comprar 5 Potes
+                    <span class="days">LEVE 5 PAGUE 3 (150 dias)</span>
+                  </a>
+
+                  <a
+                    href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=8"
+                    class="secondary-btn cta-8-potes buy-button"
+                  >
+                    Comprar 8 Potes
+                    <span class="days">LEVE 8 PAGUE 5 (240 dias)</span>
+                  </a>
+                </div>
+                <a
+                  href="https://ev.braip.com/campanhas/cpa/camx6227o"
+                  class="close-btn ozenvitta-pop-up"
+                  >Fechar</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <p>
+        Aviso: Os resultados podem variar de pessoa para pessoa. Este produto
+        não substitui o diagnóstico ou a orientação de um profissional de saúde.
+        As informações apresentadas aqui são para fins informativos e não devem
+        ser interpretadas como aconselhamento médico. Sempre consulte um médico
+        ou nutricionista antes de iniciar o uso de qualquer suplemento.
+      </p>
+    </div>
+    <div class="main-footer">
+      <div class="container">
+        <div class="legal-links">
+          <a
+            href="../politica-de-privacidade.html"
+            target="_blank"
+            rel="noopener"
+            >Política de Privacidade</a
+          >
+          |
+          <a href="../termos-de-uso.html" target="_blank" rel="noopener"
+            >Termos de Uso</a
+          >
+          |
+          <a
+            href="../politica-de-reembolso.html"
+            target="_blank"
+            rel="noopener"
+            >Política de Reembolso</a
+          >
+        </div>
+        <p>
+          Atenção: Este site é uma página de afiliação e, ao clicar nos botões,
+          você será redirecionado para o site oficial do produto.
+        </p>
+        <p>&copy; 2025 Ozenvitta. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </body>
+</html>
