@@ -64,12 +64,8 @@
         font-size: 1.75rem;
       }
       .background-container {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100vh;
-        z-index: -2;
         background: #000;
       }
       .background-image-desktop,
@@ -135,6 +131,162 @@
           font-size: 1.5rem;
         }
       }
+      /* Overlay e camada de centralização baseados na index */
+      .cookie-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(17, 24, 39, 0.45);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        z-index: 800;
+        pointer-events: auto;
+      }
+      .cookie-layer {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        overflow: visible;
+        padding: 24px;
+        z-index: 1001;
+        pointer-events: auto;
+      }
+      .cookie-layer .cookie-popup {
+        position: static;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        width: min(554px, 92vw);
+        margin: 0;
+        background: #fff;
+        border: 1px solid #e6e8ef;
+        border-radius: 12px;
+        padding: 28px 24px;
+        box-shadow: 0 26px 60px rgba(0, 0, 0, 0.28);
+        pointer-events: auto;
+      }
+      .cookie-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .btn.cta.cookie {
+        background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+        color: #111827;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .btn.cta.cookie:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 16px rgba(250, 204, 21, 0.3);
+        background: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+      }
+      @media (max-width: 480px) {
+        .cookie-layer {
+          padding: 16px;
+        }
+        .cookie-layer .cookie-popup {
+          width: 96vw;
+          padding: 24px 20px;
+        }
+      }
+
+      /* Rodapé (mesmo estilo da index) */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .main-footer {
+        position: relative;
+        z-index: 2000;
+        width: 100%;
+        background-color: var(--brand-blue-900);
+        color: #858585;
+        padding: 20px 0;
+        font-size: 0.9rem;
+        text-align: center;
+        border-top: 1px solid #1f2937;
+      }
+      .main-footer p {
+        margin: 6px 0;
+      }
+      .main-footer a {
+        color: #858585;
+        text-decoration: none;
+        margin: 0 8px;
+      }
+      .main-footer a:hover,
+      .main-footer a:focus {
+        text-decoration: underline;
+      }
+      .main-footer .legal-links {
+        margin-bottom: 8px;
+      }
+      /* Paleta da marca e ajustes visuais */
+      :root {
+        --brand-blue-700: #1f3b8f;
+        --brand-blue-500: #2b5fd7;
+        /* added for footer background and subtle text */
+        --brand-blue-900: #0f172a;
+        --gray-400: #9ca3af;
+        --brand-green-500: #31c48d;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --text-dark: #1f2937;
+      }
+      /* Overlay com matiz azul conforme identidade */
+      .cookie-overlay {
+        background: rgba(31, 59, 143, 0.45);
+      }
+      /* Destaques do pop-up alinhados ao azul da marca */
+      .cookie-layer .cookie-popup h3 {
+        color: var(--brand-blue-700);
+      }
+      .cookie-layer .cookie-popup a {
+        color: var(--brand-blue-700);
+      }
+      .close-btn {
+        color: var(--brand-blue-700);
+      }
+      .close-btn:hover {
+        color: var(--brand-blue-500);
+        text-decoration: underline;
+      }
+
+      /* Botões com estilos distintos inspirados na hero CTA (verde) */
+      .btn-primary.cta.cookie {
+        background: linear-gradient(
+          135deg,
+          var(--brand-green-500) 0%,
+          #22c55e 100%
+        );
+        color: #0f172a;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-weight: 600;
+        box-shadow: 0 8px 16px rgba(34, 197, 94, 0.25);
+      }
+      .btn-primary.cta.cookie:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(34, 197, 94, 0.35);
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      }
+      .btn-secondary.cookie {
+        background: #fff;
+        color: var(--brand-blue-700);
+        border: 2px solid var(--brand-blue-700);
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .btn-secondary.cookie:hover {
+        background: var(--gray-100);
+      }
     </style>
     <!-- Google Tag Manager -->
     <script>
@@ -179,30 +331,71 @@
       <div class="background-image-desktop"></div>
       <div class="background-image-mobile"></div>
     </div>
-    <div class="cookie-popup">
-      <a
-        href="https://ev.braip.com/campanhas/cpa/camx6227o"
-        class="close-btn cta cookie"
-        id="close-popup"
-        >Fechar</a
+
+    <!-- Overlay e camada centralizada do pop-up -->
+    <div class="cookie-overlay" aria-hidden="true"></div>
+    <div class="cookie-layer" role="presentation">
+      <div
+        class="cookie-popup"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cookie-title"
+        aria-describedby="cookie-desc"
       >
-      <h3>Política de Cookies</h3>
-      <p>
-        Este site usa cookies para personalizar conteúdo e anúncios, fornecer
-        recursos de mídia social e analisar nosso tráfego. Ao clicar em Aceitar,
-        você concorda com o uso de cookies. Para mais informações, por favor
-        visite nossa
-        <a href="https://ev.braip.com/campanhas/cpa/camx6227o" class="cta cookie"
-          >Política de Cookies</a
-        >
-      </p>
-      <a
-        href="https://ev.braip.com/campanhas/cpa/camx6227o"
-        id="accept-cookies"
-        class="btn cta cookie"
-        >Aceitar</a
-      >
+        <h3 id="cookie-title">Política de Cookies</h3>
+        <p id="cookie-desc">
+          Este site usa cookies para personalizar conteúdo e anúncios, fornecer
+          recursos de mídia social e analisar nosso tráfego. Ao clicar em
+          Aceitar, você concorda com o uso de cookies. Para mais informações,
+          por favor visite nossa
+          <a
+            href="https://ev.braip.com/campanhas/cpa/camx6227o"
+            class="cta cookie"
+            >Política de Cookies</a
+          >
+        </p>
+        <div class="cookie-actions">
+          <a
+            href="https://ev.braip.com/campanhas/cpa/camx6227o"
+            id="accept-cookies"
+            class="btn-primary cta cookie btn-accept-cookies"
+            >Aceitar</a
+          >
+          <a
+            href="https://ev.braip.com/campanhas/cpa/camx6227o"
+            class="btn-secondary cookie btn-reject-cookies"
+            aria-label="Rejeitar cookies"
+            >Rejeitar</a
+          >
+        </div>
+      </div>
     </div>
+
     <!-- <script src="/resourses/link-format.js"></script> -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="legal-links" aria-label="Links legais">
+          <a href="../politica-de-privacidade.html" target="_blank" rel="noopener"
+            >Política de Privacidade</a
+          >
+          |
+          <a href="../termos-de-uso.html" target="_blank" rel="noopener"
+            >Termos de Uso</a
+          >
+          |
+          <a href="../" target="_blank" rel="noopener"
+            >Política de Reembolso</a
+          >
+        </div>
+        <p>
+          Este site não é afiliado ao Facebook ou a qualquer entidade da Meta
+          Platforms, Inc.
+        </p>
+        <p>
+          Todos os nomes de produtos, logotipos e marcas são de propriedade de
+          seus respectivos proprietários.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
