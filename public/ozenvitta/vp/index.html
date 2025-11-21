@@ -514,6 +514,43 @@
 
       gtag("config", "AW-16809229348");
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.gtag-conversion').forEach(function (el) {
+          el.addEventListener('click', function (e) {
+            console.log('Conversion link clicked', el.href, el.dataset.conversion);
+          e.preventDefault();
+          const url = el.href;
+          const send_to = el.dataset.conversion;
+          const fallback = () => (window.location = url);
+
+          if (typeof gtag === 'function') {
+            let called = false;
+            const callback = () => {
+              if (called) return;
+              called = true;
+              window.location = url;
+            };
+            try {
+              gtag('event', 'conversion', {
+                send_to: send_to,
+                event_callback: callback,
+              });
+            } catch (err) {
+              fallback();
+              return;
+            }
+            // fallback se o gtag não chamar o callback
+            setTimeout(() => {
+              if (!called) fallback();
+            }, 1200);
+          } else {
+            fallback();
+          }
+        });
+      });
+    });
+    </script>
   </head>
   <body>
     <!-- <div class="background-container">
@@ -548,28 +585,41 @@
               <span class="best-seller">MAIS VENDIDO</span>
               <a
                 href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=3"
-                class="primary-btn cta-3-potes buy-button"
+                class="primary-btn cta-3-potes buy-button gtag-conversion"
+                data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+                aria-label="Comprar 3 Potes"
+                rel="noopener noreferrer"
               >
                 Comprar 3 Potes
                 <span class="days">LEVE 3 PAGUE 2 (90 dias)</span>
               </a>
               <a
                 href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=5"
-                class="secondary-btn cta-5-potes buy-button"
+                class="secondary-btn cta-5-potes buy-button gtag-conversion"
+                data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+                aria-label="Comprar 5 Potes"
+                rel="noopener noreferrer"
+              >
               >
                 Comprar 5 Potes
                 <span class="days">LEVE 5 PAGUE 3 (150 dias)</span>
               </a>
               <a
                 href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=8"
-                class="secondary-btn cta-8-potes buy-button"
+                class="secondary-btn cta-8-potes buy-button gtag-conversion"
+                data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+                aria-label="Comprar 8 Potes"
+                rel="noopener noreferrer"
               >
                 Comprar 8 Potes
                 <span class="days">LEVE 8 PAGUE 5 (240 dias)</span>
               </a>
               <a
                 href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=1"
-                class="secondary-btn cta-1-potes buy-button"
+                class="secondary-btn cta-1-potes buy-button gtag-conversion"
+                data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+                aria-label="Comprar 1 Pote"
+                rel="noopener noreferrer"
               >
                 Comprar 1 Pote
                 <span class="days">30 dias</span>
@@ -583,7 +633,10 @@
             </div>
             <a
               href="https://ev.braip.com/campanhas/cpa/camx6227o"
-              class="optout-link ozenvitta-optout"
+              class="optout-link ozenvitta-optout gtag-conversion"
+              data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+              aria-label="Prefiro não aproveitar agora"
+              rel="noopener noreferrer"
               >Prefiro não aproveitar agora</a
             >
           </div>
