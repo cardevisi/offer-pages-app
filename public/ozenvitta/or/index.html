@@ -315,6 +315,43 @@
       gtag("js", new Date());
       gtag("config", "AW-16809229348");
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.gtag-conversion').forEach(function (el) {
+          el.addEventListener('click', function (e) {
+            console.log('Conversion link clicked', el.href, el.dataset.conversion);
+          e.preventDefault();
+          const url = el.href;
+          const send_to = el.dataset.conversion;
+          const fallback = () => (window.location = url);
+
+          if (typeof gtag === 'function') {
+            let called = false;
+            const callback = () => {
+              if (called) return;
+              called = true;
+              window.location = url;
+            };
+            try {
+              gtag('event', 'conversion', {
+                send_to: send_to,
+                event_callback: callback,
+              });
+            } catch (err) {
+              fallback();
+              return;
+            }
+            // fallback se o gtag não chamar o callback
+            setTimeout(() => {
+              if (!called) fallback();
+            }, 1200);
+          } else {
+            fallback();
+          }
+        });
+      });
+    });
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -350,7 +387,10 @@
           por favor visite nossa
           <a
             href="https://ev.braip.com/campanhas/cpa/camx6227o"
-            class="cta cookie"
+            class="cta cookie gtag-conversion"
+            data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+            aria-label="Política de Cookies"
+            rel="noopener noreferrer"
             >Política de Cookies</a
           >
         </p>
@@ -358,13 +398,19 @@
           <a
             href="https://ev.braip.com/campanhas/cpa/camx6227o"
             id="accept-cookies"
-            class="btn-primary cta cookie btn-accept-cookies"
+            data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+            aria-label="Aceitar cookies"
+            rel="noopener noreferrer"
+            class="btn-primary cta cookie btn-accept-cookies gtag-conversion"
             >Aceitar</a
           >
           <a
+            onclick="return gtag_report_conversion('https\:\/\/ev.braip.com\/campanhas\/cpa\/camx6227o')"
             href="https://ev.braip.com/campanhas/cpa/camx6227o"
-            class="btn-secondary cookie btn-reject-cookies"
+            class="btn-secondary cookie btn-reject-cookies gtag-conversion"
+            data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
             aria-label="Rejeitar cookies"
+            rel="noopener noreferrer"
             >Rejeitar</a
           >
         </div>
