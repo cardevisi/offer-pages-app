@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OzenVitta Oficial - Oferta Especial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .main-card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 30px 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+
+      .stars-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 15px;
+      }
+
+      .stars {
+        color: #f59e0b;
+        font-size: 16px;
+      }
+      .rating-text {
+        font-size: 12px;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+
+      /* Título */
+      .headline-wrapper {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      h1 {
+        font-size: 30px;
+        font-weight: 900;
+        color: var(--primary-blue);
+        margin-bottom: 10px;
+        line-height: 1.1;
+      }
+
+      h1 span {
+        color: var(--primary-green);
+        display: block;
+      }
+
+      .sub-headline {
+        font-size: 14px;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      :root {
+        --primary-blue: #1e293b;
+        --primary-green: #27ae60;
+        --dark-green: #1b5e20;
+        --accent-orange: #f39c12;
+        --danger-red: #e74c3c;
+        --white: #ffffff;
+        --light-gray: #f8f9fa;
+        --bg-page: #f8fafc;
+        --text-dark: #0f172a;
+        --text-muted: #475569;
+        --accent-green: #22c55e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-dark);
+        line-height: 1.5;
+      }
+
+      /* Background Dinâmico */
+      .bg-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=1500");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Top Bar de Urgência */
+      .top-bar {
+        background: var(--danger-red);
+        color: #fff;
+        text-align: center;
+        padding: 8px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .container {
+        max-width: 550px;
+        margin: 0 auto;
+        padding: 20px 15px;
+      }
+
+      /* Card de Venda */
+      .sales-card {
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      }
+
+      .card-header {
+        padding: 25px 20px 10px;
+        text-align: center;
+      }
+
+      .anvisa-badge {
+        display: inline-block;
+        background: #e8f5e9;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: var(--dark-green);
+        margin-bottom: 15px;
+        border: 1px solid #c8e6c9;
+      }
+
+      h1 {
+        font-size: 2.7rem;
+        font-weight: 800;
+        color: #1a1a1a;
+        margin: 0 0 10px;
+        line-height: 1.2;
+      }
+
+      h1 span {
+        color: var(--primary-green);
+      }
+
+      /* Produto */
+      .product-visual {
+        padding: 10px;
+        text-align: center;
+        background: radial-gradient(circle, #f1f8f1 0%, #ffffff 70%);
+      }
+
+      .product-visual img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+      }
+
+      /* Benefícios */
+      .benefits-list {
+        padding: 0 25px;
+        margin: 20px 0;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #444;
+      }
+
+      .benefit-item::before {
+        content: "✓";
+        width: 22px;
+        height: 22px;
+        background: var(--primary-green);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+      }
+
+      /* Preço */
+      .pricing-box {
+        background: #fff9f0;
+        margin: 0 25px 20px;
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px dashed var(--accent-orange);
+        text-align: center;
+      }
+
+      .price-old {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 0.9rem;
+      }
+      .price-new {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: var(--primary-green);
+        margin: 2px 0;
+      }
+      .price-info {
+        font-weight: bold;
+        color: var(--accent-orange);
+      }
+
+      /* CTA */
+      .btn-cta {
+        display: block;
+        width: calc(100% - 50px);
+        margin: 0 auto 25px;
+        background: linear-gradient(180deg, #f39c12 0%, #e67e22 100%);
+        color: #fff;
+        text-decoration: none;
+        padding: 22px;
+        border-radius: 50px;
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+        box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+        border: none;
+        cursor: pointer;
+        animation: pulseCTA 2s infinite;
+      }
+
+      @keyframes pulseCTA {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.04);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Trust */
+      .trust-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 0 25px 30px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-align: center;
+        color: #666;
+      }
+
+      .trust-tag {
+        background: var(--light-gray);
+        padding: 8px;
+        border-radius: 8px;
+      }
+
+      /* Modal */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+      }
+
+      .modal-active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: #fff;
+        width: 100%;
+        max-width: 480px;
+        border-radius: 20px;
+        padding: 25px 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .kit-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        border: 2px solid #eee;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.2s;
+      }
+
+      .kit-option:hover {
+        border-color: var(--primary-green);
+        background: #f0fff4;
+      }
+      .kit-option.best-seller {
+        border-color: var(--accent-orange);
+        background: #fffcf5;
+      }
+
+      .kit-label {
+        background: var(--accent-orange);
+        color: white;
+        font-size: 0.6rem;
+        padding: 3px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: inline-block;
+      }
+
+      .kit-title {
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--dark-green);
+        display: block;
+      }
+      .kit-price {
+        text-align: right;
+      }
+      .kit-price .val {
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: var(--primary-green);
+        display: block;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 30px 20px;
+        text-align: center;
+        color: #999;
+        font-size: 0.75rem;
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.4rem;
+        }
+        .price-new {
+          font-size: 2.1rem;
+        }
+      }
+
+      .disclaimer-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+        color: #888;
+        text-align: justify;
+        font-size: 0.7rem;
+        line-height: 1.4;
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MD33XFQ7");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-16809229348");
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".gtag-conversion").forEach(function (el) {
+          el.addEventListener("click", function (e) {
+            console.log(
+              "Conversion link clicked",
+              el.href,
+              el.dataset.conversion
+            );
+            e.preventDefault();
+            const url = el.href;
+            const send_to = el.dataset.conversion;
+            const fallback = () => (window.location = url);
+
+            if (typeof gtag === "function") {
+              let called = false;
+              const callback = () => {
+                if (called) return;
+                called = true;
+                window.location = url;
+              };
+              try {
+                gtag("event", "conversion", {
+                  send_to: send_to,
+                  event_callback: callback,
+                });
+              } catch (err) {
+                fallback();
+                return;
+              }
+              // fallback se o gtag não chamar o callback
+              setTimeout(() => {
+                if (!called) fallback();
+              }, 1200);
+            } else {
+              fallback();
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MD33XFQ7"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+
+    <div class="bg-overlay"></div>
+    <div class="top-bar">🚨 OFERTA EXCLUSIVA: ÚLTIMAS UNIDADES EM ESTOQUE</div>
+
+    <div class="container">
+      <div class="header-trust">
+        <span class="badge-oficial">PRODUTO ORIGINAL CERTIFICADO</span>
+      </div>
+      <main class="sales-card">
+        <div class="main-card">
+          <div class="stars-container">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text"
+              >Aprovado por mais de 15.000 clientes</span
+            >
+          </div>
+
+          <div class="headline-wrapper">
+            <h1>Adquira o Seu <span>OzenVitta Original</span></h1>
+            <p class="sub-headline">
+              A fórmula exclusiva com Inulina e L-Carnitina para o seu dia a
+              dia.
+            </p>
+          </div>
+        </div>
+
+        <div class="product-visual">
+          <img src="../fotos_potes-mb.webp" alt="Ozenvitta Kit" />
+        </div>
+
+        <div class="benefits-list">
+          <div class="benefit-item">Inulina + L-Carnitina Concentrada</div>
+          <div class="benefit-item">Auxilia no equilíbrio do organismo</div>
+          <div class="benefit-item">Mais disposição e vitalidade diária</div>
+          <div class="benefit-item">Fórmula 100% natural e sem rebote</div>
+        </div>
+
+        <div class="pricing-box">
+          <span class="price-old">De R$ 149,90</span>
+          <span class="price-new">R$ 99,90</span>
+          <span class="price-info">cada no kit promocional</span>
+        </div>
+
+        <button class="btn-cta" id="btnKits">RESGATAR MEU DESCONTO</button>
+
+        <div class="trust-grid">
+          <div class="trust-tag">🔒 Site Seguro</div>
+          <div class="trust-tag">🚚 Frete Grátis*</div>
+          <div class="trust-tag">✅ Garantia 30 Dias</div>
+          <div class="trust-tag">📦 Rastreio Ativo</div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2025 OzenVitta Brasil - Distribuidor Oficial</p>
+        <p>
+          <a
+            href="../politica-de-privacidade.html"
+            target="_blank"
+            rel="noopener"
+            style="color: #777"
+          >
+            Políticas de Privacidade
+          </a>
+          |
+          <a
+            href="../termos-de-uso.html"
+            target="_blank"
+            rel="noopener"
+            style="color: #777"
+          >
+            Termos de Uso
+          </a>
+        </p>
+
+        <div class="disclaimer-box">
+          <strong>Aviso:</strong> Os resultados podem variar de pessoa para
+          pessoa. Este produto não substitui o diagnóstico ou a orientação de um
+          profissional de saúde. As informações apresentadas aqui são para fins
+          informativos e não devem ser interpretadas como aconselhamento médico.
+          Sempre consulte um médico ou nutricionista antes de iniciar o uso de
+          qualquer suplemento.
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal com Opção de 8 Potes -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal-content">
+        <h2 style="text-align: center; color: var(--dark-green); margin-top: 0">
+          Selecione seu Kit
+        </h2>
+
+        <div class="kits-wrapper">
+          <a
+            href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=1"
+            class="kit-option"
+          >
+            <div>
+              <span class="kit-title">1 Pote</span>
+              <small>Tratamento inicial</small>
+            </div>
+            <div class="kit-price"><span class="val">R$ 149,90</span></div>
+          </a>
+
+          <a
+            href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=3"
+            class="kit-option best-seller"
+          >
+            <div>
+              <span class="kit-label">Mais Vendido</span>
+              <span class="kit-title">3 Potes (Leve 3 Pague 2)</span>
+              <small>90 dias de tratamento</small>
+            </div>
+            <div class="kit-price"><span class="val">R$ 299,80</span></div>
+          </a>
+
+          <a
+            href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=5"
+            class="kit-option"
+          >
+            <div>
+              <span class="kit-title">5 Potes (Leve 5 Pague 3)</span>
+              <small>Máxima economia</small>
+            </div>
+            <div class="kit-price"><span class="val">R$ 449,70</span></div>
+          </a>
+
+          <!-- Opção de 8 Potes Adicionada -->
+          <a
+            href="https://ev.braip.com/campanhas/cpa/camx6227o?kit=8"
+            class="kit-option"
+          >
+            <div>
+              <span class="kit-label" style="background: var(--primary-green)"
+                >Tratamento Família</span
+              >
+              <span class="kit-title">8 Potes (Super Kit)</span>
+              <small>240 dias de tratamento</small>
+            </div>
+            <div class="kit-price"><span class="val">R$ 599,60</span></div>
+          </a>
+        </div>
+
+        <button
+          onclick="closeModal()"
+          style="
+            width: 100%;
+            background: none;
+            border: none;
+            color: #999;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: underline;
+          "
+        >
+          Voltar
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const openBtn = document.getElementById("btnKits");
+      const modal = document.getElementById("modal");
+
+      openBtn.addEventListener("click", () => {
+        modal.classList.add("modal-active");
+      });
+
+      function closeModal() {
+        modal.classList.remove("modal-active");
+      }
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+    </script>
+  </body>
+</html>
