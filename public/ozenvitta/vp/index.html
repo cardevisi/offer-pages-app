@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Ozenvitta - Modal</title>
+    <title>Ozenvitta - Kits</title>
     <meta
       http-equiv="Cache-Control"
       content="no-cache, no-store, must-revalidate"
@@ -63,6 +63,7 @@
         z-index: -1;
         background: #fff;
       }
+
 
       /* Contêiner de página para centralizar o conteúdo no body */
       .page-container {
@@ -244,6 +245,12 @@
         color: #1a1a1a;
         line-height: 1.25;
         letter-spacing: 0.2px;
+
+        span {
+          font-weight: bolder;
+          margin-bottom: 8px;
+          color: #155c40;
+        }
       }
       @media (min-width: 768px) {
         .popup-content h2 {
@@ -333,12 +340,19 @@
         margin-top: 12px;
       }
       .trust-badges .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         background: #f5f7fa;
         border: 1px solid #e5e7eb;
         color: #4b5563;
         font-size: 12px;
         border-radius: 8px;
         padding: 6px 10px;
+      }
+      .trust-badges .badge .material-symbols-outlined {
+        font-size: 16px;
+        color: #155c40; /* Cor verde para destaque, conforme solicitado */
       }
       .optout-link {
         display: inline-block;
@@ -571,12 +585,12 @@
           aria-labelledby="popup-title"
           aria-describedby="popup-desc"
         >
-          <h2 id="popup-title">Apoie seu metabolismo e bem-estar diário</h2>
+          <h2 id="popup-title"><span>Ozen Vitta Original</span> Apoie seu metabolismo e bem-estar diário</h2>
           <p id="popup-desc">
             OzenVitta combina Inulina e L-Carnitina para ajudar na saciedade e
-            energia. Promoção exclusiva Leve 3 Pague 2. Aproveite enquanto o
-            relógio estiver ativo.
+            energia. Aproveite nossa condição especial de hoje.
           </p>
+          <p>Selecionamos os kits mais vendidos do Ozen Vitta com valores promocionais e frete grátis. Escolha a melhor opção para o seu tratamento abaixo:</p>
           <div class="countdown-timer">
             Oferta termina em: <span id="countdown">15:00</span>
           </div>
@@ -626,13 +640,25 @@
               </a>
             </div>
             <div class="trust-badges">
-              <div class="badge">Compra segura via Braip</div>
-              <div class="badge">Garantia de 30 dias</div>
-              <div class="badge">PIX, cartão e boleto</div>
-              <div class="badge">Frete para todo Brasil</div>
+              <div class="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Compra segura via Braip
+              </div>
+              <div class="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                Garantia de 30 dias
+              </div>
+              <div class="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                PIX, cartão e boleto
+              </div>
+              <div class="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                Frete para todo Brasil
+              </div>
             </div>
             <a
-              href="https://ev.braip.com/campanhas/cpa/camx6227o"
+              href="#"
               class="optout-link ozenvitta-optout gtag-conversion"
               data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
               aria-label="Prefiro não aproveitar agora"
