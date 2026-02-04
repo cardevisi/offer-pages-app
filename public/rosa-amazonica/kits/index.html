@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Amazônica - Site Oficial Autorizado</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rosa-primary: #d63384;
+            --rosa-dark: #a3155e;
+            --rosa-soft: #fff0f6;
+            --text-dark: #333333;
+            --success: #28a745;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdfdfd;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .compliance-banner {
+            background-color: #f8f9fa;
+            color: #666;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.7rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .official-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 1px solid #c8e6c9;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            line-height: 1.2;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h1 span { color: var(--rosa-primary); }
+
+        .sub-header {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* GRID DE KITS */
+        .kits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .kit-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .kit-card.highlight {
+            border: 2px solid var(--rosa-primary);
+            background-color: var(--rosa-soft);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .badge-highlight {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--rosa-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .kit-img-placeholder {
+            width: 100%;
+            height: 140px;
+            background: #fdfdfd;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #ddd;
+        }
+
+        .kit-name { font-weight: 800; font-size: 1.1rem; color: #333; }
+        .kit-sub { font-size: 0.75rem; color: #888; margin-bottom: 15px; }
+
+        .new-price { display: block; font-size: 1.5rem; font-weight: 900; color: #2e7d32; }
+        .price-installments { font-size: 0.8rem; font-weight: 600; color: #444; }
+
+        .btn-buy {
+            background: var(--rosa-primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            transition: background 0.2s;
+            text-transform: uppercase;
+        }
+
+        .btn-buy:hover { background: var(--rosa-dark); }
+
+        footer {
+            margin-top: 50px;
+            padding: 40px 20px;
+            background: #f8f9fa;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .legal { font-size: 0.75rem; color: #888; max-width: 700px; margin: 20px auto; text-align: justify; line-height: 1.4; }
+
+        .footer-links {
+            margin: 20px 0;
+            font-size: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--rosa-primary);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .kits-grid { grid-template-columns: 1fr; }
+            .kit-card.highlight { transform: scale(1); margin: 15px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="compliance-banner">
+        Você está em um portal de acesso seguro aos lotes promocionais da fábrica.
+    </div>
+
+    <div class="container">
+        
+        <header>
+            <div class="official-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                OFERTA VALIDADA PELO FABRICANTE
+            </div>
+            <h1>Garanta seu <span>Rosa Amazônica</span> Original com Segurança</h1>
+            <p class="sub-header">Confirme abaixo o kit desejado para ser redirecionado à página de finalização oficial com os valores promocionais ativos.</p>
+        </header>
+
+        <div class="kits-grid">
+            <!-- KIT 1 -->
+            <div class="kit-card">
+                <div class="kit-img-placeholder">
+                  <img src="../resources/kit1.webp" width="100%" alt="Rosa Amazônica">
+                </div>
+                <div class="kit-name">1 Frasco</div>
+                <div class="kit-sub">Preço de Tabela</div>
+                <div class="price-container">
+                    <span class="new-price">R$ 197,00</span>
+                    <span class="price-installments">12x de R$ 20,27</span>
+                </div>
+                <a href="SEU_LINK_BRAIP_KIT1" class="btn-buy">SELECIONAR KIT</a>
+            </div>
+
+            <!-- KIT 3 -->
+            <div class="kit-card">
+                <div class="kit-img-placeholder">
+                  <img src="../resources/kit3.webp" width="100%" alt="Rosa Amazônica - 3 Frascos">
+                </div>
+                <div class="kit-name">3 Frascos</div>
+                <div class="kit-sub">Combo Econômico</div>
+                <div class="price-container">
+                    <span class="new-price">R$ 297,00</span>
+                    <span class="price-installments">12x de R$ 30,55</span>
+                </div>
+                <a href="SEU_LINK_BRAIP_KIT3" class="btn-buy">SELECIONAR KIT</a>
+            </div>
+
+            <!-- KIT 5 - MAIS VENDIDO -->
+            <div class="kit-card highlight">
+                <div class="badge-highlight">LOTE PROMOCIONAL - 43% OFF</div>
+                <div class="kit-img-placeholder" style="background: #fff;">
+                  <img src="../resources/kit5.webp" width="100%" alt="Rosa Amazônica - 5 Frascos">
+                </div>
+                <div class="kit-name">5 Frascos</div>
+                <div class="kit-sub">Leve 5 Pague 3</div>
+                <div class="price-container">
+                    <span class="new-price">R$ 397,00</span>
+                    <span class="price-installments">12x de R$ 40,84</span>
+                </div>
+                <a href="SEU_LINK_BRAIP_KIT5" class="btn-buy" style="background: var(--success);">APROVEITAR OFERTA</a>
+            </div>
+
+            <!-- KIT 12 -->
+            <div class="kit-card">
+                <div class="kit-img-placeholder">
+                  <img src="../resources/kit12.webp" width="100%" alt="Rosa Amazônica - 12 Frascos">
+                </div>
+                <div class="kit-name">12 Frascos</div>
+                <div class="kit-sub">Lote Atacadista</div>
+                <div class="price-container">
+                    <span class="new-price">R$ 697,00</span>
+                    <span class="price-installments">12x de R$ 71,70</span>
+                </div>
+                <a href="SEU_LINK_BRAIP_KIT12" class="btn-buy">SELECIONAR KIT</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <p style="font-size: 0.8rem; color: #888;">Garantia de 90 dias direto com o fabricante.</p>
+            <div style="margin-top: 15px; opacity: 0.7;">
+                <img src="https://img.icons8.com/color/38/000000/visa.png"/>
+                <img src="https://img.icons8.com/color/38/000000/mastercard.png"/>
+                <img src="https://img.icons8.com/color/38/000000/pix.png"/>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="./politica-de-privacidade.html">Políticas de Privacidade</a> | 
+            <a href="./termos-de-uso.html">Termos de Uso</a> | 
+            <a href="./politica-de-reembolso.html">Política de Reembolso</a>
+        </div>
+        <div class="legal">
+            <strong>Aviso de Segurança:</strong> Para proteger sua saúde e garantir o recebimento do produto original, evite sites de leilão ou terceiros. Esta página redireciona você exclusivamente para o sistema de checkout oficial da Rosa Amazônica.
+        </div>
+        <div style="font-size: 0.7rem; color: #aaa; margin-top: 20px;">
+            © 2025 Rosa Amazônica Oficial | Revendedor Autorizado
+        </div>
+    </footer>
+
+</body>
+</html>
