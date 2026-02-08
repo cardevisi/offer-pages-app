@@ -79,12 +79,12 @@
         /* opacity: 0.4; */
       }
       .background-image-desktop {
-        background-image: url("desktop.png");
+        background-image: url("../resources/desktop.png");
         display: block;
       }
       .background-image-mobile {
         background-size: cover;
-        background-image: url("mobile.png");
+        background-image: url("../resources/mobile.png");
         display: none;
       }
       .cookie-popup {
@@ -299,7 +299,7 @@
     <!-- Google tag (gtag.js) -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17929283859"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -307,44 +307,23 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "AW-16809229348");
+      gtag("config", "AW-17929283859");
     </script>
+    <!-- Event snippet for Compra conversion page -->
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.gtag-conversion').forEach(function (el) {
-          el.addEventListener('click', function (e) {
-            console.log('Conversion link clicked', el.href, el.dataset.conversion);
-          e.preventDefault();
-          const url = el.href;
-          const send_to = el.dataset.conversion;
-          const fallback = () => (window.location = url);
-
-          if (typeof gtag === 'function') {
-            let called = false;
-            const callback = () => {
-              if (called) return;
-              called = true;
-              window.location = url;
-            };
-            try {
-              gtag('event', 'conversion', {
-                send_to: send_to,
-                event_callback: callback,
-              });
-            } catch (err) {
-              fallback();
-              return;
-            }
-            // fallback se o gtag não chamar o callback
-            setTimeout(() => {
-              if (!called) fallback();
-            }, 1200);
-          } else {
-            fallback();
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
           }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-17929283859/uvtWCPi5lvIbEJPSrOVC",
+          transaction_id: "",
+          event_callback: callback,
         });
-      });
-    });
+        return false;
+      }
     </script>
   </head>
   <body>
@@ -379,20 +358,28 @@
         </p>
         <div class="cookie-actions">
           <a
-            href="https://ev.braip.com/campanhas/cpa/camx6227o"
-            class="btn btn-secondary cookie btn-reject-cookies gtag-conversion"
-            data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
+            onclick="
+              return gtag_report_conversion(
+                'https://amazonicarosa.com.br/?pv=proeo8oe&af=afiyd172x2',
+              );
+            "
+            href="https://amazonicarosa.com.br/?pv=proeo8oe&af=afiyd172x2"
+            class="btn btn-secondary cookie btn-reject-cookies"
             aria-label="Rejeitar cookies"
             rel="noopener noreferrer"
             >Rejeitar</a
           >
           <a
-            href="https://ev.braip.com/campanhas/cpa/camx6227o"
+            onclick="
+              return gtag_report_conversion(
+                'https://amazonicarosa.com.br/?pv=proeo8oe&af=afiyd172x2',
+              );
+            "
+            href="https://amazonicarosa.com.br/?pv=proeo8oe&af=afiyd172x2"
             id="accept-cookies"
-            data-conversion="AW-16809229348/gqYTCJDDucQbEKT4oc8-"
             aria-label="Aceitar cookies"
             rel="noopener noreferrer"
-            class="btn btn-primary cta cookie btn-accept-cookies gtag-conversion"
+            class="btn btn-primary cta cookie btn-accept-cookies"
             >Aceitar</a
           >
         </div>
