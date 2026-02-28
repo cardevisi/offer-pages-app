@@ -31,7 +31,6 @@
         font-family: "Montserrat", sans-serif;
         background-color: #fdfdfd;
         color: var(--text-dark);
-        line-height: 1.6;
       }
 
       .compliance-banner {
@@ -44,9 +43,13 @@
       }
 
       .container {
-        max-width: 900px;
+        width: 100%;
         margin: 0 auto;
         padding: 15px;
+      }
+
+      footer .container {
+        padding: 40px 15px;
       }
 
       header {
@@ -96,7 +99,8 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
-        margin: 40px 0;
+        margin: 40px auto;
+        max-width: 900px;
       }
 
       .kit-card {
@@ -134,6 +138,12 @@
         white-space: nowrap;
       }
 
+      .badge-highlight.badge-secondary {
+        top: 151px;
+        background: #facc15;
+        color: #1a1a1a;
+      }
+
       .kit-img-placeholder {
         width: 100%;
         height: 140px;
@@ -156,17 +166,20 @@
         color: #888;
         margin-bottom: 15px;
       }
+      .kit-card.monthly .kit-sub {
+        margin-bottom: 6px;
+      }
 
       .new-price {
         display: block;
         font-size: 0.8rem;
         font-weight: 600;
-        color: #444;
+        color: #6b7280;
       }
       .price-installments {
         font-size: 1.2rem;
         font-weight: 900;
-        color: #2e7d32;
+        color: #d2255d;
       }
 
       .btn-buy {
@@ -188,7 +201,7 @@
 
       footer {
         margin-top: 50px;
-        padding: 40px 20px;
+        width: 100%;
         background: #f8f9fa;
         text-align: center;
         border-top: 1px solid #eee;
@@ -218,6 +231,26 @@
       .footer-links a:hover {
         color: var(--rosa-primary);
         text-decoration: underline;
+      }
+      .guarantee-block {
+        margin-top: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .guarantee-text {
+        font-size: 0.8rem;
+        color: #888;
+      }
+      .guarantee-icons {
+        margin-top: 15px;
+        opacity: 0.7;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
       }
 
       @media (max-width: 768px) {
@@ -294,12 +327,12 @@
               alt="Rosa Amazônica"
             />
           </div>
-          <div class="kit-name">1 Frasco</div>
-          <div class="kit-sub">Preço de Tabela</div>
           <div class="price-container">
             <span class="price-installments">12x de R$ 20,27</span>
             <span class="new-price">R$ 197,00</span>
           </div>
+          <div class="kit-name">1 Frasco</div>
+          <div class="kit-sub">Preço de Tabela</div>
           <a
             onclick="
               return gtag_report_conversion(
@@ -321,12 +354,12 @@
               alt="Rosa Amazônica - 3 Frascos"
             />
           </div>
-          <div class="kit-name">3 Frascos</div>
-          <div class="kit-sub">Combo Econômico</div>
           <div class="price-container">
             <span class="price-installments">12x de R$ 30,55</span>
             <span class="new-price">R$ 297,00</span>
           </div>
+          <div class="kit-name">3 Frascos</div>
+          <div class="kit-sub">Combo Econômico</div>
           <a
             onclick="
               return gtag_report_conversion(
@@ -340,8 +373,8 @@
         </div>
 
         <!-- KIT 5 - MAIS VENDIDO -->
-        <div class="kit-card highlight">
-          <div class="badge-highlight">LOTE PROMOCIONAL - 43% OFF</div>
+        <div class="kit-card highlight monthly">
+          <div class="badge-highlight">LOTE PROMOCIONAL - 50% OFF</div>
           <div class="kit-img-placeholder" style="background: #fff">
             <img
               src="../resources/kit5.webp"
@@ -349,12 +382,12 @@
               alt="Rosa Amazônica - 5 Frascos"
             />
           </div>
-          <div class="kit-name">5 Frascos</div>
-          <div class="kit-sub">Leve 5 Pague 3</div>
           <div class="price-container">
             <span class="price-installments">12x de R$ 40,84</span>
             <span class="new-price">R$ 397,00</span>
           </div>
+          <div class="kit-name">5 Frascos</div>
+          <div class="kit-sub">Leve 5 Pague 3</div>
           <a
             onclick="
               return gtag_report_conversion(
@@ -369,20 +402,22 @@
         </div>
 
         <!-- KIT 12 -->
-        <div class="kit-card">
+        <div class="kit-card highlight">
+          <div class="badge-highlight">ASSINATURA MENSAL</div>
+          <div class="badge-highlight badge-secondary">MAIS ESCOLHIDO</div>
           <div class="kit-img-placeholder">
             <img
-              src="../resources/kit12.webp"
+              src="../resources/kit1.webp"
               width="100%"
-              alt="Rosa Amazônica - 12 Frascos"
+              alt="Rosa Amazônica - Assinatura Mensal"
             />
           </div>
-          <div class="kit-name">12 Frascos</div>
-          <div class="kit-sub">Lote Atacadista</div>
           <div class="price-container">
-            <span class="price-installments">12x de R$ 71,70</span>
-            <span class="new-price">R$ 697,00</span>
+            <span class="price-installments">R$ 83,90</span>
           </div>
+          <div class="kit-sub">Receba 1 frasco todo mês</div>
+          <div class="kit-sub">Cancele quando quiser</div>
+          <div class="kit-sub">Nunca fique sem</div>
           <a
             onclick="
               return gtag_report_conversion(
@@ -391,16 +426,17 @@
             "
             href="javascript:void(0);"
             class="btn-buy"
-            >SELECIONAR KIT</a
-          >
-        </div>
+            style="background: var(--success)"
+            >APROVEITAR OFERTA</a>
+          </div>
       </div>
 
-      <div style="text-align: center; margin-top: 20px">
-        <p style="font-size: 0.8rem; color: #888">
+      <!-- GARANTIA -->
+      <div class="guarantee-block">
+        <p class="guarantee-text">
           Garantia de 90 dias direto com o fabricante.
         </p>
-        <div style="margin-top: 15px; opacity: 0.7">
+        <div class="guarantee-icons">
           <img src="../resources/visa.png" />
           <img src="../resources/mastercard.png" />
           <img src="../resources/pix.png" />
@@ -409,19 +445,22 @@
     </div>
 
     <footer>
-      <div class="footer-links">
-        <a href="../politica-de-privacidade.html">Políticas de Privacidade</a> |
-        <a href="../termos-de-uso.html">Termos de Uso</a> |
-        <a href="../politica-de-reembolso.html">Política de Reembolso</a>
-      </div>
-      <div class="legal">
-        <strong>Aviso de Segurança:</strong> Para proteger sua saúde e garantir
-        o recebimento do produto original, evite sites de leilão ou terceiros.
-        Esta página redireciona você exclusivamente para o sistema de checkout
-        oficial da Rosa Amazônica.
-      </div>
-      <div style="font-size: 0.7rem; color: #aaa; margin-top: 20px">
-        © 2025 Rosa Amazônica Oficial | Revendedor Autorizado
+      <div class="container">
+        <div class="footer-links">
+          <a href="../politica-de-privacidade.html">Políticas de Privacidade</a>
+          |
+          <a href="../termos-de-uso.html">Termos de Uso</a> |
+          <a href="../politica-de-reembolso.html">Política de Reembolso</a>
+        </div>
+        <div class="legal">
+          <strong>Aviso de Segurança:</strong> Para proteger sua saúde e garantir
+          o recebimento do produto original, evite sites de leilão ou terceiros.
+          Esta página redireciona você exclusivamente para o sistema de checkout
+          oficial da Rosa Amazônica.
+        </div>
+        <div style="font-size: 0.7rem; color: #aaa; margin-top: 20px">
+          © 2025 Rosa Amazônica Oficial | Revendedor Autorizado
+        </div>
       </div>
     </footer>
   </body>
