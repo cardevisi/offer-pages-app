@@ -259,6 +259,24 @@
       gtag("js", new Date());
       gtag("config", "AW-16809229348");
     </script>
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+
+        gtag("event", "conversion", {
+          // Mantenha o seu ID e troque o 'SEU_ROTULO_DE_SAIDA' pelo rótulo da meta secundária
+          send_to: "AW-16809229348/Clique_saida_audifort",
+          value: 1.0,
+          currency: "USD",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
     <!-- Flow Tracking: audifort -->
     <script
       src="https://flow-tracking-cdn-production.up.railway.app/v2/loader.js"
@@ -301,6 +319,7 @@
           This includes essential cookies, analytical cookies, and marketing
           cookies. You can customize which cookies you want to allow.
           <a
+            onclick="return gtag_report_conversion('https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank')"
             href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
             class="cta cookie"
             aria-label="Cookie policy"
@@ -309,11 +328,13 @@
         </p>
         <div class="cookie-actions">
           <a
+            onclick="return gtag_report_conversion('https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank')"
             href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
             class="btn cta cookie"
             >Accept All</a
           >
           <a
+            onclick="return gtag_report_conversion('https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank')"
             href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
             class="btn cta cookie"
             aria-label="Reject non-essential cookies"
