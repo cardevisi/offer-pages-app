@@ -261,6 +261,8 @@
     </script>
     <script>
       function gtag_report_conversion(url) {
+        console.log("gtag_report_conversion called with URL:", url);
+        
         var callback = function () {
           if (typeof url != "undefined") {
             window.location = url;
@@ -274,7 +276,7 @@
           currency: "USD",
           event_callback: callback,
         });
-        console.log("gtag_report_conversion called with URL:", url);
+        
         return false;
       }
     </script>
