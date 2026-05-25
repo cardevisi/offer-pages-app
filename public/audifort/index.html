@@ -261,22 +261,16 @@
     </script>
     <script>
       function gtag_report_conversion(url) {
-        console.log("gtag_report_conversion called with URL:", url);
-        
         var callback = function () {
           if (typeof url != "undefined") {
             window.location = url;
           }
         };
-
         gtag("event", "conversion", {
-          // Mantenha o seu ID e troque o 'SEU_ROTULO_DE_SAIDA' pelo rótulo da meta secundária
-          send_to: "AW-16809229348/Clique_saida_audifort",
-          value: 1.0,
-          currency: "USD",
+          send_to: "AW-16809229348/NUhvCLC53bIcEKT4oc8-",
           event_callback: callback,
         });
-        
+        console.log("Conversion event sent to Google Ads", url);
         return false;
       }
     </script>
@@ -322,7 +316,11 @@
           This includes essential cookies, analytical cookies, and marketing
           cookies. You can customize which cookies you want to allow.
           <a
-            onclick="return gtag_report_conversion('https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank')"
+            onclick="
+              return gtag_report_conversion(
+                'https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank',
+              );
+            "
             href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
             class="cta cookie"
             aria-label="Cookie policy"
@@ -331,13 +329,21 @@
         </p>
         <div class="cookie-actions">
           <a
-            onclick="return gtag_report_conversion('https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank')"
+            onclick="
+              return gtag_report_conversion(
+                'https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank',
+              );
+            "
             href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
             class="btn cta cookie"
             >Accept All</a
           >
           <a
-            onclick="return gtag_report_conversion('https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank')"
+            onclick="
+              return gtag_report_conversion(
+                'https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank',
+              );
+            "
             href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
             class="btn cta cookie"
             aria-label="Reject non-essential cookies"
