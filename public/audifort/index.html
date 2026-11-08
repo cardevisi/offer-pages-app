@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Audifort</title>
+    <title>Audifort Product Guide | Product Details &amp; Current Offers</title>
+    <meta
+      name="description"
+      content="An independent Audifort product guide with product details, current package information, and transparent affiliate disclosure."
+    />
+    <link rel="canonical" href="https://toplifepicks.shop/audifort/" />
     <meta
       http-equiv="Cache-Control"
       content="no-cache, no-store, must-revalidate"
@@ -63,10 +68,6 @@
       a:hover,
       a:focus {
         text-decoration: underline;
-      }
-      h3 {
-        font-size: 1.75rem;
-        color: #1f2937 !important;
       }
       .background-container {
         width: 100%;
@@ -257,135 +258,773 @@
       .main-footer .legal-links {
         margin-bottom: 8px;
       }
+      :root {
+        --navy: #10243a;
+        --navy-deep: #0b1c2d;
+        --teal: #075752;
+        --gold: #bd9959;
+        --ink: #172535;
+        --muted: #5f6d79;
+        --line: #dce4e8;
+        --paper: #f5f7f6;
+      }
+      html { scroll-behavior: smooth; }
+      body { color: var(--ink); font-family: "Segoe UI", Arial, sans-serif; line-height: 1.65; }
+      a { color: var(--teal); }
+      a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+        outline: 3px solid var(--gold); outline-offset: 3px;
+      }
+      h1, h2, h3 { color: var(--navy); }
+      .disclosure-bar { padding: 8px 16px; color: #f5f8f8; background: var(--navy-deep); text-align: center; font-size: .82rem; }
+      .site-container, .site-header-inner, .footer-inner { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+      .site-header { border-bottom: 1px solid var(--line); background: #fff; }
+      .site-header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+      .brand { color: var(--navy); font: 700 1.2rem Georgia, "Times New Roman", serif; letter-spacing: .02em; text-decoration: none; }
+      .brand span { display: block; color: var(--muted); font: 500 .65rem "Segoe UI", Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+      .site-nav { display: flex; align-items: center; gap: 26px; }
+      .site-nav a { color: var(--ink); font-size: .9rem; text-decoration: none; }
+      .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 12px 22px; border: 1px solid var(--teal); border-radius: 5px; color: #fff !important; background: var(--teal); font-size: .94rem; font-weight: 650; line-height: 1.25; text-align: center; text-decoration: none !important; transition: background 160ms ease, transform 160ms ease; }
+      .button:hover { background: var(--navy); transform: translateY(-1px); }
+      .button-secondary { border-color: #9baeb3; color: var(--navy) !important; background: transparent; }
+      .button-secondary:hover { color: #fff !important; background: var(--navy); }
+      .hero { background: var(--paper); }
+      .hero-grid { min-height: 540px; display: grid; grid-template-columns: 1.04fr .96fr; }
+      .hero-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 65px 52px 65px max(36px, calc((100vw - 1160px) / 2)); }
+      .eyebrow { margin: 0 0 14px; color: var(--teal); font-size: .76rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+      h1, .section-title { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.025em; line-height: 1.12; }
+      h1 { max-width: 660px; margin: 0 0 20px; font-size: clamp(2.5rem, 4vw, 3.6rem); }
+      .hero-lede { max-width: 570px; margin: 0 0 25px; color: #495b67; font-size: 1.05rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      .affiliate-note { max-width: 560px; margin: 16px 0 0; color: #65737c; font-size: .78rem; line-height: 1.5; }
+      .hero-visual { min-height: 540px; display: grid; place-items: center; padding: 42px; background: var(--navy); }
+      .product-image-wrap { width: min(100%, 460px); min-height: 420px; display: grid; place-items: center; border: 1px solid #ffffff2e; border-radius: 48% 48% 5px 5px; background: radial-gradient(ellipse at center, #27445b 0%, #17334a 48%, #10243a 80%); }
+      .product-image { display: block; width: min(72%, 275px); height: auto; max-height: 430px; object-fit: contain; filter: drop-shadow(0 22px 25px #0005); }
+      .trust-strip { padding: 22px 0; color: #eaf1f1; background: var(--teal); }
+      .trust-strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+      .trust-item { display: flex; align-items: flex-start; gap: 12px; font-size: .88rem; }
+      .trust-mark { color: #e0c183; font-size: 1rem; }
+      .trust-mark::before { content: "\25C6"; }
+      .trust-item strong { display: block; color: #fff; }
+      .section { padding: 82px 0; }
+      .section-muted { background: var(--paper); }
+      .section-heading { max-width: 720px; margin: 0 auto 38px; text-align: center; }
+      .section-heading .eyebrow { margin-bottom: 10px; }
+      .section-title { margin: 0 0 14px; font-size: clamp(2rem, 3.2vw, 3rem); }
+      .section-intro { margin: 0; color: var(--muted); }
+      .overview-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 26px; }
+      .info-card, .package-card, .check-card { border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 12px 32px #10243a0b; }
+      .info-card { padding: 30px; }
+      .info-card h3, .check-card h3 { margin: 0 0 12px; font: 500 1.4rem Georgia, "Times New Roman", serif; }
+      .info-card p:last-child { margin-bottom: 0; }
+      .fact-list { margin: 0; padding: 0; list-style: none; }
+      .fact-list li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .fact-list li:last-child { border: 0; }
+      .fact-list span:first-child { color: var(--muted); }
+      .fact-list strong { color: var(--navy); text-align: right; }
+      .note-box { margin-top: 20px; padding: 15px 17px; border-left: 3px solid var(--gold); color: #4f5e67; background: #fbf8f1; font-size: .9rem; }
+      .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .package-card { display: flex; flex-direction: column; padding: 26px; }
+      .package-quantity { margin: 0 0 6px; color: var(--navy); font: 500 1.55rem Georgia, "Times New Roman", serif; }
+      .package-duration { min-height: 28px; margin: 0 0 20px; color: var(--muted); font-size: .88rem; }
+      .package-price { margin: 0; color: var(--navy); font-size: 2.2rem; font-weight: 700; letter-spacing: -.04em; line-height: 1.15; }
+      .package-unit { margin: 3px 0 0; color: var(--muted); font-size: .86rem; }
+      .package-total { margin: 16px 0 4px; font-weight: 650; }
+      .package-shipping { min-height: 44px; margin: 0 0 20px; color: var(--muted); font-size: .86rem; }
+      .package-card .button { width: 100%; margin-top: auto; }
+      .package-footnote { max-width: 850px; margin: 23px auto 0; color: var(--muted); font-size: .82rem; text-align: center; }
+      .checks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .check-card { padding: 24px; }
+      .check-card p { margin: 0; color: var(--muted); }
+      .check-number { display: inline-grid; width: 34px; height: 34px; place-items: center; margin-bottom: 12px; border-radius: 50%; color: #fff; background: var(--teal); font-weight: 700; }
+      .faq-list { max-width: 860px; margin: 0 auto; border-top: 1px solid var(--line); }
+      .faq-list details { border-bottom: 1px solid var(--line); }
+      .faq-list summary { position: relative; padding: 19px 42px 19px 2px; color: var(--navy); cursor: pointer; font-size: 1rem; font-weight: 650; list-style: none; }
+      .faq-list summary::-webkit-details-marker { display: none; }
+      .faq-list summary::after { position: absolute; top: 15px; right: 4px; color: var(--teal); content: "+"; font-size: 1.5rem; font-weight: 400; }
+      .faq-list details[open] summary::after { content: "\2212"; }
+      .faq-answer { max-width: 780px; padding: 0 20px 18px 2px; color: var(--muted); }
+      .final-cta { padding: 64px 0; color: #edf3f3; background: var(--navy); text-align: center; }
+      .final-cta h2 { max-width: 700px; margin: 0 auto 14px; color: #fff; font: 500 clamp(2rem, 3.3vw, 3rem)/1.15 Georgia, "Times New Roman", serif; }
+      .final-cta p { max-width: 680px; margin: 0 auto 22px; color: #d0dce1; }
+      .final-cta .button { color: var(--navy) !important; background: #fff; border-color: #fff; }
+      .final-cta .button:hover { color: #fff !important; background: var(--teal); border-color: var(--teal); }
+      .main-footer { z-index: auto; padding: 32px 0; color: #d0d9de; background: var(--navy-deep); font-size: .85rem; text-align: center; }
+      .main-footer p { margin: 6px 0; }
+      .main-footer a { margin: 0; color: #d0e4e1; }
+      .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; margin-bottom: 18px; }
+      .footer-disclosure { max-width: 860px; margin: 0 auto 12px !important; color: #e3e9ec; }
+      .footer-contact { color: #c2cdd3; }
+      .cookie-consent { position: relative; width: min(500px, calc(100vw - 40px)); margin: 14px max(20px, calc((100vw - 1160px) / 2)) 14px auto; padding: 15px 18px; border: 1px solid #d7e0e3; border-radius: 10px; color: var(--ink); background: #fff; box-shadow: 0 12px 35px #081b2b1f; }
+      .cookie-consent[hidden], .cookie-preferences[hidden] { display: none; }
+      .cookie-consent h2 { margin: 0 0 4px; font-size: 1rem; line-height: 1.3; }
+      .cookie-consent p { margin: 0 0 10px; color: var(--muted); font-size: .78rem; line-height: 1.4; }
+      .cookie-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin: 0; padding: 0; border: 0; }
+      .cookie-actions button { min-width: 0; min-height: 36px; padding: 7px 6px; border: 1px solid var(--teal); border-radius: 4px; color: #fff; background: var(--teal); cursor: pointer; font: 650 .74rem/1.2 "Segoe UI", Arial, sans-serif; }
+      .cookie-actions button.secondary { color: var(--navy); background: #fff; border-color: #aebdc2; }
+      .cookie-actions button:hover { color: #fff; background: var(--navy); }
+      .cookie-actions button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+      #cookie-preferences .cookie-actions { display: flex; }
+      .cookie-preferences { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+      .cookie-preferences label { display: flex; align-items: center; gap: 9px; margin: 8px 0; font-size: .83rem; }
+      .cookie-preferences input { width: 17px; height: 17px; accent-color: var(--teal); }
+      .mobile-sticky-cta { display: none; }
+      .mobile-sticky-cta[hidden] { display: none; }
+      @media (max-width: 820px) {
+        .hero-grid { grid-template-columns: 1fr .82fr; }
+        .hero-copy { padding: 48px 26px; }
+        .hero-visual { min-height: 480px; padding: 25px; }
+        .product-image-wrap { min-height: 370px; }
+        .packages-grid { gap: 12px; }
+        .package-card { padding: 20px; }
+      }
+      @media (max-width: 640px) {
+        .disclosure-bar { font-size: .74rem; }
+        .site-container, .site-header-inner, .footer-inner { width: min(calc(100% - 32px), 540px); }
+        .site-header-inner { min-height: 66px; }
+        .brand { font-size: 1.03rem; }
+        .brand span { font-size: .56rem; }
+        .site-nav { gap: 12px; }
+        .site-nav a { font-size: .78rem; }
+        .site-nav .nav-cta { display: none; }
+        .brand span { letter-spacing: .08em; }
+        .hero-grid { display: flex; flex-direction: column; }
+        .hero-copy { padding: 38px 22px 28px; }
+        h1 { font-size: clamp(2rem, 7vw, 2.6rem); }
+        .hero-lede { font-size: .98rem; }
+        .hero-actions { width: 100%; display: grid; grid-template-columns: 1fr; gap: 9px; }
+        .hero-actions .button { width: 100%; }
+        .hero-visual { min-height: 340px; padding: 22px; }
+        .product-image-wrap { width: min(100%, 350px); min-height: 305px; }
+        .product-image { width: min(67%, 220px); max-height: 285px; }
+        .trust-strip-inner, .overview-grid, .packages-grid, .checks-grid { grid-template-columns: 1fr; }
+        .trust-strip-inner { gap: 13px; }
+        .section { padding: 58px 0; }
+        .section-heading { margin-bottom: 27px; text-align: left; }
+        .info-card, .package-card { padding: 23px; }
+        .package-duration, .package-shipping { min-height: 0; }
+        .cookie-consent { width: calc(100vw - 24px); margin: 12px auto; padding: 12px; }
+        .cookie-actions { gap: 6px; }
+        .cookie-actions button { padding: 6px 4px; font-size: .7rem; }
+        .mobile-sticky-cta:not([hidden]) { position: fixed; right: 0; bottom: 0; left: 0; z-index: 2500; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 16px calc(9px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: #fff; box-shadow: 0 -8px 24px #10243a14; }
+        body.has-mobile-sticky-cta { padding-bottom: 82px; }
+        .mobile-sticky-copy { display: flex; min-width: 0; flex-direction: column; line-height: 1.3; }
+        .mobile-sticky-copy strong { color: var(--navy); font-size: .82rem; }
+        .mobile-sticky-copy small { color: var(--muted); font-size: .66rem; }
+        .mobile-sticky-cta .button { min-height: 42px; padding: 9px 13px; white-space: nowrap; font-size: .82rem; }
+      }
+      @media (max-width: 360px) {
+        .brand span { display: none; }
+        .site-header-inner { gap: 12px; }
+        .site-nav { gap: 10px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: .01ms !important; }
+      }
     </style>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-MD33XFQ7");
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16809229348"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "AW-16809229348");
-    </script>
-    <script>
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof url != "undefined") {
-            window.location = url;
-          }
-        };
-        gtag("event", "conversion", {
-          send_to: "AW-16809229348/NUhvCLC53bIcEKT4oc8-",
-          event_callback: callback,
-        });
-        console.log("Conversion event sent to Google Ads", url);
-        return false;
-      }
-    </script>
-    <!-- Flow Tracking: audifort -->
-    <script
-      src="https://flow-tracking-cdn-production.up.railway.app/v2/loader.js"
-      data-track="76ff3f67-1cb3-4423-90c3-d64cf7e0e4f9"
-      data-endpoint="https://api.flowtrackingtool.com"
-      data-cdn-base="https://flow-tracking-cdn-production.up.railway.app"
-      data-api-base="https://api.flowtrackingtool.com"
-      data-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFja0lkIjoiNzZmZjNmNjctMWNiMy00NDIzLTkwYzMtZDY0Y2Y3ZTBlNGY5IiwiYXVkIjoiZmxvd3RyazplbWJlZCIsImlzcyI6ImZsb3d0cmsiLCJraWQiOiI4NThjNGYwNmQwMjQ1NDBkIiwiaWF0IjoxNzc5MjQxMzg5LCJleHAiOjE4MTA3NzczODl9.TsX8XXUJ3SCBmQZU9d-GtifOZoEh2EcFXFLCppKfyLk"
-      async
-      crossorigin="anonymous"
-    ></script>
+    <!-- Optional analytics and advertising scripts load only after consent. -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-MD33XFQ7"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div class="background-container">
-      <div class="background-image-desktop"></div>
-      <div class="background-image-mobile"></div>
+    <div class="disclosure-bar">
+      Independent affiliate guide. We may earn a commission from qualifying purchases.
     </div>
-    <div class="cookie-overlay" aria-hidden="true"></div>
-    <div class="cookie-layer" role="presentation">
-      <div
-        class="cookie-popup"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="cookie-title"
-        aria-describedby="cookie-desc"
-      >
-        <h3 id="cookie-title" class="cookie-title">Cookie Policy</h3>
-        <p id="cookie-desc" class="cookie-desc">
-          This site uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking "Allow", you agree to the use of cookies. For more information, visit our Cookie Policy.
-        </p>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="#top" aria-label="Audifort independent product guide">
+          AUDIFORT <span>Independent Product Guide</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#product-information">Product</a>
+          <a href="#packages">Packages</a>
+          <a href="#faq">FAQ</a>
+          <a
+            class="button nav-cta"
+            href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
+            data-affiliate-link
+            data-aff-product="audifort"
+            data-platform="clickbank"
+            rel="sponsored nofollow"
+            >View Current Offer</a
+          >
+        </nav>
+      </div>
+    </header>
+    <aside
+      class="cookie-consent"
+      id="cookie-consent"
+      role="region"
+      aria-labelledby="cookie-title"
+      aria-describedby="cookie-description"
+      hidden
+    >
+      <h2 id="cookie-title">Your privacy choices</h2>
+      <p id="cookie-description">
+        Essential storage saves your choice. Optional analytics and advertising
+        load only with your consent. Read our
+        <a href="./privacy-policy.html#cookies">Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" id="accept-cookies">Accept All</button>
+        <button type="button" class="secondary" id="reject-cookies">
+          Reject Optional
+        </button>
+        <button type="button" class="secondary" id="manage-cookies">
+          Manage Preferences
+        </button>
+      </div>
+      <div class="cookie-preferences" id="cookie-preferences" hidden>
+        <label>
+          <input type="checkbox" checked disabled />
+          Essential preference storage (always active)
+        </label>
+        <label>
+          <input type="checkbox" id="analytics-consent" />
+          Analytics
+        </label>
+        <label>
+          <input type="checkbox" id="advertising-consent" />
+          Advertising and affiliate measurement
+        </label>
         <div class="cookie-actions">
-          <a
-            onclick="
-              return gtag_report_conversion(
-                'https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank',
-              );
-            "
-            href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
-            class="btn cta cookie"
-            >Allow</a
-          >
-          <a
-            onclick="
-              return gtag_report_conversion(
-                'https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank',
-              );
-            "
-            href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
-            class="btn cta cookie exit"
-            aria-label="Reject non-essential cookies"
-            >Close</a
-          >
+          <button type="button" id="save-cookie-preferences">Save Preferences</button>
         </div>
       </div>
-    </div>
-    <footer class="main-footer">
-      <div class="container">
-        <div class="legal-links" aria-label="Legal links">
-          <a href="./privacy-policy.html" target="_blank" rel="noopener"
-            >Privacy Policy</a
-          >
-          |
-          <a href="./terms-of-use.html" target="_blank" rel="noopener"
-            >Terms of Use</a
-          >
-          |
-          <a href="./refund-policy.html" target="_blank" rel="noopener"
-            >Refund Policy</a
-          >
+    </aside>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">An independent product information resource</p>
+            <h1 id="hero-title">Audifort Product Guide</h1>
+            <p class="hero-lede">
+              Review the product format, currently listed package choices, and
+              ordering terms before deciding whether to continue to the seller's page.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#packages">Explore Audifort Offers</a>
+              <a class="button button-secondary" href="#product-information"
+                >Review Product Details</a
+              >
+            </div>
+            <p class="affiliate-note">
+              Affiliate disclosure: We may earn a commission if you purchase
+              through a link on this page, at no additional cost to you.
+            </p>
+          </div>
+          <div class="hero-visual">
+            <div class="product-image-wrap">
+              <img
+                class="product-image"
+                src="./bottle-label.webp"
+                alt="Audifort supplement bottle and product label"
+                width="550"
+                height="550"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
         </div>
-        <p>
-          Attention: This is an affiliate page. By clicking the buttons, you
-          will be redirected to Audifort's official website.
+      </section>
+      <section class="trust-strip" aria-label="About this guide">
+        <div class="site-container trust-strip-inner">
+          <div class="trust-item">
+            <span class="trust-mark" aria-hidden="true"></span>
+            <span><strong>Independent publisher</strong>Not the manufacturer or official store.</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-mark" aria-hidden="true"></span>
+            <span><strong>Offer details checked</strong>Package information is based on the linked seller page.</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-mark" aria-hidden="true"></span>
+            <span><strong>Clear limitations</strong>Product information is not medical advice.</span>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="product-information" aria-labelledby="product-title">
+        <div class="site-container">
+          <div class="section-heading">
+            <p class="eyebrow">Product information</p>
+            <h2 class="section-title" id="product-title">Getting to Know Audifort</h2>
+            <p class="section-intro">
+              A concise summary of details visible in the product materials and
+              the seller's current ordering page.
+            </p>
+          </div>
+          <div class="overview-grid">
+            <article class="info-card">
+              <h3>What the available materials show</h3>
+              <p>
+                The product image identifies Audifort as a dietary supplement
+                in a liquid dropper format. The pictured bottle label lists
+                60 mL / 2 fl oz. The seller's offer page currently presents
+                packages containing 2, 3, or 6 bottles.
+              </p>
+              <p>
+                This page does not make claims that Audifort treats, prevents,
+                or improves a medical condition. Consult the current product
+                label and a qualified healthcare professional with questions
+                about dietary supplements.
+              </p>
+              <div class="note-box">
+                The complete Supplement Facts panel and a verified ingredient
+                list were not available in the product materials reviewed for
+                this guide. Check the seller's current page and product label
+                for those details before ordering.
+              </div>
+            </article>
+            <aside class="info-card" aria-label="Product details at a glance">
+              <h3>Product Information at a Glance</h3>
+              <ul class="fact-list">
+                <li><span>Product name</span><strong>Audifort</strong></li>
+                <li><span>Category on label</span><strong>Dietary supplement</strong></li>
+                <li><span>Format shown</span><strong>Liquid dropper</strong></li>
+                <li><span>Container size shown</span><strong>60 mL / 2 fl oz</strong></li>
+                <li><span>Package quantities listed</span><strong>2, 3, or 6 bottles</strong></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="section section-muted" id="packages" aria-labelledby="packages-title">
+        <div class="site-container">
+          <div class="section-heading">
+            <p class="eyebrow">Current seller listing</p>
+            <h2 class="section-title" id="packages-title">Audifort Package Options</h2>
+            <p class="section-intro">
+              These are the package options and prices displayed on the linked
+              seller page when checked. Confirm the final price, shipping, and
+              conditions at checkout.
+            </p>
+          </div>
+          <div class="packages-grid">
+            <article class="package-card">
+              <p class="package-quantity">2 Bottles</p>
+              <p class="package-duration">60-day supply, as listed by the seller</p>
+              <p class="package-price">$79</p>
+              <p class="package-unit">per bottle</p>
+              <p class="package-total">Listed total: $158</p>
+              <p class="package-shipping">Shipping is listed separately.</p>
+              <a
+                class="button"
+                href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
+                data-affiliate-link
+                data-aff-product="audifort"
+                data-platform="clickbank"
+                rel="sponsored nofollow"
+                >View Current Offer</a
+              >
+            </article>
+            <article class="package-card">
+              <p class="package-quantity">3 Bottles</p>
+              <p class="package-duration">90-day supply, as listed by the seller</p>
+              <p class="package-price">$69</p>
+              <p class="package-unit">per bottle</p>
+              <p class="package-total">Listed total: $207</p>
+              <p class="package-shipping">Free U.S. shipping is listed for this package.</p>
+              <a
+                class="button"
+                href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
+                data-affiliate-link
+                data-aff-product="audifort"
+                data-platform="clickbank"
+                rel="sponsored nofollow"
+                >View Current Offer</a
+              >
+            </article>
+            <article class="package-card">
+              <p class="package-quantity">6 Bottles</p>
+              <p class="package-duration">180-day supply, as listed by the seller</p>
+              <p class="package-price">$49</p>
+              <p class="package-unit">per bottle</p>
+              <p class="package-total">Listed total: $294</p>
+              <p class="package-shipping">Free U.S. shipping is listed for this package.</p>
+              <a
+                class="button"
+                href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
+                data-affiliate-link
+                data-aff-product="audifort"
+                data-platform="clickbank"
+                rel="sponsored nofollow"
+                >View Current Offer</a
+              >
+            </article>
+          </div>
+          <p class="package-footnote">
+            The seller's page also currently displays a 90-day money-back
+            guarantee and two digital bonuses with the 3- and 6-bottle options.
+            Offer details may change; review the seller's terms before purchase.
+            The seller's checkout is the final source for current pricing,
+            shipping, package contents, bonus availability, and refund conditions.
+          </p>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="before-order-title">
+        <div class="site-container">
+          <div class="section-heading">
+            <p class="eyebrow">A practical buying guide</p>
+            <h2 class="section-title" id="before-order-title">Important Things to Know Before Ordering</h2>
+            <p class="section-intro">
+              A few checks can help you understand what is included and who is
+              responsible for your order.
+            </p>
+          </div>
+          <div class="checks-grid">
+            <article class="check-card">
+              <span class="check-number">1</span>
+              <h3>Review the label</h3>
+              <p>
+                Confirm the Supplement Facts panel, serving information,
+                warnings, and package contents on the current product label.
+              </p>
+            </article>
+            <article class="check-card">
+              <span class="check-number">2</span>
+              <h3>Confirm the full cost</h3>
+              <p>
+                Review the package total, shipping, taxes if applicable, and
+                any recurring-order terms shown before submitting payment.
+              </p>
+            </article>
+            <article class="check-card">
+              <span class="check-number">3</span>
+              <h3>Read the seller's conditions</h3>
+              <p>
+                The linked seller page currently advertises a 90-day guarantee.
+                Read its complete eligibility, timing, and return instructions
+                before relying on it.
+              </p>
+            </article>
+            <article class="check-card">
+              <span class="check-number">4</span>
+              <h3>Know who handles the order</h3>
+              <p>
+                Purchases, payments, shipping, and order support are handled by
+                the seller, not by this independent information website.
+              </p>
+            </article>
+          </div>
+          <div class="note-box">
+            This website provides general product information, not medical
+            advice. A dietary supplement is not a substitute for professional
+            care. Ask a qualified healthcare professional about suitability,
+            interactions, or other personal health questions.
+          </div>
+        </div>
+      </section>
+      <section class="section section-muted" id="faq" aria-labelledby="faq-title">
+        <div class="site-container">
+          <div class="section-heading">
+            <p class="eyebrow">Questions and answers</p>
+            <h2 class="section-title" id="faq-title">Audifort FAQ</h2>
+            <p class="section-intro">
+              Answers reflect the product materials and seller offer page
+              reviewed for this guide. Verify current details before ordering.
+            </p>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>What is Audifort?</summary>
+              <div class="faq-answer">
+                The product image identifies Audifort as a dietary supplement
+                in a liquid dropper bottle. For the current label and product
+                description, review the seller's offer page.
+              </div>
+            </details>
+            <details>
+              <summary>Where can I find the product information?</summary>
+              <div class="faq-answer">
+                Review the current product label and seller information through
+                the offer link. The complete ingredient panel was not available
+                in the materials verified for this guide.
+              </div>
+            </details>
+            <details>
+              <summary>What package options are currently listed?</summary>
+              <div class="faq-answer">
+                The seller's page currently lists packages of 2, 3, and 6
+                bottles. Availability and terms can change.
+              </div>
+            </details>
+            <details>
+              <summary>How much does Audifort cost?</summary>
+              <div class="faq-answer">
+                At the time this guide was prepared, the seller page displayed
+                $158 for 2 bottles, $207 for 3 bottles, and $294 for 6 bottles.
+                Check the final checkout total because prices and shipping may
+                change.
+              </div>
+            </details>
+            <details>
+              <summary>Are shipping costs included?</summary>
+              <div class="faq-answer">
+                The seller currently lists shipping separately for the 2-bottle
+                option and free U.S. shipping for the 3- and 6-bottle options.
+                Confirm your shipping details at checkout.
+              </div>
+            </details>
+            <details>
+              <summary>What is the refund policy?</summary>
+              <div class="faq-answer">
+                The seller's page currently advertises a 90-day money-back
+                guarantee. The seller controls the applicable terms and
+                processes any order or refund request; review those terms on
+                the seller's site.
+              </div>
+            </details>
+            <details>
+              <summary>Is this the official Audifort website?</summary>
+              <div class="faq-answer">
+                No. This is an independent affiliate information website. It
+                does not manufacture or sell Audifort and is not the
+                manufacturer's official website.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="final-cta" aria-labelledby="final-cta-title">
+        <div class="site-container">
+          <h2 id="final-cta-title">Review Audifort Packages</h2>
+          <p>
+            Take a moment to review the product label, package options, final
+            price, shipping, and purchasing conditions on the seller's page.
+          </p>
+          <a
+            class="button"
+            href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
+            data-affiliate-link
+            data-aff-product="audifort"
+            data-platform="clickbank"
+            rel="sponsored nofollow"
+            >View Audifort Offers</a
+          >
+          <p class="affiliate-note" style="margin-right: auto; margin-left: auto; color: #d0dce1">
+            We may earn a commission from qualifying purchases, at no additional cost to you.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-inner">
+        <nav class="footer-links" aria-label="Legal and support links">
+          <a href="./privacy-policy.html">Privacy Policy</a>
+          <a href="./privacy-policy.html#cookies">Cookie Policy</a>
+          <a href="./terms-of-use.html">Terms of Use</a>
+          <a href="./refund-policy.html">Refund Information</a>
+          <a
+            href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
+            data-affiliate-link
+            data-aff-product="audifort"
+            data-platform="clickbank"
+            rel="sponsored nofollow"
+            >Seller's Offer Page</a
+          >
+          <a href="#" id="cookie-settings-link">Cookie Preferences</a>
+        </nav>
+        <p class="footer-disclosure">
+          Affiliate disclosure: This independent website participates in
+          affiliate marketing. If you purchase Audifort through a link on this
+          page, we may earn a commission at no additional cost to you. This
+          relationship does not change the product information presented here.
         </p>
-        <p>&copy; 2026 Audifort. All rights reserved.</p>
+        <p class="footer-contact">
+          This site is not the official Audifort website. The seller handles
+          orders, payments, shipping, and product support. Publisher contact
+          details for this independent site have not been provided.
+        </p>
+        <p>&copy; 2026 Independent Audifort Product Guide. All rights reserved.</p>
       </div>
     </footer>
+    <aside class="mobile-sticky-cta" id="mobile-sticky-cta" aria-label="Audifort offer" hidden>
+      <div class="mobile-sticky-copy">
+        <strong>Audifort offers</strong>
+        <small>Affiliate link. We may earn a commission.</small>
+      </div>
+      <a
+        class="button"
+        href="https://d9b62kj8gyfl0m3y8cv4xn2r3p.hop.clickbank.net?source_id=clickbank"
+        data-affiliate-link
+        data-aff-product="audifort"
+        data-platform="clickbank"
+        rel="sponsored nofollow"
+        >View Offer</a
+      >
+    </aside>
+    <script>
+      (() => {
+        const consentKey = "audifort-cookie-consent-v1";
+        const banner = document.getElementById("cookie-consent");
+        const preferences = document.getElementById("cookie-preferences");
+        const mobileStickyCta = document.getElementById("mobile-sticky-cta");
+        const analyticsInput = document.getElementById("analytics-consent");
+        const advertisingInput = document.getElementById("advertising-consent");
+        let trackingLoaded = false;
+        let consentAllowsStickyCta = false;
+
+        function updateMobileStickyCta() {
+          const heroBottom = document.querySelector(".hero").getBoundingClientRect().bottom;
+          const packagesBottom = document.getElementById("packages").getBoundingClientRect().bottom;
+          const visible =
+            consentAllowsStickyCta &&
+            heroBottom <= 0 &&
+            packagesBottom <= 0 &&
+            banner.hidden &&
+            window.matchMedia("(max-width: 640px)").matches;
+          mobileStickyCta.hidden = !visible;
+          document.body.classList.toggle("has-mobile-sticky-cta", visible);
+        }
+
+        function setMobileStickyCta(allowed) {
+          consentAllowsStickyCta = allowed;
+          updateMobileStickyCta();
+        }
+
+        window.addEventListener("scroll", updateMobileStickyCta, { passive: true });
+        window.addEventListener("resize", updateMobileStickyCta);
+
+        function loadOptionalTracking(consent) {
+          if (trackingLoaded || (!consent.analytics && !consent.advertising)) return;
+          trackingLoaded = true;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = window.gtag || function () {
+            window.dataLayer.push(arguments);
+          };
+          window.gtag("consent", "default", {
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "granted",
+            security_storage: "granted",
+          });
+          window.gtag("consent", "update", {
+            analytics_storage: consent.analytics ? "granted" : "denied",
+            ad_storage: consent.advertising ? "granted" : "denied",
+            ad_user_data: consent.advertising ? "granted" : "denied",
+            ad_personalization: consent.advertising ? "granted" : "denied",
+          });
+          window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+          const gtm = document.createElement("script");
+          gtm.async = true;
+          gtm.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MD33XFQ7";
+          document.head.appendChild(gtm);
+
+          if (consent.advertising) {
+            window.gtag("js", new Date());
+            window.gtag("config", "AW-16809229348");
+            const adsTag = document.createElement("script");
+            adsTag.async = true;
+            adsTag.src = "https://www.googletagmanager.com/gtag/js?id=AW-16809229348";
+            document.head.appendChild(adsTag);
+          }
+
+          if (consent.advertising) {
+            const flow = document.createElement("script");
+            flow.async = true;
+            flow.crossOrigin = "anonymous";
+            flow.src = "https://flow-tracking-cdn-production.up.railway.app/v2/loader.js";
+            flow.dataset.track = "76ff3f67-1cb3-4423-90c3-d64cf7e0e4f9";
+            flow.dataset.endpoint = "https://api.flowtrackingtool.com";
+            flow.dataset.cdnBase = "https://flow-tracking-cdn-production.up.railway.app";
+            flow.dataset.apiBase = "https://api.flowtrackingtool.com";
+            flow.dataset.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFja0lkIjoiNzZmZjNmNjctMWNiMy00NDIzLTkwYzMtZDY0Y2Y3ZTBlNGY5IiwiYXVkIjoiZmxvd3RyazplbWJlZCIsImlzcyI6ImZsb3d0cmsiLCJraWQiOiI4NThjNGYwNmQwMjQ1NDBkIiwiaWF0IjoxNzc5MjQxMzg5LCJleHAiOjE4MTA3NzM4ODl9.TsX8XXUJ3SCBmQZU9d-GtifOZoEh2EcFXFLCppKfyLk";
+            document.head.appendChild(flow);
+          }
+        }
+
+        function saveConsent(consent) {
+          let previousConsent = null;
+          try {
+            previousConsent = JSON.parse(localStorage.getItem(consentKey) || "null");
+            localStorage.setItem(consentKey, JSON.stringify(consent));
+          } catch (error) {}
+          if (
+            trackingLoaded &&
+            previousConsent &&
+            (previousConsent.analytics !== consent.analytics ||
+              previousConsent.advertising !== consent.advertising)
+          ) {
+            window.gtag("consent", "update", {
+              analytics_storage: consent.analytics ? "granted" : "denied",
+              ad_storage: consent.advertising ? "granted" : "denied",
+              ad_user_data: consent.advertising ? "granted" : "denied",
+              ad_personalization: consent.advertising ? "granted" : "denied",
+            });
+            window.location.reload();
+            return;
+          }
+          banner.hidden = true;
+          setMobileStickyCta(true);
+          loadOptionalTracking(consent);
+        }
+
+        let storedConsent = null;
+        try {
+          storedConsent = JSON.parse(localStorage.getItem(consentKey) || "null");
+        } catch (error) {
+          storedConsent = null;
+        }
+        if (storedConsent && typeof storedConsent === "object") {
+          setMobileStickyCta(true);
+          loadOptionalTracking({
+            analytics: storedConsent.analytics === true,
+            advertising: storedConsent.advertising === true,
+          });
+        } else {
+          banner.hidden = false;
+          setMobileStickyCta(false);
+        }
+
+        document.getElementById("accept-cookies").addEventListener("click", () => {
+          saveConsent({ analytics: true, advertising: true });
+        });
+        document.getElementById("reject-cookies").addEventListener("click", () => {
+          saveConsent({ analytics: false, advertising: false });
+        });
+        document.getElementById("manage-cookies").addEventListener("click", () => {
+          preferences.hidden = !preferences.hidden;
+        });
+        document.getElementById("save-cookie-preferences").addEventListener("click", () => {
+          saveConsent({
+            analytics: analyticsInput.checked,
+            advertising: advertisingInput.checked,
+          });
+        });
+        document.getElementById("cookie-settings-link").addEventListener("click", (event) => {
+          event.preventDefault();
+          banner.hidden = false;
+          setMobileStickyCta(false);
+          preferences.hidden = false;
+          banner.scrollIntoView({ behavior: "smooth", block: "center" });
+          try {
+            const current = JSON.parse(localStorage.getItem(consentKey) || "{}");
+            analyticsInput.checked = current.analytics === true;
+            advertisingInput.checked = current.advertising === true;
+          } catch (error) {
+            analyticsInput.checked = false;
+            advertisingInput.checked = false;
+          }
+        });
+        document.querySelectorAll("[data-affiliate-link]").forEach((link) => {
+          link.addEventListener("click", () => {
+            let consent = {};
+            try {
+              consent = JSON.parse(localStorage.getItem(consentKey) || "{}");
+            } catch (error) {
+              consent = {};
+            }
+            if (consent.analytics || consent.advertising) {
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({
+                event: "affiliate_outbound_click",
+                affiliate_product: "audifort",
+                affiliate_platform: "clickbank",
+              });
+            }
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

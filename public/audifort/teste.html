@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Hearing Assessment</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #28a745;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+        }
+
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background-color: #fff;
+            border: 2px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+
+        /* Loading Screen */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Final Button */
+        .cta-btn {
+            display: block;
+            background-color: #ff9900; /* Laranja de alta conversão para o mercado EUA */
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(255, 153, 0, 0.3);
+            transition: background 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: #e68a00;
+        }
+
+        /* Footer obrigatório para Google Ads */
+        footer {
+            background: #222;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 15px auto 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Take This 30-Second Hearing Assessment</h1>
+        <p class="subtitle">See if your hearing discomfort can be addressed naturally</p>
+
+        <!-- STEP 1 -->
+        <div class="quiz-step active" id="step1">
+            <p class="question">1. How often do you experience a ringing or buzzing sound in your ears?</p>
+            <div class="options">
+                <button class="option-btn" onclick="nextStep(2)">Constantly (Every single day)</button>
+                <button class="option-btn" onclick="nextStep(2)">Occasionally (Comes and goes)</button>
+                <button class="option-btn" onclick="nextStep(2)">Only at night or in quiet places</button>
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="quiz-step" id="step2">
+            <p class="question">2. Does this ear discomfort affect your sleep or concentration?</p>
+            <div class="options">
+                <button class="option-btn" onclick="nextStep(3)">Yes, it makes it hard to focus or sleep</button>
+                <button class="option-btn" onclick="nextStep(3)">Sometimes, but I try to ignore it</button>
+                <button class="option-btn" onclick="nextStep(3)">Not yet, but I'm worried it will get worse</button>
+            </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="quiz-step" id="step3">
+            <p class="question">3. What is your age range? (Helps customize your protocol)</p>
+            <div class="options">
+                <button class="option-btn" onclick="nextStep(4)">Under 40</button>
+                <button class="option-btn" onclick="nextStep(4)">41 to 55</button>
+                <button class="option-btn" onclick="nextStep(4)">56 to 70</button>
+                <button class="option-btn" onclick="nextStep(4)">71+</button>
+            </div>
+        </div>
+
+        <!-- STEP 4 (LOADING) -->
+        <div class="quiz-step" id="step4">
+            <div class="loader"></div>
+            <p class="loading-text">Analyzing your answers...</p>
+            <p style="text-align: center; color: #666;">Checking formula availability for your profile.</p>
+        </div>
+
+        <!-- STEP 5 (RESULTADOS) -->
+        <div class="quiz-step" id="step5">
+            <h2 style="color: var(--secondary-color); text-align: center;">You Are Eligible!</h2>
+            <p>Based on your answers, your hearing discomfort may be linked to a lack of specific neuro-nutrients that protect your inner ear.</p>
+            <p>A targeted blend of natural ingredients has been shown to support healthy hearing and clear the noise. A special discounted supply has been reserved for your age group today.</p>
+            
+            <!-- COLOQUE SEU LINK DE AFILIADO DA CLICKBANK NO HREF ABAIXO -->
+            <a href="SEU_LINK_DE_AFILIADO_AQUI" class="cta-btn" target="_blank">👉 CLICK HERE TO CLAIM YOUR DISCOUNTED BOTTLES</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <a href="/privacy-policy">Privacy Policy</a> | 
+            <a href="/terms">Terms of Service</a> | 
+            <a href="/contact">Contact Us</a>
+        </p>
+        <p class="disclaimer">
+            Disclaimer: The information provided on this site is not intended to diagnose, treat, cure, or prevent any disease. This site is not affiliated with Google or Google Inc. properly.
+        </p>
+    </footer>
+
+    <script>
+        function nextStep(step) {
+            // Esconde todos os passos
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+            
+            // Mostra o passo atual
+            document.getElementById('step' + step).classList.add('active');
+
+            // Se for o passo 4 (Loading), espera 2 segundos e vai para o resultado
+            if(step === 4) {
+                setTimeout(() => {
+                    nextStep(5);
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
