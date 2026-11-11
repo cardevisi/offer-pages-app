@@ -322,6 +322,12 @@
         color: var(--muted);
         font-size: 1.06rem;
       }
+      .review-byline {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+      }
       .benefit-list {
         display: grid;
         gap: 10px;
@@ -579,6 +585,145 @@
         font-size: 0.95rem;
       }
 
+      /* Ingredients */
+      .ingredient-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .ingredient-card {
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 6px 16px #0f172a08;
+      }
+      .ingredient-card h3 {
+        font-size: 1.04rem;
+      }
+      .ingredient-card .ingredient-type {
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        color: var(--green-dark);
+        background: #f0fdf4;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .ingredient-card p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .ingredient-note {
+        max-width: 780px;
+        margin: 22px auto 0;
+        color: var(--muted);
+        font-size: 0.84rem;
+        text-align: center;
+        font-style: italic;
+      }
+
+      /* Pros & Cons */
+      .proscons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .proscons-card {
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+      .proscons-card.pros {
+        border-color: #bbf7d0;
+      }
+      .proscons-card.cons {
+        border-color: #fed7aa;
+      }
+      .proscons-card h3 {
+        margin-bottom: 14px;
+        font-size: 1.1rem;
+      }
+      .proscons-card ul {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      .proscons-card li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 0.94rem;
+        color: var(--ink);
+      }
+      .proscons-card li::before {
+        flex: 0 0 auto;
+        font-weight: 800;
+      }
+      .proscons-card.pros li::before {
+        content: "+";
+        color: var(--green-dark);
+      }
+      .proscons-card.cons li::before {
+        content: "–";
+        color: var(--orange-dark);
+      }
+
+      /* Who should buy */
+      .whobuy-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .whobuy-card {
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+      .whobuy-card h3 {
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+      .whobuy-card ul {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      .whobuy-card li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 0.94rem;
+      }
+      .whobuy-card li::before {
+        content: "•";
+        flex: 0 0 auto;
+        color: var(--navy);
+        font-weight: 800;
+      }
+      .whobuy-card.cons li::before {
+        color: var(--orange-dark);
+      }
+
+      @media (min-width: 700px) {
+        .card-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .ingredient-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .proscons-grid,
+        .whobuy-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       /* Final CTA */
       .final-cta {
         padding: 62px 0;
@@ -793,10 +938,50 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "How do I take Audifort?",
+                "name": "Is Audifort right for me?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Audifort comes in a liquid dropper format. The label directions describe a daily serving taken directly from the dropper. Always follow the serving guidance printed on the current product label."
+                  "text": "Audifort is marketed as a daily hearing support supplement for adults who want a plant-based option for ear wellness. If you have an existing medical condition, take medication, are pregnant, or are under 18, consult your doctor first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What kind of results can I expect from Audifort?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Results vary from person to person and supplements are not a substitute for medical care. The seller recommends consistent daily use and notes that individual experiences may differ."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the best way to take Audifort?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Audifort comes in a liquid dropper format. Follow the serving guidance printed on the current product label."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if Audifort doesn't work for me?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Every order is backed by the seller's 90-day money-back guarantee. Contact the seller directly to request a refund within the guarantee period."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where can I buy Audifort and how quickly can I get it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Audifort is sold only through the official seller page. Orders are dispatched by the seller and delivery time depends on your location and shipping method."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is my purchase secure? How many times will you charge my card?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Payments are processed securely by the seller. You are charged once for the package selected at checkout with no recurring charges unless stated."
                 }
               },
               {
@@ -804,23 +989,7 @@
                 "name": "Is there a money-back guarantee?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. The seller currently advertises a 90-day money-back guarantee, which gives you time to try the product and request a refund through the seller if it is not right for you."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How fast is shipping?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Orders are dispatched directly by the seller. Delivery speed depends on your location and the shipping method shown at checkout, and tracking details are provided by the seller."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Where is the best place to buy Audifort?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Order through the official supplier page linked on this review so your purchase is covered by the seller's 90-day money-back guarantee. Offers found elsewhere may not include the same terms."
+                  "text": "Yes. The seller currently advertises a 90-day money-back guarantee."
                 }
               }
             ]
@@ -839,8 +1008,9 @@
           <span class="review-badge">Updated Review for 2026</span>
         </div>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="#product-information">Why Audifort</a>
+          <a href="#ingredients">Ingredients</a>
           <a href="#packages">Packages</a>
+          <a href="#pros-cons">Pros &amp; Cons</a>
           <a href="#faq">FAQ</a>
           <a
             class="nav-cta"
@@ -910,11 +1080,15 @@
               A detailed breakdown of ingredients, pricing, package options, and
               overall value before you order.
             </p>
+            <p class="review-byline">
+              Reviewed by our editorial team &middot; Last updated: November 10,
+              2026 &middot; Prices verified at the seller's checkout.
+            </p>
             <ul class="benefit-list">
               <li>
                 <span
-                  ><strong>Liquid Dropper Format:</strong> Superior absorption
-                  compared to traditional pills.</span
+                  ><strong>Liquid Dropper Format:</strong> Easy-to-take daily
+                  serving instead of swallowing large pills.</span
                 >
               </li>
               <li>
@@ -1019,6 +1193,77 @@
         </div>
       </section>
 
+      <section class="section" id="ingredients" aria-labelledby="ingredients-title">
+        <div class="site-container">
+          <div class="section-heading">
+            <p class="eyebrow">Formula breakdown</p>
+            <h2 id="ingredients-title">Key Ingredients in Audifort</h2>
+            <p>
+              The seller lists over 20 plant-based ingredients. Below are the
+              main compounds called out on the official label, with a brief,
+              neutral description of each.
+            </p>
+          </div>
+          <div class="ingredient-grid">
+            <article class="ingredient-card">
+              <span class="ingredient-type">Root extract</span>
+              <h3>Maca Root</h3>
+              <p>
+                A Peruvian root traditionally used as an adaptogen. It is
+                included in the formula as part of the plant-based nutrient
+                blend.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <span class="ingredient-type">Seed extract</span>
+              <h3>Grape Seed</h3>
+              <p>
+                Rich in polyphenols and commonly added to supplement blends for
+                its antioxidant content.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <span class="ingredient-type">Leaf extract</span>
+              <h3>Green Tea</h3>
+              <p>
+                Contains catechins and caffeine. Widely studied for its
+                antioxidant properties and included in many wellness formulas.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <span class="ingredient-type">Fruit extract</span>
+              <h3>Capsicum Annuum</h3>
+              <p>
+                A pepper-derived extract used in supplements for circulation
+                support. Also known for its active compound capsaicin.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <span class="ingredient-type">Flower bud</span>
+              <h3>Syzygium Aromaticum (Clove)</h3>
+              <p>
+                Clove extract, used both as a flavoring and for its traditional
+                use in oral and ear wellness support.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <span class="ingredient-type">Sweetener</span>
+              <h3>Stevia</h3>
+              <p>
+                A natural, zero-calorie sweetener used to improve the taste of
+                the liquid drops without adding sugar.
+              </p>
+            </article>
+          </div>
+          <p class="ingredient-note">
+            This is a summary of the ingredients highlighted by the seller. For
+            the complete list and exact dosages, always check the product label
+            shown at the official checkout. Individual results may vary and
+            these statements have not been evaluated by the FDA.
+          </p>
+        </div>
+      </section>
+
       <section class="section" id="packages" aria-labelledby="packages-title">
         <div class="site-container">
           <div class="section-heading">
@@ -1057,7 +1302,8 @@
               <p class="package-total">Total: $207</p>
               <ul class="package-includes">
                 <li>FREE U.S. shipping</li>
-                <li>2 digital bonuses included</li>
+                <li>The Deep Sleep Awakening Protocol (bonus)</li>
+                <li>The Brainwire Regeneration Blueprint (bonus)</li>
                 <li>Covered by the 90-day guarantee</li>
               </ul>
               <a
@@ -1078,7 +1324,8 @@
               <p class="package-total">Total: $294</p>
               <ul class="package-includes">
                 <li>FREE U.S. shipping</li>
-                <li>2 digital bonuses included</li>
+                <li>The Deep Sleep Awakening Protocol (bonus)</li>
+                <li>The Brainwire Regeneration Blueprint (bonus)</li>
                 <li>Lowest price per bottle</li>
               </ul>
               <a
@@ -1103,6 +1350,81 @@
 
       <section
         class="section section-muted"
+        id="pros-cons"
+        aria-labelledby="proscons-title"
+      >
+        <div class="site-container">
+          <div class="section-heading">
+            <p class="eyebrow">Honest assessment</p>
+            <h2 id="proscons-title">Pros &amp; Cons</h2>
+            <p>
+              No product is perfect. Here is a balanced look at what Audifort
+              offers and where it falls short, based on the seller's listing.
+            </p>
+          </div>
+          <div class="proscons-grid">
+            <div class="proscons-card pros">
+              <h3>What we liked</h3>
+              <ul>
+                <li>Liquid dropper format that is easy to swallow.</li>
+                <li>Plant-based, non-GMO ingredient list.</li>
+                <li>90-day money-back guarantee from the seller.</li>
+                <li>Made in FDA-registered, GMP-certified facilities.</li>
+                <li>Bundles include free U.S. shipping and two digital guides.</li>
+              </ul>
+            </div>
+            <div class="proscons-card cons">
+              <h3>What to consider</h3>
+              <ul>
+                <li>Only available through the official seller page.</li>
+                <li>Per-bottle cost is higher on smaller packages.</li>
+                <li>Results vary — supplements are not a medical treatment.</li>
+                <li>Shipping may apply for the 2-bottle package.</li>
+                <li>No option to buy in retail stores or pharmacies.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="who-should-buy" aria-labelledby="whobuy-title">
+        <div class="site-container">
+          <div class="section-heading">
+            <p class="eyebrow">Who it's for</p>
+            <h2 id="whobuy-title">Is Audifort Right for You?</h2>
+            <p>
+              Use this quick check to decide whether this supplement fits your
+              situation. Always consult a healthcare professional before starting
+              any new supplement, especially if you take medication.
+            </p>
+          </div>
+          <div class="whobuy-grid">
+            <div class="whobuy-card">
+              <h3>Audifort may be a good fit if you…</h3>
+              <ul>
+                <li>Want a daily plant-based supplement for ear wellness.</li>
+                <li>Prefer liquid drops over swallowing large pills.</li>
+                <li>Are looking for a formula made in the USA.</li>
+                <li>Want the safety of a 90-day money-back guarantee.</li>
+                <li>Plan to use it consistently over several months.</li>
+              </ul>
+            </div>
+            <div class="whobuy-card cons">
+              <h3>Audifort is probably not for you if you…</h3>
+              <ul>
+                <li>Need a prescription treatment for a hearing condition.</li>
+                <li>Expect immediate or guaranteed results.</li>
+                <li>Are pregnant, nursing, or under 18 (ask a doctor first).</li>
+                <li>Prefer buying from local stores or pharmacies.</li>
+                <li>Are on a tight budget — bundles give the best value.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section-muted"
         id="faq"
         aria-labelledby="faq-title"
       >
@@ -1113,11 +1435,53 @@
           </div>
           <div class="faq-list">
             <details>
-              <summary>How do I take Audifort?</summary>
+              <summary>Is Audifort right for me?</summary>
               <div class="faq-answer">
-                Audifort comes in a liquid dropper format. The label directions
-                describe a daily serving taken directly from the dropper. Always
-                follow the serving guidance printed on the current product label.
+                Audifort is marketed as a daily hearing support supplement for
+                adults who want a plant-based option for ear wellness. If you
+                have an existing medical condition, take medication, are
+                pregnant, or are under 18, consult your doctor first.
+              </div>
+            </details>
+            <details>
+              <summary>What kind of results can I expect from Audifort?</summary>
+              <div class="faq-answer">
+                Results vary from person to person and supplements are not a
+                substitute for medical care. The seller recommends consistent
+                daily use and notes that individual experiences may differ.
+                Always manage expectations and follow the label directions.
+              </div>
+            </details>
+            <details>
+              <summary>What is the best way to take Audifort?</summary>
+              <div class="faq-answer">
+                Audifort comes in a liquid dropper format. Follow the serving
+                guidance printed on the current product label. Take it daily as
+                directed for the best chance of consistent results.
+              </div>
+            </details>
+            <details>
+              <summary>What if Audifort doesn't work for me?</summary>
+              <div class="faq-answer">
+                Every order is backed by the seller's 90-day money-back
+                guarantee. If you are not satisfied, contact the seller directly
+                to request a refund within the guarantee period.
+              </div>
+            </details>
+            <details>
+              <summary>Where can I buy Audifort and how quickly can I get it?</summary>
+              <div class="faq-answer">
+                Audifort is sold only through the official seller page. Orders
+                are dispatched by the seller and delivery time depends on your
+                location and the shipping method shown at checkout.
+              </div>
+            </details>
+            <details>
+              <summary>Is my purchase secure? How many times will you charge my card?</summary>
+              <div class="faq-answer">
+                Payments are processed securely by the seller. You are charged
+                once for the package you select at checkout — there are no
+                recurring or hidden charges unless stated at checkout.
               </div>
             </details>
             <details>
@@ -1126,22 +1490,6 @@
                 Yes. The seller currently advertises a 90-day money-back
                 guarantee, which gives you time to try the product and request a
                 refund through the seller if it is not right for you.
-              </div>
-            </details>
-            <details>
-              <summary>How fast is shipping?</summary>
-              <div class="faq-answer">
-                Orders are dispatched directly by the seller. Delivery speed
-                depends on your location and the shipping method shown at
-                checkout, and tracking details are provided by the seller.
-              </div>
-            </details>
-            <details>
-              <summary>Where is the best place to buy Audifort?</summary>
-              <div class="faq-answer">
-                Order through the official supplier page linked on this review so
-                your purchase is covered by the seller's 90-day money-back
-                guarantee. Offers found elsewhere may not include the same terms.
               </div>
             </details>
           </div>
@@ -1191,8 +1539,9 @@
         </p>
         <p class="footer-disclosure">
           This site is not the official Audifort website. The seller handles
-          orders, payments, shipping, and product support. Publisher contact
-          details for this independent site have not been provided.
+          orders, payments, shipping, and product support. Publisher:
+          TopLifePicks. For editorial inquiries, contact us at
+          <a href="mailto:contact@toplifepicks.shop">contact@toplifepicks.shop</a>.
         </p>
         <p class="footer-copyright">
           &copy; 2026 Audifort Review &amp; Guide. All rights reserved.
@@ -1385,11 +1734,24 @@
                 affiliate_product: "audifort",
                 affiliate_platform: "clickbank",
               });
+              // Micro-conversao: clique para a oferta do ClickBank.
+              // IMPORTANTE: crie uma acao de conversao "Click to Offer"
+              // no Google Ads e substitua o label abaixo pelo gerado.
+              if (typeof window.gtag === "function") {
+                window.gtag("event", "conversion", {
+                  send_to: "AW-16809229348/REPLACE_WITH_CLICK_LABEL",
+                  affiliate_product: "audifort",
+                  affiliate_platform: "clickbank",
+                });
+              }
             }
           });
         });
       })();
     </script>
+    <!-- Cardevisi: captura o gclid e injeta o tid nos links ClickBank (tracking de postback) -->
     <script src="https://api.cardevisi.com/api/v1/track/1f357a039a7cf8dca3c7a68c5e315c73.js" async></script>
+    <!-- link-format.js: apenda extclid (gclid), keyword, matchtype e device nos links ClickBank -->
+    <script src="/resourses/link-format.js?v=20261110"></script>
   </body>
 </html>

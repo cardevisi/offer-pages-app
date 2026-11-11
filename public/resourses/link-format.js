@@ -126,7 +126,7 @@
 
   function getPlatform() {
     const platformLinks = document.querySelectorAll(
-      'a[href*="source_id="], a[href*="tid="], a[href]'
+      'a[href*="source_id="], a[href*="tid="], a[href]',
     );
     for (const link of platformLinks) {
       const url = new URL(link.href);
@@ -135,7 +135,7 @@
         return sourceId;
       }
       const tid = url.searchParams.get("tid");
-      if (tid === url.searchParams.get("tid")) {
+      if (tid && platformMappings[tid]) {
         return tid;
       }
     }
@@ -143,8 +143,8 @@
   }
 
   function smartAdvUpdateLinks() {
-    // Captura todos os links da página que possuam o parâmetro 'sub1'
-    const links = document.querySelectorAll('a[href*="source_id="], a[href]');
+    // Captura apenas links de afiliado (com source_id)
+    const links = document.querySelectorAll('a[href*="source_id="]');
 
     // Loop através de cada link
     links.forEach((link) => {
@@ -166,18 +166,23 @@
 
   // Função para atualizar todos os links na página
   function clickbankUpdateLinks() {
-    // Captura todos os links da página que possuam o parâmetro 'tid'
-    const links = document.querySelectorAll('a[href*="tid="], a[href]');
+    // Captura apenas links de afiliado ClickBank (com source_id, tid ou hop.clickbank.net)
+    const links = document.querySelectorAll(
+      'a[href*="source_id="], a[href*="tid="], a[href*="clickbank"]',
+    );
 
     // Loop através de cada link
     links.forEach((link) => {
       const url = new URL(link.href);
 
-      // Substitui o valor do parâmetro 'tid'
-      url.searchParams.set("tid", "gads");
+      // Define tid apenas se a Cardevisi (ou outro script) não tiver definido
+      if (!url.searchParams.get("tid")) {
+        url.searchParams.set("tid", "gads");
+      }
       url.searchParams.set("aff_sub1", keyword);
       url.searchParams.set("aff_sub2", matchtype);
       url.searchParams.set("aff_sub3", device);
+      // extclid é o parâmetro oficial do ClickBank para click IDs externos (gclid)
       url.searchParams.set("extclid", gclid);
 
       // Atualiza o href do link com a nova URL
@@ -190,7 +195,7 @@
   const platform = getPlatform();
   if (!platform) {
     console.warn(
-      "Plataforma não identificada. Nenhuma alteração será feita nos links."
+      "Plataforma não identificada. Nenhuma alteração será feita nos links.",
     );
   } else {
     console.log(`Plataforma identificada: ${platform}`);
@@ -203,7 +208,7 @@
         break;
       default:
         console.warn(
-          `Nenhuma função de atualização definida para a plataforma: ${platform}`
+          `Nenhuma função de atualização definida para a plataforma: ${platform}`,
         );
     }
   }
