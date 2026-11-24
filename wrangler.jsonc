@@ -1,9 +1,17 @@
 {
   "name": "offer-pages-app",
   "compatibility_date": "2025-04-05",
+  // O Worker só roda quando nenhum arquivo de ./public bate com a URL.
+  "main": "src/index.js",
   "assets": {
     "directory": "./public"
-  }
+  },
+  // Páginas publicadas pelo app-campaign-ads após aprovação humana.
+  // Criar uma vez: npx wrangler r2 bucket create offer-pages
+  "r2_buckets": [
+    {
+      "binding": "PAGES",
+      "bucket_name": "offer-pages"
+    }
+  ]
 }
-
-
