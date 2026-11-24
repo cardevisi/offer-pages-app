@@ -119,17 +119,34 @@
   }
 
   // Capturando os valores reais dos parâmetros na URL da página atual
-  const gclid = searchParams.get("gclid") ?? "gclid"; //encodeURIComponent(String(getParameterByName("gclid"))); // Codificando para URL
+  // Sem gclid real na URL, nada é enviado: um valor fixo ("gclid") sujaria a atribuição.
+  const gclid = searchParams.get("gclid") || null;
   const keyword = searchParams.get("keyword") ?? "key_0"; //encodeURIComponent(String(getParameterByName("keyword") ?? "key_0")); // Codificando para URL
   const matchtype = searchParams.get("matchtype") ?? "mt_0"; //encodeURIComponent(String(getParameterByName("matchtype") ?? "mt_0")); // Codificando para URL
   const device = searchParams.get("device") ?? "d_0"; //encodeURIComponent(String(getParameterByName("device") ?? "d_0")); // What device the click came from: "m" for mobile (including WAP), "t" for tablet, and "c" for computer. // Codificando para URL
 
+  function parseLink(link) {
+    try {
+      return new URL(link.href);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Hoplinks da ClickBank: <conta>.hop.clickbank.net, com ou sem parâmetros.
+  function isClickbankLink(url) {
+    return /(^|\.)hop\.clickbank\.net$/i.test(url.hostname);
+  }
+
   function getPlatform() {
-    const platformLinks = document.querySelectorAll(
-      'a[href*="source_id="], a[href*="tid="], a[href]',
-    );
+    const platformLinks = document.querySelectorAll("a[href]");
     for (const link of platformLinks) {
-      const url = new URL(link.href);
+      const url = parseLink(link);
+      if (!url) continue;
+      // O host identifica a ClickBank mesmo quando o tid é livre (ex.: tid=google_ads).
+      if (isClickbankLink(url)) {
+        return "clickbank";
+      }
       const sourceId = url.searchParams.get("source_id");
       if (sourceId && platformMappings[sourceId]) {
         return sourceId;
@@ -144,15 +161,16 @@
 
   function smartAdvUpdateLinks() {
     // Captura apenas links de afiliado (com source_id)
-    const links = document.querySelectorAll('a[href*="source_id="]');
+    const links = document.querySelectorAll("a[href]");
 
     // Loop através de cada link
     links.forEach((link) => {
-      const url = new URL(link.href);
+      const url = parseLink(link);
+      if (!url || !url.searchParams.has("source_id")) return;
 
       // Substitui os valores dos parâmetros conforme o mapeamento
       url.searchParams.set("sub1", keyword);
-      url.searchParams.set("sub2", gclid);
+      if (gclid) url.searchParams.set("sub2", gclid);
       url.searchParams.set("sub3", device);
       url.searchParams.set("sub4", matchtype);
       url.searchParams.set("sub5", keyword);
@@ -166,14 +184,13 @@
 
   // Função para atualizar todos os links na página
   function clickbankUpdateLinks() {
-    // Captura apenas links de afiliado ClickBank (com source_id, tid ou hop.clickbank.net)
-    const links = document.querySelectorAll(
-      'a[href*="source_id="], a[href*="tid="], a[href*="clickbank"]',
-    );
+    // Captura apenas hoplinks da ClickBank (*.hop.clickbank.net)
+    const links = document.querySelectorAll("a[href]");
 
     // Loop através de cada link
     links.forEach((link) => {
-      const url = new URL(link.href);
+      const url = parseLink(link);
+      if (!url || !isClickbankLink(url)) return;
 
       // Define tid apenas se a Cardevisi (ou outro script) não tiver definido
       if (!url.searchParams.get("tid")) {
@@ -183,7 +200,7 @@
       url.searchParams.set("aff_sub2", matchtype);
       url.searchParams.set("aff_sub3", device);
       // extclid é o parâmetro oficial do ClickBank para click IDs externos (gclid)
-      url.searchParams.set("extclid", gclid);
+      if (gclid) url.searchParams.set("extclid", gclid);
 
       // Atualiza o href do link com a nova URL
       link.href = url.toString();
